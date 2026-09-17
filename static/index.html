@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduGrade AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">E</div>
+        <div>
+          <strong>EduGrade AI</strong>
+          <span>Assessment workspace</span>
+        </div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="admin">
+          <span class="nav-icon">01</span> Admin
+        </button>
+        <button class="nav-item" data-view="teacher">
+          <span class="nav-icon">02</span> Teacher
+          <span id="review-count" class="count">0</span>
+        </button>
+        <button class="nav-item" data-view="student">
+          <span class="nav-icon">03</span> Student
+        </button>
+      </nav>
+      <div class="responsible-ai">
+        <span class="eyebrow">Responsible AI</span>
+        <strong>Educators stay in control</strong>
+        <p>Every AI grade includes confidence, evidence, and a complete review trail.</p>
+      </div>
+      <div id="connection-status" class="connection">Checking Azure connection...</div>
+      <button id="trace-toggle" class="trace-toggle">Agent Inspector <span>›</span></button>
+    </aside>
+
+    <aside id="trace-panel" class="trace-panel collapsed" aria-label="Owner agent inspector">
+      <div class="trace-header">
+        <div>
+          <span class="eyebrow">Owner view · local demo</span>
+          <h3>Agent Inspector</h3>
+        </div>
+        <button id="trace-collapse" aria-label="Minimize inspector">‹</button>
+      </div>
+      <div class="trace-security">
+        <span></span>
+        Local owner view. Entra authorization is required before deployment.
+      </div>
+      <div id="trace-live-status" class="trace-live-status">Waiting for an assessment run</div>
+      <div id="trace-events" class="trace-events">
+        <div class="trace-empty">Run a student submission to inspect each execution stage.</div>
+      </div>
+      <div class="trace-legend">
+        <span><i class="trace-dot"></i> Standard processing</span>
+        <span><i class="trace-dot rai"></i> Responsible AI control</span>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <span class="eyebrow">AI-powered assessment</span>
+          <h1 id="page-title">Learning, governed thoughtfully.</h1>
+        </div>
+        <div class="header-pill"><span></span> Human review enabled</div>
+      </header>
+
+      <section id="admin-view" class="view active">
+        <div class="role-hero admin-hero">
+          <div>
+            <span class="eyebrow">Admin learning workspace</span>
+            <h2>Give the agent trusted teaching context.</h2>
+            <p>Upload the module first. EduGrade uses it as the source of truth for assignment alignment, evaluation, and feedback.</p>
+          </div>
+          <div class="hero-stat"><strong id="module-count">0</strong><span>Active modules</span></div>
+        </div>
+        <div class="admin-grid">
+          <form id="module-form" class="panel form-panel">
+            <div class="panel-heading">
+              <div><span class="eyebrow">Knowledge intake</span><h2>Upload learning module</h2></div>
+              <span class="status-badge ready_for_approval">Admin controlled</span>
+            </div>
+            <div class="form-grid">
+              <label>Module title<input id="module-title" required placeholder="e.g. The Water Cycle"></label>
+              <label>Subject<input id="module-subject" required placeholder="e.g. Environmental Science"></label>
+            </div>
+            <div class="form-grid">
+              <label>Grade level<input id="module-grade" required placeholder="e.g. Grade 6"></label>
+              <label>Source type
+                <select id="module-source">
+                  <option value="text">Text / lesson notes</option>
+                  <option value="document">Document / handout</option>
+                  <option value="video_transcript">Video transcript + handout</option>
+                </select>
+              </label>
+            </div>
+            <label>Module content
+              <textarea id="module-content" rows="10" required placeholder="Paste lesson content, expected concepts, examples, and homework expectations..."></textarea>
+            </label>
+            <label class="file-drop">Attach supporting file
+              <input id="module-file" type="file" accept=".txt,.md,.pdf,.doc,.docx">
+              <span>Drop a handout or select a file. Text files are read directly for the demo.</span>
+            </label>
+            <button class="primary-button" type="submit"><span>Add module to agent context</span><span>→</span></button>
+            <div id="module-error" class="error-message"></div>
+          </form>
+          <div>
+            <div class="flow-card">
+              <span class="eyebrow">Agent workflow</span>
+              <h3>Responsible assessment by design</h3>
+              <div class="flow-list">
+                <div><b>01</b><span><strong>Permission check</strong>Confirm media consent before access.</span></div>
+                <div><b>02</b><span><strong>Read the module</strong>Understand what was taught and expected.</span></div>
+                <div><b>03</b><span><strong>Preprocess outside AI</strong>Scan media, extract text, and sanitize the transcript.</span></div>
+                <div><b>04</b><span><strong>Reason with rubric</strong>Score evidence, completeness, tone, and clarity.</span></div>
+                <div><b>05</b><span><strong>Safety gate</strong>Assess the work, never judge the child.</span></div>
+                <div><b>06</b><span><strong>Teacher approval</strong>Accept or discard AI feedback before release.</span></div>
+              </div>
+            </div>
+            <div class="panel module-library">
+              <span class="eyebrow">Agent knowledge</span>
+              <h3>Module library</h3>
+              <div id="module-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="student-view" class="view">
+        <div class="role-hero student-hero">
+          <div>
+            <span class="eyebrow">Student learning space</span>
+            <h2>Welcome back, Maya.</h2>
+            <p>View your assigned work, submit securely, and receive teacher-approved feedback in English and Hindi.</p>
+          </div>
+          <div class="consent-banner">
+            <div class="consent-icon">✓</div>
+            <div>
+              <span class="eyebrow">Student account safety</span>
+              <h3>Parent or guardian consent protects media submissions.</h3>
+              <p>EduGrade processes only academic content needed for this assignment. It does not evaluate appearance, identity, voice, background, personality, or personal traits.</p>
+            </div>
+            <span id="consent-status" class="status-badge needs_review">First login required</span>
+          </div>
+          <div class="hero-stat"><strong>3</strong><span>Tasks this week</span></div>
+        </div>
+        <div class="stepper">
+          <div class="step active"><b>1</b><span>Assignment</span></div>
+          <div class="step"><b>2</b><span>Rubric</span></div>
+          <div class="step"><b>3</b><span>AI evaluation</span></div>
+          <div class="step"><b>4</b><span>Educator review</span></div>
+        </div>
+
+        <div class="layout">
+          <form id="assessment-form" class="panel form-panel">
+            <div class="panel-heading">
+              <div><span class="eyebrow">Current task · Due Friday</span><h2>Submit homework</h2></div>
+              <button type="button" id="load-sample" class="text-button">Load demo</button>
+            </div>
+            <div class="form-grid">
+              <label>
+                Student name
+                <input id="student-name" required placeholder="e.g. Maya Johnson">
+              </label>
+              <label>
+                Assignment title
+                <input id="assignment-title" required placeholder="e.g. The Water Cycle">
+              </label>
+            </div>
+            <label>
+              Assignment prompt
+              <textarea id="assignment-prompt" required rows="4" placeholder="What were students asked to do?"></textarea>
+            </label>
+            <div class="form-grid">
+              <label>Learning module
+                <select id="module-select"><option value="">Select an admin module</option></select>
+              </label>
+              <label>Submission format
+                <select id="submission-type">
+                  <option value="typed_text">Typed response</option>
+                  <option value="handwritten_image">Handwritten note + typed transcript</option>
+                  <option value="video_and_handnote">Video + handwritten note + transcript</option>
+                </select>
+              </label>
+            </div>
+            <label class="file-drop">Homework attachment
+              <input id="submission-file" type="file" accept="image/*,video/*,.pdf">
+              <span>For video, the file remains outside the grading agent. A separate service creates the transcript used below.</span>
+            </label>
+            <label class="permission-row">
+              <input id="permission-confirmed" type="checkbox" checked>
+              <span>I confirm that permission is available for EduGrade AI to process this submitted media.</span>
+            </label>
+            <div id="external-processing-panel" class="video-consent-panel hidden">
+              <span class="eyebrow">External video processing boundary</span>
+              <p class="boundary-copy">Raw video is not sent to the AI grading module. Confirm that the video was processed by the consent-aware transcription/OCR service and that the text below is the sanitized transcript.</p>
+              <label class="permission-row">
+                <input id="external-processing-confirmed" type="checkbox">
+                <span>External transcription and sanitization completed; only the transcript may be evaluated.</span>
+              </label>
+              <label>Media processing receipt
+                <input id="media-processing-reference" placeholder="e.g. MEDIA-2026-00042">
+              </label>
+            </div>
+            <label>
+              Student response or media transcript
+              <textarea id="submission" required rows="9" placeholder="Paste the student's response here..."></textarea>
+              <span class="field-hint"><span id="word-count">0</span> words</span>
+            </label>
+
+            <div class="rubric-heading">
+              <div>
+                <span class="eyebrow">Scoring criteria</span>
+                <h3>Grading rubric</h3>
+              </div>
+              <button type="button" id="add-criterion" class="secondary-button">+ Add criterion</button>
+            </div>
+            <div id="rubric-list"></div>
+            <div class="total-row">Total available points <strong id="total-points">0</strong></div>
+
+            <button id="evaluate-button" class="primary-button" type="submit">
+              <span>Evaluate with EduGrade AI</span>
+              <span class="arrow">→</span>
+            </button>
+            <div id="form-error" class="error-message" role="alert"></div>
+          </form>
+
+          <aside class="demo-card">
+            <span class="eyebrow">What happens next</span>
+            <h3>From submission to feedback in minutes.</h3>
+            <ol>
+              <li><b>Rubric reasoning</b><span>Each criterion is scored with evidence.</span></li>
+              <li><b>Personal feedback</b><span>Strengths and learning gaps become actionable guidance.</span></li>
+              <li><b>Confidence gate</b><span>Uncertain results are held for instructor review.</span></li>
+              <li><b>Educator approval</b><span>Edit, approve, or override before release.</span></li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section id="teacher-view" class="view">
+        <div class="role-hero teacher-hero">
+          <div>
+            <span class="eyebrow">Teacher command center</span>
+            <h2>Class performance at a glance.</h2>
+            <p>Prioritize uncertain assessments, compare rubric evidence, and decide exactly what feedback reaches students.</p>
+          </div>
+          <div class="hero-stat"><strong>6.4h</strong><span>Grading time saved</span></div>
+        </div>
+        <div class="metric-strip">
+          <div><span>Class average</span><strong>82%</strong><em>+4% this month</em></div>
+          <div><span>Homework completed</span><strong>24/28</strong><em>86% completion</em></div>
+          <div><span>Needs review</span><strong id="metric-review-count">0</strong><em>Confidence gated</em></div>
+          <div><span>Learning gap</span><strong>Reasoning</strong><em>Most common trend</em></div>
+        </div>
+        <div class="queue-header">
+          <div>
+            <span class="eyebrow">Human-in-the-loop governance</span>
+            <h2>Educator review queue</h2>
+          </div>
+          <button id="refresh-queue" class="secondary-button">Refresh assessments</button>
+        </div>
+        <div id="queue-list" class="queue-list"></div>
+      </section>
+
+      <section id="result-view" class="view">
+        <button id="back-to-queue" class="text-button back-button">← Back to teacher dashboard</button>
+        <div id="result-content"></div>
+      </section>
+    </main>
+  </div>
+  <div id="loading-overlay" class="loading-overlay hidden">
+    <div class="loader"></div>
+    <strong>EduGrade AI is evaluating the submission</strong>
+    <span>Applying the rubric, finding evidence, and calculating confidence...</span>
+  </div>
+  <div id="registration-overlay" class="registration-overlay hidden">
+    <form id="registration-form" class="registration-card">
+      <div class="registration-brand"><div class="brand-mark">E</div><strong>EduGrade AI</strong></div>
+      <span class="eyebrow">First-time student registration</span>
+      <h2>Welcome to a safer learning experience.</h2>
+      <p class="registration-copy">A parent or guardian completes consent once. EduGrade then checks the stored permission before any future video submission.</p>
+      <div class="form-grid">
+        <label>Student name<input id="register-student-name" required value="Maya Johnson"></label>
+        <label>Student email<input id="register-student-email" type="email" required value="maya@student.demo"></label>
+      </div>
+      <div class="form-grid">
+        <label>Parent / guardian name<input id="parent-name" required placeholder="Parent or guardian full name"></label>
+        <label>Parent / guardian email<input id="parent-email" type="email" required placeholder="parent@example.com"></label>
+      </div>
+      <label>Consent verification reference<input id="registration-consent-reference" required placeholder="e.g. EDU-CONSENT-2026-014"></label>
+      <label class="permission-row">
+        <input id="registration-parent-consent" type="checkbox" required>
+        <span>I am the parent or guardian and consent to academic submissions being processed for grading support.</span>
+      </label>
+      <label class="permission-row">
+        <input id="registration-video-consent" type="checkbox">
+        <span>I also approve video processing for academic evaluation. This can be declined while retaining text and image submissions.</span>
+      </label>
+      <div class="privacy-note"><strong>Responsible AI promise</strong> Media is used only to evaluate assigned academic work. The agent does not assess identity, appearance, emotion, personality, or personal traits. A teacher reviews feedback before students see it.</div>
+      <button class="primary-button" type="submit"><span>Register and continue</span><span>→</span></button>
+      <div id="registration-error" class="error-message"></div>
+    </form>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

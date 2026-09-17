@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/assessments.json
+data/modules.json
+data/student_profiles.json
