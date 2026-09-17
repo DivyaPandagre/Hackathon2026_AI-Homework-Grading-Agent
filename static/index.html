@@ -290,11 +290,23 @@
         <label>Student name<input id="register-student-name" required value="Maya Johnson"></label>
         <label>Student email<input id="register-student-email" type="email" required value="maya@student.demo"></label>
       </div>
+      <div class="verification-row" data-verification="student">
+        <button id="send-student-code" class="secondary-button" type="button">Send student code</button>
+        <input id="student-verification-code" inputmode="numeric" maxlength="6" placeholder="6-digit code">
+        <button id="verify-student-code" class="secondary-button" type="button">Verify</button>
+        <span id="student-verification-status">Not verified</span>
+      </div>
       <div class="form-grid">
         <label>Parent / guardian name<input id="parent-name" required placeholder="Parent or guardian full name"></label>
         <label>Parent / guardian email<input id="parent-email" type="email" required placeholder="parent@example.com"></label>
       </div>
-      <label>Consent verification reference<input id="registration-consent-reference" required placeholder="e.g. EDU-CONSENT-2026-014"></label>
+      <div class="verification-row" data-verification="parent">
+        <button id="send-parent-code" class="secondary-button" type="button">Send parent code</button>
+        <input id="parent-verification-code" inputmode="numeric" maxlength="6" placeholder="6-digit code">
+        <button id="verify-parent-code" class="secondary-button" type="button">Verify</button>
+        <span id="parent-verification-status">Not verified</span>
+      </div>
+      <div id="demo-code-message" class="demo-code-message hidden"></div>
       <label class="permission-row">
         <input id="registration-parent-consent" type="checkbox" required>
         <span>I am the parent or guardian and consent to academic submissions being processed for grading support.</span>
@@ -303,7 +315,7 @@
         <input id="registration-video-consent" type="checkbox">
         <span>I also approve video processing for academic evaluation. This can be declined while retaining text and image submissions.</span>
       </label>
-      <div class="privacy-note"><strong>Responsible AI promise</strong> Media is used only to evaluate assigned academic work. The agent does not assess identity, appearance, emotion, personality, or personal traits. A teacher reviews feedback before students see it.</div>
+      <div class="privacy-note"><strong>Responsible AI promise</strong> Media is used only to evaluate assigned academic work. The agent does not assess identity, appearance, emotion, personality, or personal traits. A teacher reviews feedback before students see it. EduGrade generates the consent record automatically after both emails are verified.</div>
       <button class="primary-button" type="submit"><span>Register and continue</span><span>→</span></button>
       <div id="registration-error" class="error-message"></div>
     </form>

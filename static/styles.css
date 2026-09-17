@@ -396,6 +396,32 @@ textarea { resize: vertical; line-height: 1.55; }
 .registration-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; font: 700 17px "Manrope"; }
 .privacy-note { margin: 16px 0; padding: 14px; border-left: 4px solid var(--forest); background: #f0f7f3; color: var(--muted); font-size: 11px; line-height: 1.55; }
 .privacy-note strong { display: block; color: var(--ink); }
+.verification-row {
+  display: grid;
+  grid-template-columns: auto minmax(120px, 1fr) auto auto;
+  gap: 9px;
+  align-items: center;
+  margin-top: 10px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #f8faf9;
+}
+.verification-row input { padding: 9px 11px; }
+.verification-row span { color: #8a5f19; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.verification-row.verified { border-color: #a8cfb7; background: #f0f8f3; }
+.verification-row.verified span { color: #277046; }
+.verification-row.verified input { border-color: #abd0b8; }
+.demo-code-message {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: #684f1b;
+  background: #fff7df;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.demo-code-message.hidden { display: none; }
 
 @media (max-width: 1000px) {
   .app-shell { grid-template-columns: 1fr; }
@@ -423,4 +449,5 @@ textarea { resize: vertical; line-height: 1.55; }
   .assessment-card { grid-template-columns: 1fr 1fr; }
   .metric-strip { grid-template-columns: 1fr; }
   .role-hero { align-items: flex-start; gap: 20px; }
+  .verification-row { grid-template-columns: 1fr 1fr; }
 }

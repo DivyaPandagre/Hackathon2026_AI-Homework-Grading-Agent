@@ -1,5 +1,6 @@
-from datetime import timezone
+from datetime import datetime, timezone
 from pathlib import Path
+from uuid import uuid4
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.responses import FileResponse
@@ -21,16 +22,23 @@ from .models import (
     ReviewRequest,
     StudentProfile,
     StudentRegistration,
+    VerificationChallenge,
+    VerificationConfirm,
+    VerificationPurpose,
+    VerificationRequest,
+    VerificationResult,
     utc_now,
 )
 from .module_store import ModuleStore
 from .store import AssessmentStore
+from .verification_store import VerificationStore
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR = BASE_DIR / "static"
 store = AssessmentStore(BASE_DIR / "data" / "assessments.json")
 module_store = ModuleStore(BASE_DIR / "data" / "modules.json")
 consent_store = ConsentStore(BASE_DIR / "data" / "student_profiles.json")
+verification_store = VerificationStore()
 
 app = FastAPI(
     title="EduGrade AI",
@@ -78,12 +86,85 @@ async def create_module(request: LearningModuleCreate) -> LearningModule:
 
 
 @app.post(
+    "/api/verifications/request",
+    response_model=VerificationChallenge,
+    status_code=status.HTTP_201_CREATED,
+)
+async def request_verification(
+    request: VerificationRequest,
+    settings: Settings = Depends(get_settings),
+) -> VerificationChallenge:
+    request_id, code, expires_in = verification_store.create(
+        request.email, request.purpose
+    )
+    return VerificationChallenge(
+        request_id=request_id,
+        expires_in_seconds=expires_in,
+        delivery="simulated_email" if settings.demo_otp_enabled else "email",
+        demo_code=code if settings.demo_otp_enabled else None,
+    )
+
+
+@app.post(
+    "/api/verifications/confirm",
+    response_model=VerificationResult,
+)
+async def confirm_verification(
+    request: VerificationConfirm,
+) -> VerificationResult:
+    try:
+        token, email, purpose = verification_store.confirm(
+            request.request_id, request.code
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return VerificationResult(
+        verification_token=token,
+        email=email,
+        purpose=purpose,
+    )
+
+
+@app.post(
     "/api/students/register",
     response_model=StudentProfile,
     status_code=status.HTTP_201_CREATED,
 )
 async def register_student(request: StudentRegistration) -> StudentProfile:
-    return consent_store.save(StudentProfile(**request.model_dump()))
+    if not verification_store.consume(
+        request.student_email_verification_token,
+        request.student_email,
+        VerificationPurpose.student_email,
+    ):
+        raise HTTPException(
+            status_code=422,
+            detail="Student email verification is missing or invalid.",
+        )
+    if not verification_store.consume(
+        request.parent_email_verification_token,
+        request.parent_email,
+        VerificationPurpose.parent_email,
+    ):
+        raise HTTPException(
+            status_code=422,
+            detail="Parent email verification is missing or invalid.",
+        )
+
+    consent_reference = (
+        f"EDU-CONSENT-{datetime.now(timezone.utc):%Y}-"
+        f"{uuid4().hex[:8].upper()}"
+    )
+    return consent_store.save(
+        StudentProfile(
+            student_name=request.student_name,
+            student_email=request.student_email,
+            parent_name=request.parent_name,
+            parent_email=request.parent_email,
+            parent_consent_confirmed=request.parent_consent_confirmed,
+            video_processing_approved=request.video_processing_approved,
+            consent_reference=consent_reference,
+        )
+    )
 
 
 @app.get("/api/students/{student_id}", response_model=StudentProfile)

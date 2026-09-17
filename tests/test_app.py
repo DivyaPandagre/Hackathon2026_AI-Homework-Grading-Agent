@@ -10,6 +10,8 @@ from app.models import (
     CriterionEvaluation,
 )
 from app.store import AssessmentStore
+from app.consent_store import ConsentStore
+from app.verification_store import VerificationStore
 import app.main as main_module
 
 
@@ -112,3 +114,59 @@ def test_rejects_score_above_rubric_maximum(tmp_path: Path):
     assert response.status_code == 422
 
     app.dependency_overrides.clear()
+
+
+def test_registration_requires_verified_emails_and_generates_consent_reference(
+    tmp_path: Path,
+):
+    main_module.consent_store = ConsentStore(tmp_path / "profiles.json")
+    main_module.verification_store = VerificationStore()
+    client = TestClient(app)
+
+    student_challenge = client.post(
+        "/api/verifications/request",
+        json={"email": "maya@student.demo", "purpose": "student_email"},
+    ).json()
+    parent_challenge = client.post(
+        "/api/verifications/request",
+        json={"email": "parent@example.com", "purpose": "parent_email"},
+    ).json()
+
+    student_result = client.post(
+        "/api/verifications/confirm",
+        json={
+            "request_id": student_challenge["request_id"],
+            "code": student_challenge["demo_code"],
+        },
+    ).json()
+    parent_result = client.post(
+        "/api/verifications/confirm",
+        json={
+            "request_id": parent_challenge["request_id"],
+            "code": parent_challenge["demo_code"],
+        },
+    ).json()
+
+    registration = client.post(
+        "/api/students/register",
+        json={
+            "student_name": "Maya",
+            "student_email": "maya@student.demo",
+            "parent_name": "Anita",
+            "parent_email": "parent@example.com",
+            "parent_consent_confirmed": True,
+            "video_processing_approved": True,
+            "student_email_verification_token": student_result[
+                "verification_token"
+            ],
+            "parent_email_verification_token": parent_result[
+                "verification_token"
+            ],
+        },
+    )
+
+    assert registration.status_code == 201
+    profile = registration.json()
+    assert profile["student_email_verified"] is True
+    assert profile["parent_email_verified"] is True
+    assert profile["consent_reference"].startswith("EDU-CONSENT-")

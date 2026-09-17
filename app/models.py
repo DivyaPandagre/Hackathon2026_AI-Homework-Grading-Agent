@@ -155,7 +155,8 @@ class StudentRegistration(BaseModel):
     parent_email: str = Field(min_length=3, max_length=200)
     parent_consent_confirmed: bool
     video_processing_approved: bool
-    consent_reference: str = Field(min_length=3, max_length=120)
+    student_email_verification_token: str = Field(min_length=20, max_length=200)
+    parent_email_verification_token: str = Field(min_length=20, max_length=200)
 
     @model_validator(mode="after")
     def validate_consent(self) -> "StudentRegistration":
@@ -164,9 +165,47 @@ class StudentRegistration(BaseModel):
         return self
 
 
-class StudentProfile(StudentRegistration):
+class StudentProfile(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid4()))
+    student_name: str
+    student_email: str
+    student_email_verified: bool = True
+    parent_name: str
+    parent_email: str
+    parent_email_verified: bool = True
+    parent_consent_confirmed: bool
+    video_processing_approved: bool
+    consent_reference: str
+    consent_version: str = "2026.1"
     registered_at: datetime = Field(default_factory=utc_now)
+
+
+class VerificationPurpose(str, Enum):
+    student_email = "student_email"
+    parent_email = "parent_email"
+
+
+class VerificationRequest(BaseModel):
+    email: str = Field(min_length=3, max_length=200)
+    purpose: VerificationPurpose
+
+
+class VerificationChallenge(BaseModel):
+    request_id: str
+    expires_in_seconds: int
+    delivery: str
+    demo_code: str | None = None
+
+
+class VerificationConfirm(BaseModel):
+    request_id: str
+    code: str = Field(pattern=r"^\d{6}$")
+
+
+class VerificationResult(BaseModel):
+    verification_token: str
+    email: str
+    purpose: VerificationPurpose
 
 
 class HealthResponse(BaseModel):

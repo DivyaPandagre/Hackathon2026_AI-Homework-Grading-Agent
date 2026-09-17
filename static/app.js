@@ -3,6 +3,10 @@ const state = {
   current: null,
   modules: [],
   student: null,
+  verification: {
+    student: { requestId: null, token: null },
+    parent: { requestId: null, token: null },
+  },
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -233,6 +237,68 @@ function requireStudentRegistration() {
   state.student = getStoredStudent();
   updateConsentStatus();
   if (!state.student) $("#registration-overlay").classList.remove("hidden");
+}
+
+async function sendVerification(kind) {
+  const isStudent = kind === "student";
+  const emailInput = isStudent ? $("#register-student-email") : $("#parent-email");
+  const status = isStudent
+    ? $("#student-verification-status")
+    : $("#parent-verification-status");
+  const message = $("#demo-code-message");
+  if (!emailInput.reportValidity()) return;
+  try {
+    const challenge = await api("/api/verifications/request", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailInput.value.trim(),
+        purpose: isStudent ? "student_email" : "parent_email",
+      }),
+    });
+    state.verification[kind] = { requestId: challenge.request_id, token: null };
+    status.textContent = "Code sent";
+    if (challenge.demo_code) {
+      message.textContent = `Demo email delivery: verification code ${challenge.demo_code} was sent to ${emailInput.value.trim()}.`;
+      message.classList.remove("hidden");
+      const codeInput = isStudent
+        ? $("#student-verification-code")
+        : $("#parent-verification-code");
+      codeInput.value = challenge.demo_code;
+    }
+  } catch (error) {
+    $("#registration-error").textContent = error.message;
+  }
+}
+
+async function confirmVerification(kind) {
+  const isStudent = kind === "student";
+  const codeInput = isStudent
+    ? $("#student-verification-code")
+    : $("#parent-verification-code");
+  const status = isStudent
+    ? $("#student-verification-status")
+    : $("#parent-verification-status");
+  const row = document.querySelector(`[data-verification="${kind}"]`);
+  const requestId = state.verification[kind].requestId;
+  if (!requestId) {
+    $("#registration-error").textContent = "Send a verification code first.";
+    return;
+  }
+  try {
+    const result = await api("/api/verifications/confirm", {
+      method: "POST",
+      body: JSON.stringify({
+        request_id: requestId,
+        code: codeInput.value.trim(),
+      }),
+    });
+    state.verification[kind].token = result.verification_token;
+    status.textContent = "Email verified ✓";
+    row.classList.add("verified");
+    codeInput.disabled = true;
+  } catch (error) {
+    $("#registration-error").textContent = error.message;
+  }
 }
 
 function renderAssessment(item) {
@@ -488,6 +554,10 @@ $("#registration-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   const errorBox = $("#registration-error");
   errorBox.textContent = "";
+  if (!state.verification.student.token || !state.verification.parent.token) {
+    errorBox.textContent = "Verify both student and parent email addresses before registration.";
+    return;
+  }
   try {
     const profile = await api("/api/students/register", {
       method: "POST",
@@ -498,7 +568,8 @@ $("#registration-form").addEventListener("submit", async (event) => {
         parent_email: $("#parent-email").value.trim(),
         parent_consent_confirmed: $("#registration-parent-consent").checked,
         video_processing_approved: $("#registration-video-consent").checked,
-        consent_reference: $("#registration-consent-reference").value.trim(),
+        student_email_verification_token: state.verification.student.token,
+        parent_email_verification_token: state.verification.parent.token,
       }),
     });
     localStorage.setItem("edugrade_student", JSON.stringify(profile));
@@ -508,6 +579,24 @@ $("#registration-form").addEventListener("submit", async (event) => {
   } catch (error) {
     errorBox.textContent = error.message;
   }
+});
+
+$("#send-student-code").addEventListener("click", () => sendVerification("student"));
+$("#verify-student-code").addEventListener("click", () => confirmVerification("student"));
+$("#send-parent-code").addEventListener("click", () => sendVerification("parent"));
+$("#verify-parent-code").addEventListener("click", () => confirmVerification("parent"));
+
+$("#register-student-email").addEventListener("input", () => {
+  state.verification.student = { requestId: null, token: null };
+  $("#student-verification-status").textContent = "Not verified";
+  document.querySelector('[data-verification="student"]').classList.remove("verified");
+  $("#student-verification-code").disabled = false;
+});
+$("#parent-email").addEventListener("input", () => {
+  state.verification.parent = { requestId: null, token: null };
+  $("#parent-verification-status").textContent = "Not verified";
+  document.querySelector('[data-verification="parent"]').classList.remove("verified");
+  $("#parent-verification-code").disabled = false;
 });
 
 $("#trace-toggle").addEventListener("click", () => {
