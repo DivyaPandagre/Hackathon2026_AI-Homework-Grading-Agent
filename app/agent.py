@@ -77,10 +77,30 @@ class AssessmentAgent:
             timeout=90,
         )
         try:
+            user_content: list[dict[str, str]] = [
+                {"type": "input_text", "text": self._build_prompt(request)}
+            ]
+            if request.attachment and request.attachment.data_url:
+                if request.submission_type == "handwritten_image":
+                    user_content.append(
+                        {
+                            "type": "input_image",
+                            "image_url": request.attachment.data_url,
+                            "detail": "high",
+                        }
+                    )
+                elif request.submission_type == "handwritten_pdf":
+                    user_content.append(
+                        {
+                            "type": "input_file",
+                            "filename": request.attachment.file_name,
+                            "file_data": request.attachment.data_url,
+                        }
+                    )
             response = await client.responses.create(
                 model=self.settings.azure_openai_deployment,
                 instructions=SYSTEM_PROMPT,
-                input=self._build_prompt(request),
+                input=[{"role": "user", "content": user_content}],
             )
         except APIStatusError as exc:
             detail = self._safe_error_detail(exc)
@@ -128,12 +148,16 @@ Media permission confirmed: {request.permission_confirmed}
 External media processing confirmed: {request.external_media_processing_confirmed}
 Media processing receipt: {request.media_processing_reference or "Not applicable"}
 Student submission:
-{request.submission}
+{request.submission or "The academic work is provided in the attached handwritten image or PDF."}
 
 First verify that the submission relates to the learning module. Evaluate the
-student's work rather than judging the child. Do not infer intent or personal
-traits. Provide feedback in both English and Hindi. Evaluate the submission and
-return only the required JSON."""
+student's work rather than judging the child. For handwriting, interpret neatness
+only as legibility, spacing, alignment, and organization. Do not reward or penalize
+handwriting style, motor development, decorative quality, or perceived effort.
+Check whether the required work is visibly completed and assess spelling at the
+age level stated in the module. Do not infer intent or personal traits. Provide
+feedback in both English and Hindi. Evaluate the submission and return only the
+required JSON."""
 
     @staticmethod
     def _safe_error_detail(error: APIStatusError) -> str:

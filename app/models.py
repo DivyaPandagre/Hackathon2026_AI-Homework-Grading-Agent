@@ -22,15 +22,25 @@ class RubricCriterion(BaseModel):
     max_points: float = Field(gt=0, le=1000)
 
 
+class SubmissionAttachment(BaseModel):
+    file_name: str = Field(min_length=1, max_length=240)
+    mime_type: str = Field(min_length=3, max_length=100)
+    size_bytes: int = Field(gt=0, le=10_000_000)
+    data_url: str = Field(default="", max_length=14_000_000, exclude=True)
+
+
 class AssessmentCreate(BaseModel):
+    homework_id: str = Field(default="", max_length=120)
     student_id: str = Field(default="", max_length=120)
     student_name: str = Field(min_length=1, max_length=120)
     assignment_title: str = Field(min_length=1, max_length=200)
     assignment_prompt: str = Field(min_length=1, max_length=8000)
     module_title: str = Field(default="Teacher-provided learning module", max_length=200)
     module_content: str = Field(default="", max_length=20000)
-    submission: str = Field(min_length=1, max_length=30000)
+    submission: str = Field(default="", max_length=30000)
     submission_type: str = Field(default="typed_text", max_length=80)
+    attachment: SubmissionAttachment | None = None
+    mcq_answers: dict[str, int] = Field(default_factory=dict)
     permission_confirmed: bool = True
     external_media_processing_confirmed: bool = False
     media_processing_reference: str = Field(default="", max_length=160)
@@ -41,6 +51,21 @@ class AssessmentCreate(BaseModel):
     def validate_permission(self) -> "AssessmentCreate":
         if not self.permission_confirmed:
             raise ValueError("permission is required before media can be evaluated")
+        if self.submission_type == "handwritten_image":
+            if (
+                self.attachment is None
+                or self.attachment.mime_type
+                not in {"image/jpeg", "image/png", "image/webp"}
+            ):
+                raise ValueError("a handwritten image is required")
+        if self.submission_type == "handwritten_pdf":
+            if (
+                self.attachment is None
+                or self.attachment.mime_type != "application/pdf"
+            ):
+                raise ValueError("a handwritten PDF is required")
+        if self.submission_type == "mcq" and not self.mcq_answers:
+            raise ValueError("MCQ answers are required")
         if self.submission_type == "video_and_handnote":
             if not self.external_media_processing_confirmed:
                 raise ValueError(
@@ -48,6 +73,10 @@ class AssessmentCreate(BaseModel):
                 )
             if not self.media_processing_reference:
                 raise ValueError("an external media processing receipt is required")
+            if not self.submission:
+                raise ValueError("an externally generated video transcript is required")
+        if self.submission_type == "typed_text" and not self.submission:
+            raise ValueError("submission text is required")
         return self
 
 
@@ -141,11 +170,60 @@ class LearningModuleCreate(BaseModel):
     grade_level: str = Field(min_length=1, max_length=80)
     content: str = Field(min_length=1, max_length=30000)
     source_type: str = Field(default="text", max_length=40)
+    evaluation_rubric: list[RubricCriterion] = Field(default_factory=list, max_length=8)
+
+    @model_validator(mode="after")
+    def validate_optional_rubric(self) -> "LearningModuleCreate":
+        if self.evaluation_rubric:
+            validate_rubric_total(self.evaluation_rubric)
+        return self
 
 
 class LearningModule(LearningModuleCreate):
     id: str = Field(default_factory=lambda: str(uuid4()))
     created_at: datetime = Field(default_factory=utc_now)
+
+
+class ModuleRubricUpdate(BaseModel):
+    rubric: list[RubricCriterion] = Field(min_length=1, max_length=8)
+
+    @model_validator(mode="after")
+    def validate_total(self) -> "ModuleRubricUpdate":
+        validate_rubric_total(self.rubric)
+        return self
+
+
+def validate_rubric_total(rubric: list[RubricCriterion]) -> None:
+    total = sum(item.max_points for item in rubric)
+    if abs(total - 100) > 0.01:
+        raise ValueError("module evaluation parameters must total 100 points")
+
+
+class MCQQuestion(BaseModel):
+    id: str
+    prompt: str
+    options: list[str] = Field(min_length=2, max_length=6)
+    correct_index: int = Field(ge=0, exclude=True)
+    explanation: str = ""
+
+    @model_validator(mode="after")
+    def validate_answer(self) -> "MCQQuestion":
+        if self.correct_index >= len(self.options):
+            raise ValueError("correct_index is outside the options list")
+        return self
+
+
+class HomeworkDefinition(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid4()))
+    module_id: str
+    title: str
+    subject: str
+    grade_level: str
+    instructions: str
+    allowed_submission_types: list[str]
+    rubric: list[RubricCriterion]
+    mcq_questions: list[MCQQuestion] = Field(default_factory=list)
+    due_label: str = "Due Friday"
 
 
 class StudentRegistration(BaseModel):

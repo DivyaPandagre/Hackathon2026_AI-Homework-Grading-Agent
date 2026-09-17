@@ -108,6 +108,7 @@
               <span>Drop a handout or select a file. Text files are read directly for the demo.</span>
             </label>
             <button class="primary-button" type="submit"><span>Add module to agent context</span><span>→</span></button>
+            <p class="field-note">A class- and subject-specific 100-point evaluation rubric is created automatically. Admins and teachers can refine it from the module library.</p>
             <div id="module-error" class="error-message"></div>
           </form>
           <div>
@@ -159,7 +160,7 @@
             </div>
             <span id="consent-status" class="status-badge needs_review">First login required</span>
           </div>
-          <div class="hero-stat"><strong>3</strong><span>Tasks this week</span></div>
+          <div class="hero-stat"><strong id="student-task-count">0</strong><span>Available tasks</span></div>
         </div>
         <div class="stepper">
           <div class="step active"><b>1</b><span>Assignment</span></div>
@@ -171,72 +172,63 @@
         <div class="layout">
           <form id="assessment-form" class="panel form-panel">
             <div class="panel-heading">
-              <div><span class="eyebrow">Current task · Due Friday</span><h2>Submit homework</h2></div>
-              <button type="button" id="load-sample" class="text-button">Load demo</button>
+              <div><span class="eyebrow">Assigned learning</span><h2>Submit homework</h2></div>
+              <span class="status-badge ready_for_approval">No typed answers</span>
             </div>
             <div class="form-grid">
-              <label>
-                Student name
-                <input id="student-name" required placeholder="e.g. Maya Johnson">
-              </label>
-              <label>
-                Assignment title
-                <input id="assignment-title" required placeholder="e.g. The Water Cycle">
-              </label>
-            </div>
-            <label>
-              Assignment prompt
-              <textarea id="assignment-prompt" required rows="4" placeholder="What were students asked to do?"></textarea>
-            </label>
-            <div class="form-grid">
-              <label>Learning module
-                <select id="module-select"><option value="">Select an admin module</option></select>
+              <label>Assigned homework
+                <select id="homework-select" required>
+                  <option value="">Select homework</option>
+                </select>
               </label>
               <label>Submission format
-                <select id="submission-type">
-                  <option value="typed_text">Typed response</option>
-                  <option value="handwritten_image">Handwritten note + typed transcript</option>
-                  <option value="video_and_handnote">Video + handwritten note + transcript</option>
+                <select id="submission-type" required>
+                  <option value="">Select format</option>
+                  <option value="handwritten_image">Photo of handwritten work</option>
+                  <option value="handwritten_pdf">PDF of handwritten work</option>
+                  <option value="mcq">Answer MCQs in the portal</option>
+                  <option value="video_and_handnote">Recorded video</option>
                 </select>
               </label>
             </div>
-            <label class="file-drop">Homework attachment
-              <input id="submission-file" type="file" accept="image/*,video/*,.pdf">
-              <span>For video, the file remains outside the grading agent. A separate service creates the transcript used below.</span>
+            <div id="homework-brief" class="homework-brief empty">
+              Select an assigned homework to view its instructions and rubric.
+            </div>
+            <label id="submission-file-panel" class="file-drop hidden">Homework attachment
+              <input id="submission-file" type="file" accept=".jpg,.jpeg,.png,.webp,.pdf,video/*">
+              <span id="submission-file-help">Upload the required homework file.</span>
             </label>
+            <div id="mcq-panel" class="mcq-panel hidden"></div>
             <label class="permission-row">
               <input id="permission-confirmed" type="checkbox" checked>
-              <span>I confirm that permission is available for EduGrade AI to process this submitted media.</span>
+              <span>I confirm this is my submitted homework and permission is available for EduGrade to process it for teacher review.</span>
             </label>
             <div id="external-processing-panel" class="video-consent-panel hidden">
               <span class="eyebrow">External video processing boundary</span>
-              <p class="boundary-copy">Raw video is not sent to the AI grading module. Confirm that the video was processed by the consent-aware transcription/OCR service and that the text below is the sanitized transcript.</p>
+              <p class="boundary-copy">The recorded video is uploaded to the external media service, not the grading model. Upload the sanitized transcript produced by that service.</p>
+              <div class="video-recorder">
+                <video id="video-preview" playsinline muted></video>
+                <div>
+                  <button id="start-recording" class="secondary-button" type="button">Start recording</button>
+                  <button id="stop-recording" class="secondary-button" type="button" disabled>Stop</button>
+                  <span id="recording-status">Or select an existing video above.</span>
+                </div>
+              </div>
+              <label class="file-drop">Externally generated transcript
+                <input id="video-transcript-file" type="file" accept=".txt,text/plain">
+                <span>Upload a TXT transcript generated outside the grading agent. Students do not type this content.</span>
+              </label>
               <label class="permission-row">
                 <input id="external-processing-confirmed" type="checkbox">
-                <span>External transcription and sanitization completed; only the transcript may be evaluated.</span>
+                <span>External transcription and privacy sanitization are complete; only the transcript may be evaluated.</span>
               </label>
               <label>Media processing receipt
                 <input id="media-processing-reference" placeholder="e.g. MEDIA-2026-00042">
               </label>
             </div>
-            <label>
-              Student response or media transcript
-              <textarea id="submission" required rows="9" placeholder="Paste the student's response here..."></textarea>
-              <span class="field-hint"><span id="word-count">0</span> words</span>
-            </label>
-
-            <div class="rubric-heading">
-              <div>
-                <span class="eyebrow">Scoring criteria</span>
-                <h3>Grading rubric</h3>
-              </div>
-              <button type="button" id="add-criterion" class="secondary-button">+ Add criterion</button>
-            </div>
-            <div id="rubric-list"></div>
-            <div class="total-row">Total available points <strong id="total-points">0</strong></div>
 
             <button id="evaluate-button" class="primary-button" type="submit">
-              <span>Evaluate with EduGrade AI</span>
+              <span>Submit homework for evaluation</span>
               <span class="arrow">→</span>
             </button>
             <div id="form-error" class="error-message" role="alert"></div>
@@ -244,10 +236,10 @@
 
           <aside class="demo-card">
             <span class="eyebrow">What happens next</span>
-            <h3>From submission to feedback in minutes.</h3>
+            <h3>Real homework, safely evaluated.</h3>
             <ol>
-              <li><b>Rubric reasoning</b><span>Each criterion is scored with evidence.</span></li>
-              <li><b>Personal feedback</b><span>Strengths and learning gaps become actionable guidance.</span></li>
+              <li><b>Submission check</b><span>Confirm required work is visibly completed.</span></li>
+              <li><b>Age-aware review</b><span>Check correctness, legibility, organization, and spelling.</span></li>
               <li><b>Confidence gate</b><span>Uncertain results are held for instructor review.</span></li>
               <li><b>Educator approval</b><span>Edit, approve, or override before release.</span></li>
             </ol>
@@ -270,6 +262,17 @@
           <div><span>Needs review</span><strong id="metric-review-count">0</strong><em>Confidence gated</em></div>
           <div><span>Learning gap</span><strong>Reasoning</strong><em>Most common trend</em></div>
         </div>
+        <div class="panel teacher-rubric-panel">
+          <div>
+            <span class="eyebrow">Module evaluation governance</span>
+            <h3>Review or edit grading parameters</h3>
+            <p>Each class and subject has its own module rubric. Changes apply to future homework evaluations.</p>
+          </div>
+          <select id="teacher-module-select" aria-label="Select module rubric">
+            <option value="">Select a module</option>
+          </select>
+          <button id="teacher-edit-rubric" class="secondary-button" type="button">Edit rubric</button>
+        </div>
         <div class="queue-header">
           <div>
             <span class="eyebrow">Human-in-the-loop governance</span>
@@ -290,6 +293,26 @@
     <div class="loader"></div>
     <strong>EduGrade AI is evaluating the submission</strong>
     <span>Applying the rubric, finding evidence, and calculating confidence...</span>
+  </div>
+  <div id="rubric-overlay" class="registration-overlay hidden">
+    <form id="rubric-form" class="registration-card rubric-editor-card">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">Admin and teacher control</span>
+          <h2>Edit module evaluation rubric</h2>
+        </div>
+        <button id="close-rubric-editor" class="text-button" type="button">Close</button>
+      </div>
+      <p id="rubric-module-context" class="registration-copy"></p>
+      <div class="rubric-editor-heading">
+        <strong>Evaluation parameters</strong>
+        <span>Total: <b id="rubric-total">0</b>/100 points</span>
+      </div>
+      <div id="rubric-editor-list"></div>
+      <button id="add-rubric-criterion" class="secondary-button" type="button">Add parameter</button>
+      <button class="primary-button" type="submit"><span>Save module rubric</span><span>→</span></button>
+      <div id="rubric-editor-error" class="error-message"></div>
+    </form>
   </div>
   <div id="registration-overlay" class="registration-overlay hidden">
     <form id="registration-form" class="registration-card">

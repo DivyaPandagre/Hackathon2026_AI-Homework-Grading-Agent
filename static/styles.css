@@ -26,6 +26,7 @@ body {
 }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
+.hidden { display: none !important; }
 
 .app-shell {
   min-height: 100vh;
@@ -196,6 +197,19 @@ textarea { resize: vertical; line-height: 1.55; }
   align-items: end; padding: 15px 0; border-bottom: 1px solid #edf0ee;
 }
 .criterion-row label { margin: 0; }
+.field-note { margin: 0; color: var(--muted); font-size: 9px; line-height: 1.5; }
+.module-item { gap: 8px; }
+.module-item .module-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.module-item .module-actions span { flex: 1; }
+.module-item .edit-module-rubric { padding: 6px 9px; font-size: 8px; white-space: nowrap; }
+.teacher-rubric-panel { display: grid; grid-template-columns: 1fr minmax(260px, 420px) auto; gap: 16px; align-items: center; margin-bottom: 28px; }
+.teacher-rubric-panel h3 { margin: 4px 0; }
+.teacher-rubric-panel p { margin: 0; color: var(--muted); font-size: 10px; }
+.rubric-editor-card { width: min(900px, calc(100vw - 36px)); max-height: calc(100vh - 40px); overflow-y: auto; }
+.rubric-editor-heading { display: flex; justify-content: space-between; align-items: center; margin: 20px 0 10px; }
+.rubric-editor-heading span { color: var(--muted); font-size: 10px; }
+.rubric-editor-card .criterion-row { margin-bottom: 10px; }
+.remove-rubric-criterion { border: 0; padding: 11px 5px; color: #9d554b; background: transparent; font-size: 18px; }
 .remove-criterion { border: 0; padding: 11px 5px; color: #9d554b; background: transparent; font-size: 18px; }
 .total-row { display: flex; justify-content: flex-end; gap: 14px; margin: 17px 0; font-size: 12px; }
 .total-row strong { color: var(--forest); }
@@ -309,6 +323,41 @@ textarea { resize: vertical; line-height: 1.55; }
 .permission-row { grid-template-columns: 18px 1fr; align-items: center; padding: 12px; border-radius: 10px; background: #eef6f1; }
 .permission-row input { width: 16px; height: 16px; }
 .permission-row span { font-size: 11px; font-weight: 500; }
+.homework-brief {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #bdd3c6;
+  border-radius: 13px;
+  color: #435149;
+  background: #f3f8f5;
+}
+.homework-brief.empty { color: var(--muted); border-style: dashed; background: #fafbfa; }
+.homework-brief h3 { margin: 2px 0 7px; }
+.homework-brief p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; white-space: pre-line; }
+.homework-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.homework-meta span { padding: 5px 8px; border-radius: 99px; color: var(--forest); background: var(--mint); font-size: 9px; font-weight: 700; }
+.homework-rubric { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 14px; }
+.homework-rubric div { padding: 9px 10px; border-radius: 9px; background: white; font-size: 9px; }
+.homework-rubric strong { float: right; color: var(--forest); }
+.mcq-panel { display: grid; gap: 13px; margin-top: 18px; }
+.mcq-question { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfb; }
+.mcq-question > strong { display: block; margin-bottom: 11px; font-size: 12px; }
+.mcq-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mcq-options label {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 9px 10px;
+  border: 1px solid #e0e7e3;
+  border-radius: 8px;
+  background: white;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.mcq-options input { width: 14px; height: 14px; }
 .consent-banner {
   display: grid; grid-template-columns: 48px 1fr auto; gap: 16px; align-items: center;
   margin-bottom: 22px; padding: 20px 24px; border: 1px solid #b8d8c7;
@@ -321,6 +370,10 @@ textarea { resize: vertical; line-height: 1.55; }
 .video-consent-panel { margin-top: 16px; padding: 18px; border: 1px solid #ebc981; border-radius: 13px; background: #fffaf0; }
 .video-consent-panel.hidden { display: none; }
 .boundary-copy { margin: 8px 0; color: #705b31; font-size: 11px; line-height: 1.55; }
+.video-recorder { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: center; margin: 12px 0; }
+.video-recorder video { width: 150px; height: 100px; border-radius: 10px; background: #10231a; object-fit: cover; }
+.video-recorder > div { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.video-recorder span { width: 100%; color: #705b31; font-size: 9px; }
 .metric-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px; }
 .metric-strip > div { padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: white; box-shadow: var(--shadow); }
 .metric-strip span, .metric-strip strong, .metric-strip em { display: block; }
@@ -450,8 +503,10 @@ textarea { resize: vertical; line-height: 1.55; }
   nav { margin: 0; width: 100%; }
   .form-panel { padding: 20px; }
   .form-grid, .insight-columns, .feedback-compare { grid-template-columns: 1fr; }
+  .homework-rubric, .mcq-options { grid-template-columns: 1fr; }
   .criterion-row { grid-template-columns: 1fr 80px 30px; }
   .criterion-row label:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+  .teacher-rubric-panel { grid-template-columns: 1fr; }
   .assessment-card { grid-template-columns: 1fr 1fr; }
   .metric-strip { grid-template-columns: 1fr; }
   .role-hero { align-items: flex-start; gap: 20px; }

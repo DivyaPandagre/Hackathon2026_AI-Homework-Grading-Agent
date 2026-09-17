@@ -1,0 +1,4352 @@
+[
+  {
+    "id": "hw-fce29ee7-adc0-4ab3-bca7-00e63e1dc85a",
+    "module_id": "fce29ee7-adc0-4ab3-bca7-00e63e1dc85a",
+    "title": "Letters A–F: Match, Trace, and Say",
+    "subject": "English Language and Literacy",
+    "grade_level": "CBSE Pre-Primary",
+    "instructions": "Do these tasks on paper. You may submit a clear photo/PDF of your work or a short video of you reading the words.\n- Match: Draw a line from each letter to its picture word: A–apple, B–ball, C–cat, D–dog, E–elephant, F–fish. (You may draw small pictures or write the words.)\n- Trace: Trace uppercase and lowercase A a, B b, C c, D d, E e, F f once each.\n- Circle: For each word (apple, ball, cat, dog, elephant, fish), circle the first letter.\n- Say: Point and say one word for each letter A–F.\n- Color: Color your neatest-traced letter pair.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Pre-Primary. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "fce29ee7-adc0-4ab3-bca7-00e63e1dc85a-q1",
+        "prompt": "Which letter begins the word \"apple\"?",
+        "options": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "explanation": "Apple starts with the sound /a/ and the letter A.",
+        "correct_index": 0
+      },
+      {
+        "id": "fce29ee7-adc0-4ab3-bca7-00e63e1dc85a-q2",
+        "prompt": "Which word begins with the letter C?",
+        "options": [
+          "cat",
+          "apple",
+          "fish",
+          "dog"
+        ],
+        "explanation": "Cat begins with C. The others begin with A, F, and D.",
+        "correct_index": 0
+      },
+      {
+        "id": "fce29ee7-adc0-4ab3-bca7-00e63e1dc85a-q3",
+        "prompt": "Choose the lowercase partner of D.",
+        "options": [
+          "a",
+          "d",
+          "e",
+          "f"
+        ],
+        "explanation": "Uppercase D matches lowercase d.",
+        "correct_index": 1
+      },
+      {
+        "id": "fce29ee7-adc0-4ab3-bca7-00e63e1dc85a-q4",
+        "prompt": "Which letter makes the beginning sound in \"fish\"?",
+        "options": [
+          "F",
+          "E",
+          "A",
+          "B"
+        ],
+        "explanation": "Fish starts with the sound /f/ and the letter F.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-e328e7f4-2f80-4928-8954-183392ff8f41",
+    "module_id": "e328e7f4-2f80-4928-8954-183392ff8f41",
+    "title": "Numbers 1–10 and Shapes",
+    "subject": "Numeracy and Mathematical Thinking",
+    "grade_level": "CBSE Pre-Primary",
+    "instructions": "Complete on paper. Submit a photo/PDF or a short video showing your counting.\n- Count: Make 3 small groups of home objects (e.g., 3 spoons, 5 buttons, 7 blocks). Draw circles to show each group and write the matching number next to each drawing.\n- Trace: Trace numbers 1 to 10 in order once.\n- Match: Draw 2, 4, and 7 dots in three boxes. Match them to the numerals 2, 4, 7.\n- Compare: Draw two groups (e.g., 6 dots and 4 dots). Circle the group with more. Put a box around the group with fewer.\n- Shapes: Draw and label one circle, one square, one triangle, and one rectangle you saw at home (e.g., plate–circle).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Pre-Primary. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "e328e7f4-2f80-4928-8954-183392ff8f41-q1",
+        "prompt": "Which number comes after 3?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "1"
+        ],
+        "explanation": "Counting goes 1, 2, 3, 4. So after 3 comes 4.",
+        "correct_index": 2
+      },
+      {
+        "id": "e328e7f4-2f80-4928-8954-183392ff8f41-q2",
+        "prompt": "Which number is the smallest?",
+        "options": [
+          "9",
+          "6",
+          "2",
+          "7"
+        ],
+        "explanation": "2 is less than 6, 7, and 9.",
+        "correct_index": 2
+      },
+      {
+        "id": "e328e7f4-2f80-4928-8954-183392ff8f41-q3",
+        "prompt": "Which shape has 3 sides?",
+        "options": [
+          "Triangle",
+          "Circle",
+          "Square",
+          "Rectangle"
+        ],
+        "explanation": "A triangle has 3 sides. Circles have no sides; squares and rectangles have 4.",
+        "correct_index": 0
+      },
+      {
+        "id": "e328e7f4-2f80-4928-8954-183392ff8f41-q4",
+        "prompt": "Which number is missing? 1, 2, 3, __, 5",
+        "options": [
+          "4",
+          "6",
+          "7",
+          "10"
+        ],
+        "explanation": "The sequence is 1, 2, 3, 4, 5.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-5ce7d10a-222f-436a-a244-48faa0f3214d",
+    "module_id": "5ce7d10a-222f-436a-a244-48faa0f3214d",
+    "title": "Phonics: Blend and Read CVC Words",
+    "subject": "English",
+    "grade_level": "CBSE Class 1",
+    "instructions": "Work on paper. You may upload a photo/PDF or a short video of you reading the words.\n- Read aloud these words: cat, bat, mat, sun, sit, pen, log, cup, hat, red.\n- Circle the beginning sound letter in each word (e.g., c in cat).\n- Blend and write these: c-a-t, s-u-n, b-a-g, p-e-n, h-a-t.\n- Underline the vowel in each word you wrote.\n- Draw a small picture for any two words and label them.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "5ce7d10a-222f-436a-a244-48faa0f3214d-q1",
+        "prompt": "Which letters make the word \"cat\"?",
+        "options": [
+          "c-a-t",
+          "c-o-w",
+          "d-o-g",
+          "s-i-t"
+        ],
+        "explanation": "Cat is made by blending c + a + t.",
+        "correct_index": 0
+      },
+      {
+        "id": "5ce7d10a-222f-436a-a244-48faa0f3214d-q2",
+        "prompt": "Which letter is the vowel in the word \"sun\"?",
+        "options": [
+          "u",
+          "a",
+          "e",
+          "o"
+        ],
+        "explanation": "In \"sun\", the middle vowel sound is u.",
+        "correct_index": 0
+      },
+      {
+        "id": "5ce7d10a-222f-436a-a244-48faa0f3214d-q3",
+        "prompt": "Which word matches the sounds /h/–/a/–/t/?",
+        "options": [
+          "hat",
+          "hit",
+          "hot",
+          "hut"
+        ],
+        "explanation": "Blending /h/ + /a/ + /t/ makes \"hat\".",
+        "correct_index": 0
+      },
+      {
+        "id": "5ce7d10a-222f-436a-a244-48faa0f3214d-q4",
+        "prompt": "Which is a CVC word?",
+        "options": [
+          "cat",
+          "tree",
+          "stop",
+          "she"
+        ],
+        "explanation": "Cat has consonant–vowel–consonant (CVC).",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-e3f7a012-7efd-47a7-92a3-46be9302b9a9",
+    "module_id": "e3f7a012-7efd-47a7-92a3-46be9302b9a9",
+    "title": "My Family: Write Simple Sentences",
+    "subject": "English",
+    "grade_level": "CBSE Class 1",
+    "instructions": "Write on paper and add a drawing. Submit a clear photo/PDF or a short video reading your sentences.\n- Write 4 simple sentences about your family. Start each with a capital letter and end with a full stop.\n- Underline all capital letters you used.\n- Circle the full stops at the end of your sentences.\n- Check spacing: put one finger space between words.\n- Draw one picture of your family under your sentences.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "e3f7a012-7efd-47a7-92a3-46be9302b9a9-q1",
+        "prompt": "Which sentence is correctly written?",
+        "options": [
+          "my mother cooks.",
+          "My mother cooks.",
+          "My mother cooks",
+          "my Mother cooks."
+        ],
+        "explanation": "It begins with a capital letter and ends with a full stop.",
+        "correct_index": 1
+      },
+      {
+        "id": "e3f7a012-7efd-47a7-92a3-46be9302b9a9-q2",
+        "prompt": "A sentence should begin with a:",
+        "options": [
+          "Capital letter",
+          "Small letter",
+          "Number only",
+          "Full stop"
+        ],
+        "explanation": "Sentences begin with a capital letter.",
+        "correct_index": 0
+      },
+      {
+        "id": "e3f7a012-7efd-47a7-92a3-46be9302b9a9-q3",
+        "prompt": "Which mark shows the end of a simple statement?",
+        "options": [
+          ".",
+          "?",
+          "!",
+          ","
+        ],
+        "explanation": "A full stop (.) ends a simple statement.",
+        "correct_index": 0
+      },
+      {
+        "id": "e3f7a012-7efd-47a7-92a3-46be9302b9a9-q4",
+        "prompt": "Choose the correctly spaced sentence.",
+        "options": [
+          "Ilovemydad.",
+          "I love my dad.",
+          "I  love  my  dad.",
+          "i love my dad."
+        ],
+        "explanation": "Words have single spaces, and it starts with capital I.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-c23ae841-ac35-45b2-a251-ff5ff6d534b5",
+    "module_id": "c23ae841-ac35-45b2-a251-ff5ff6d534b5",
+    "title": "वर्णमाला और सरल शब्द: मिलान और लेखन",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 1",
+    "instructions": "कागज़ पर काम करें। अपनी लिखावट/चित्र की साफ़ फोटो/PDF या शब्द पढ़ते हुए छोटा वीडियो अपलोड कर सकते हैं।\n- अक्षर–चित्र मिलान: अ–अनार, क–कमल, ग–गेंद, म–मछली, न–नक़्शा (नक्शा), फ–फल (चित्र बना सकते हैं या शब्द लिखें)।\n- ट्रेसिंग: अ, आ, इ, क, ग, म – इन अक्षरों को एक बार ट्रेस करें।\n- पढ़ो और लिखो: दो अक्षर वाले 5 सरल शब्द लिखें: नल, जल, फल, कल, दल।\n- पहचान: दिए शब्दों में स्वर को घेरा लगाएँ (जैसे ‘अ’ ‘आ’ ‘इ’)।\n- बोलो: ऊपर लिखे शब्दों को साफ़ आवाज़ में पढ़कर सुनाएँ।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "c23ae841-ac35-45b2-a251-ff5ff6d534b5-q1",
+        "prompt": "‘अ’ क्या है?",
+        "options": [
+          "स्वर",
+          "व्यंजन",
+          "संख्या",
+          "रंग"
+        ],
+        "explanation": "‘अ’ स्वर है।",
+        "correct_index": 0
+      },
+      {
+        "id": "c23ae841-ac35-45b2-a251-ff5ff6d534b5-q2",
+        "prompt": "कौन-सा शब्द दो अक्षरों का है?",
+        "options": [
+          "कमल",
+          "नदी",
+          "नल",
+          "किताब"
+        ],
+        "explanation": "‘नल’ दो अक्षरों का शब्द है।",
+        "correct_index": 2
+      },
+      {
+        "id": "c23ae841-ac35-45b2-a251-ff5ff6d534b5-q3",
+        "prompt": "‘क’ से शुरू होने वाला शब्द चुनें:",
+        "options": [
+          "कमल",
+          "घर",
+          "नल",
+          "फल"
+        ],
+        "explanation": "‘कमल’ ‘क’ से शुरू होता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "c23ae841-ac35-45b2-a251-ff5ff6d534b5-q4",
+        "prompt": "कौन-सा अक्षर व्यंजन है?",
+        "options": [
+          "क",
+          "अ",
+          "ए",
+          "ऊ"
+        ],
+        "explanation": "‘क’ व्यंजन है; ‘अ’, ‘ए’, ‘ऊ’ स्वर हैं।",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-30d2d9da-f51c-4dc1-a694-48f1fb1b3bbf",
+    "module_id": "30d2d9da-f51c-4dc1-a694-48f1fb1b3bbf",
+    "title": "मेरा परिवार — सरल वाक्य गृहकार्य",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 1",
+    "instructions": "- यह काम अपनी कॉपी में कीजिए। साफ़ फोटो/PDF अपलोड करें या छोटा वीडियो बनाकर अपलोड करें।\n- 1) अपने परिवार के 4 सदस्यों के नाम लिखिए (जैसे: माँ, पापा, दादी, भाई/बहन)।\n- 2) ऊपर लिखे हर नाम पर 1-1 छोटा वाक्य लिखिए। उदाहरण: “यह मेरी माँ है।”\n- 3) अपने परिवार का एक छोटा चित्र बनाइए और चित्र में 3 लोगों के नाम लिखकर चिन्हित कीजिए।\n- 4) शब्द जोड़कर सही वाक्य बनाइए और लिखिए: (a) यह/मेरे/पापा/हैं (b) यह/मेरी/दादी/है\n- 5) नीचे दिए शब्दों में से परिवार के 3 शब्द चुनकर कॉपी में लिखिए: घर, पेन, माँ, भाई, दादी, गेंद",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "30d2d9da-f51c-4dc1-a694-48f1fb1b3bbf-q1",
+        "prompt": "‘पापा’ किसको कहते हैं?",
+        "options": [
+          "पिता",
+          "माता",
+          "भाई",
+          "बहन"
+        ],
+        "explanation": "‘पापा’ का अर्थ ‘पिता’ होता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "30d2d9da-f51c-4dc1-a694-48f1fb1b3bbf-q2",
+        "prompt": "सही सरल वाक्य चुनिए:",
+        "options": [
+          "यह मेरी माँ है।",
+          "मेरी यह माँ।",
+          "यह हैं माँ मेरी।",
+          "माँ मेरा यह है।"
+        ],
+        "explanation": "‘यह मेरी माँ है।’ पूरा और सही क्रम वाला वाक्य है।",
+        "correct_index": 0
+      },
+      {
+        "id": "30d2d9da-f51c-4dc1-a694-48f1fb1b3bbf-q3",
+        "prompt": "कौन-सा शब्द परिवार से जुड़ा है?",
+        "options": [
+          "पुस्तक",
+          "भाई",
+          "पेड़",
+          "खिलौना"
+        ],
+        "explanation": "‘भाई’ परिवार का सदस्य होता है।",
+        "correct_index": 1
+      },
+      {
+        "id": "30d2d9da-f51c-4dc1-a694-48f1fb1b3bbf-q4",
+        "prompt": "खाली जगह भरें: यह ____ घर है।",
+        "options": [
+          "मेरा",
+          "मैं",
+          "तुम",
+          "वह"
+        ],
+        "explanation": "सही वाक्य: ‘यह मेरा घर है।’",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-7c1728b6-0640-43b6-a572-327bdac7759b",
+    "module_id": "7c1728b6-0640-43b6-a572-327bdac7759b",
+    "title": "Numbers 1 to 100 — Place Value and Comparing",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 1",
+    "instructions": "- Do the work neatly in your notebook. Upload a clear photo/PDF or a short video of your work.\n- 1) Write the numbers 30 to 40 in order. Circle 35 and underline 40.\n- 2) Write tens and ones for these: 18, 43, 70, 99. Example: 18 = 1 ten and 8 ones.\n- 3) Put <, >, or = between: 48 __ 54, 90 __ 90, 17 __ 12, 63 __ 36, 5 __ 15, 100 __ 99.\n- 4) Arrange in order: (a) Ascending: 42, 24, 56, 65 (b) Descending: 13, 31, 8, 18.\n- 5) Fill the missing numbers: 58, 59, __, 61, __, 63, __.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "7c1728b6-0640-43b6-a572-327bdac7759b-q1",
+        "prompt": "What number comes after 59?",
+        "options": [
+          "58",
+          "60",
+          "61",
+          "69"
+        ],
+        "explanation": "The next number after 59 is 60.",
+        "correct_index": 1
+      },
+      {
+        "id": "7c1728b6-0640-43b6-a572-327bdac7759b-q2",
+        "prompt": "Which number has 4 tens and 3 ones?",
+        "options": [
+          "34",
+          "43",
+          "40",
+          "13"
+        ],
+        "explanation": "4 tens and 3 ones make 43.",
+        "correct_index": 1
+      },
+      {
+        "id": "7c1728b6-0640-43b6-a572-327bdac7759b-q3",
+        "prompt": "Which is the greatest number?",
+        "options": [
+          "72",
+          "27",
+          "70",
+          "67"
+        ],
+        "explanation": "72 is larger than 27, 70, and 67.",
+        "correct_index": 0
+      },
+      {
+        "id": "7c1728b6-0640-43b6-a572-327bdac7759b-q4",
+        "prompt": "Choose the correct sign: 48 __ 54",
+        "options": [
+          "<",
+          ">",
+          "=",
+          "÷"
+        ],
+        "explanation": "48 is less than 54, so use <.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-b3dfe535-2d71-4d77-8940-06cc5d103d5f",
+    "module_id": "b3dfe535-2d71-4d77-8940-06cc5d103d5f",
+    "title": "Addition and Subtraction within 20 — Practice",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 1",
+    "instructions": "- Do all work in your notebook. Show your thinking. Upload a clear photo/PDF or a short video.\n- 1) Solve: 7+5, 9+6, 12−4, 15−8, 10+7, 14−6, 8+8, 13−5.\n- 2) Choose one problem and draw dots or small pictures to show how you found the answer.\n- 3) Fill the missing numbers: __ + 6 = 14; 9 + __ = 12; 18 − __ = 10; __ − 5 = 7.\n- 4) Make your own story sum with numbers within 20. Write the number sentence and the answer.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "b3dfe535-2d71-4d77-8940-06cc5d103d5f-q1",
+        "prompt": "What is 8 + 5?",
+        "options": [
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "explanation": "8 + 5 = 13.",
+        "correct_index": 1
+      },
+      {
+        "id": "b3dfe535-2d71-4d77-8940-06cc5d103d5f-q2",
+        "prompt": "What is 15 − 7?",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "explanation": "15 − 7 = 8.",
+        "correct_index": 2
+      },
+      {
+        "id": "b3dfe535-2d71-4d77-8940-06cc5d103d5f-q3",
+        "prompt": "Which makes 9?",
+        "options": [
+          "4 + 6",
+          "5 + 4",
+          "7 + 3",
+          "9 + 1"
+        ],
+        "explanation": "5 + 4 = 9. The others make 10 or more.",
+        "correct_index": 1
+      },
+      {
+        "id": "b3dfe535-2d71-4d77-8940-06cc5d103d5f-q4",
+        "prompt": "You have 10 apples and eat 3. How many are left?",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "explanation": "10 − 3 = 7 apples left.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-cdb054e8-6666-42e0-afce-59f079691080",
+    "module_id": "cdb054e8-6666-42e0-afce-59f079691080",
+    "title": "My Body and Five Senses — Label, Match, Observe",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 1",
+    "instructions": "- Work in your notebook. Upload a clear photo/PDF or a short video explaining your work.\n- 1) Draw a simple person. Label: head, eyes, ears, nose, mouth, hands, legs.\n- 2) Match by writing pairs: Eyes — see, Ears — hear, Nose — smell, Tongue — taste, Skin — feel.\n- 3) Find 3 things at home and write which sense you used. Example: bell — hear (ears).\n- 4) Draw an activity that uses two senses (e.g., eating a mango). Label the senses you used.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "cdb054e8-6666-42e0-afce-59f079691080-q1",
+        "prompt": "Which sense organ helps you to see?",
+        "options": [
+          "Ears",
+          "Eyes",
+          "Nose",
+          "Tongue"
+        ],
+        "explanation": "We see with our eyes.",
+        "correct_index": 1
+      },
+      {
+        "id": "cdb054e8-6666-42e0-afce-59f079691080-q2",
+        "prompt": "You smell a flower with your:",
+        "options": [
+          "Nose",
+          "Ears",
+          "Skin",
+          "Mouth"
+        ],
+        "explanation": "We smell with our nose.",
+        "correct_index": 0
+      },
+      {
+        "id": "cdb054e8-6666-42e0-afce-59f079691080-q3",
+        "prompt": "We taste food with our:",
+        "options": [
+          "Hands",
+          "Tongue",
+          "Eyes",
+          "Nose"
+        ],
+        "explanation": "We taste with our tongue.",
+        "correct_index": 1
+      },
+      {
+        "id": "cdb054e8-6666-42e0-afce-59f079691080-q4",
+        "prompt": "We feel touch with our:",
+        "options": [
+          "Skin",
+          "Ears",
+          "Eyes",
+          "Tongue"
+        ],
+        "explanation": "Our skin helps us feel.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-b5c5f05e-1a5f-4a5f-9bc6-e0c820c6de2e",
+    "module_id": "b5c5f05e-1a5f-4a5f-9bc6-e0c820c6de2e",
+    "title": "Plants and Animals Around Us — Sort and Draw",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 1",
+    "instructions": "- Complete in your notebook. Upload a clear photo/PDF or a short video.\n- 1) Draw and label one plant and one animal you have seen near your home or school.\n- 2) Make two lists: Plants (write 4 names) and Animals (write 4 names).\n- 3) Match by writing pairs: Bird — nest, Dog — kennel, Cow — shed, Fish — water.\n- 4) Choose one living thing (plant or animal). Draw one thing it needs to live (air/water/food) and label it.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 1. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "b5c5f05e-1a5f-4a5f-9bc6-e0c820c6de2e-q1",
+        "prompt": "Which one is a plant?",
+        "options": [
+          "Rose",
+          "Cat",
+          "Dog",
+          "Cow"
+        ],
+        "explanation": "Rose is a plant; the others are animals.",
+        "correct_index": 0
+      },
+      {
+        "id": "b5c5f05e-1a5f-4a5f-9bc6-e0c820c6de2e-q2",
+        "prompt": "Which one is an animal?",
+        "options": [
+          "Mango tree",
+          "Sunflower",
+          "Rabbit",
+          "Grass"
+        ],
+        "explanation": "Rabbit is an animal; the others are plants.",
+        "correct_index": 2
+      },
+      {
+        "id": "b5c5f05e-1a5f-4a5f-9bc6-e0c820c6de2e-q3",
+        "prompt": "All living things need:",
+        "options": [
+          "Water",
+          "Toys",
+          "TV",
+          "Cars"
+        ],
+        "explanation": "Water is a basic need for living things.",
+        "correct_index": 0
+      },
+      {
+        "id": "b5c5f05e-1a5f-4a5f-9bc6-e0c820c6de2e-q4",
+        "prompt": "Which one grows from a seed?",
+        "options": [
+          "Tree",
+          "Stone",
+          "Chair",
+          "Car"
+        ],
+        "explanation": "Plants like trees grow from seeds.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-1c7d5564-b696-4176-9cce-2717cbe01cd8",
+    "module_id": "1c7d5564-b696-4176-9cce-2717cbe01cd8",
+    "title": "Naming Words and Pronouns Practice",
+    "subject": "English",
+    "grade_level": "CBSE Class 2",
+    "instructions": "Do the tasks neatly in your notebook. You may submit a clear photo or PDF of your work.\n- Task 1: Underline the nouns (naming words) in these 8 sentences:\n  1) Riya has a red bag.  2) The dog runs fast.  3) My teacher smiles.  4) The sun is bright.\n  5) Arjun plays football.  6) We went to the park.  7) The cat drinks milk.  8) Mother cooks rice.\n- Task 2: Rewrite the second sentence using he, she, it, or they to replace the repeated noun:\n  a) Ravi is in class. Ravi is happy.  b) The cat is on the mat. The cat is sleepy.\n  c) Meera and Tara are friends. Meera and Tara sing.  d) The apple is red. The apple is sweet.\n- Task 3: Sort these words into four columns: People, Places, Animals, Things. Words: teacher, tiger, book, Delhi, river, school, flowers, cow.\n- Task 4: Write 4 short sentences. In each, use one noun and one pronoun correctly (for example: Rohan has a kite. He flies it.).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "1c7d5564-b696-4176-9cce-2717cbe01cd8-q1",
+        "prompt": "Which word is the noun in the sentence: The cat sleeps.",
+        "options": [
+          "cat",
+          "sleeps",
+          "the",
+          "very"
+        ],
+        "explanation": "A noun names a person, place, animal, or thing. Cat is a naming word.",
+        "correct_index": 0
+      },
+      {
+        "id": "1c7d5564-b696-4176-9cce-2717cbe01cd8-q2",
+        "prompt": "Choose the best pronoun: Ravi is running. ___ is fast.",
+        "options": [
+          "He",
+          "She",
+          "It",
+          "They"
+        ],
+        "explanation": "Ravi is a boy, so we use He.",
+        "correct_index": 0
+      },
+      {
+        "id": "1c7d5564-b696-4176-9cce-2717cbe01cd8-q3",
+        "prompt": "Mina and Ritu are sisters. ___ read books.",
+        "options": [
+          "He",
+          "She",
+          "It",
+          "They"
+        ],
+        "explanation": "For more than one person, use They.",
+        "correct_index": 3
+      },
+      {
+        "id": "1c7d5564-b696-4176-9cce-2717cbe01cd8-q4",
+        "prompt": "The apple is red. ___ is sweet.",
+        "options": [
+          "He",
+          "She",
+          "It",
+          "They"
+        ],
+        "explanation": "Apple is a thing, so use It.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-a086b182-d50e-42a9-97bb-ba59728731d1",
+    "module_id": "a086b182-d50e-42a9-97bb-ba59728731d1",
+    "title": "Story Sequence and Comprehension",
+    "subject": "English",
+    "grade_level": "CBSE Class 2",
+    "instructions": "Read the short story and do the tasks in your notebook. You may submit photos or a PDF.\nStory: Mina and her brother Raj go to the park after school. The sky is blue and windy. Mina flies a red kite. Suddenly the kite gets stuck in a small tree. Raj carefully pulls the string. The kite comes down and they smile.\n- Task 1: Arrange events. Number these from 1 to 5 in the correct order:\n  a) Raj pulls the string carefully.  b) The kite gets stuck in a small tree.\n  c) Mina and Raj go to the park.  d) The kite comes down and they smile.\n  e) Mina flies a red kite.\n- Task 2: Write the characters’ names.\n- Task 3: Write the setting (place) of the story.\n- Task 4: Answer in 1 short sentence each: Who flew the kite? What color was it? What problem happened? How was it solved?\n- Task 5: Draw your favourite part and label it Beginning, Middle, or End.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "a086b182-d50e-42a9-97bb-ba59728731d1-q1",
+        "prompt": "Read: Tom and his mother go to the market. They buy fresh apples. It starts to rain, so they run home. Who are the characters?",
+        "options": [
+          "Tom and his mother",
+          "Tom and his teacher",
+          "A boy and a dog",
+          "Two shopkeepers"
+        ],
+        "explanation": "The story names Tom and his mother.",
+        "correct_index": 0
+      },
+      {
+        "id": "a086b182-d50e-42a9-97bb-ba59728731d1-q2",
+        "prompt": "Read: Tom and his mother go to the market. They buy fresh apples. It starts to rain, so they run home. Where are they at the beginning?",
+        "options": [
+          "Market",
+          "School",
+          "Park",
+          "Bus"
+        ],
+        "explanation": "They go to the market first.",
+        "correct_index": 0
+      },
+      {
+        "id": "a086b182-d50e-42a9-97bb-ba59728731d1-q3",
+        "prompt": "Read: Tom and his mother go to the market. They buy fresh apples. It starts to rain, so they run home. What happens first?",
+        "options": [
+          "They go to the market.",
+          "They run home.",
+          "They eat apples.",
+          "They see a movie."
+        ],
+        "explanation": "The first event is going to the market.",
+        "correct_index": 0
+      },
+      {
+        "id": "a086b182-d50e-42a9-97bb-ba59728731d1-q4",
+        "prompt": "Read: Tom and his mother go to the market. They buy fresh apples. It starts to rain, so they run home. Why do they run home?",
+        "options": [
+          "Because it starts to rain",
+          "Because they are late for school",
+          "Because the store is closed",
+          "Because they lost money"
+        ],
+        "explanation": "The sentence says they run home when it starts to rain.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-9455894f-b3ff-437b-bc7e-0cd766f1bf96",
+    "module_id": "9455894f-b3ff-437b-bc7e-0cd766f1bf96",
+    "title": "संज्ञा और सर्वनाम अभ्यास",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 2",
+    "instructions": "साफ़-सुथरे अक्षरों में कॉपी में काम करें। फोटो/PDF अपलोड कर सकते हैं।\n- कार्य 1: नीचे दिए 8 वाक्यों में संज्ञा (नाम) रेखांकित करें:\n  1) रीमा के पास लाल पेन है।  2) कुत्ता दौड़ता है।  3) मेरा दोस्त खेलता है।  4) सूरज चमकता है।\n  5) अर्जुन फुटबॉल खेलता है।  6) हम पार्क गए।  7) बिल्ली दूध पीती है।  8) माँ खाना बनाती है।\n- कार्य 2: दूसरे वाक्य को उचित सर्वनाम (वह/यह/वे) लगाकर दोबारा लिखें:\n  क) रवि कक्षा में है। रवि खुश है।\n  ख) बिल्ली चटाई पर है। बिल्ली सो रही है।\n  ग) सीमा और रीना दोस्त हैं। सीमा और रीना गाती हैं।\n  घ) सेब लाल है। सेब मीठा है।\n- कार्य 3: शब्दों को चार श्रेणियों में बाँटें: व्यक्ति, स्थान, पशु, वस्तु। शब्द: शिक्षक, बाघ, किताब, शहर, नदी, स्कूल, फूल, गाय।\n- कार्य 4: अपने 4 छोटे वाक्य लिखिए — 2 वाक्य संज्ञा के साथ, और उन्हीं में से 2 वाक्य सर्वनाम का प्रयोग करके दोबारा लिखिए।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "9455894f-b3ff-437b-bc7e-0cd766f1bf96-q1",
+        "prompt": "वाक्य में संज्ञा पहचानिए: बिल्ली सोती है।",
+        "options": [
+          "बिल्ली",
+          "सोती",
+          "है",
+          "जल्दी"
+        ],
+        "explanation": "‘बिल्ली’ एक नाम है, इसलिए संज्ञा है।",
+        "correct_index": 0
+      },
+      {
+        "id": "9455894f-b3ff-437b-bc7e-0cd766f1bf96-q2",
+        "prompt": "रिक्त स्थान भरें: रवि खेल रहा है। ___ तेज़ है।",
+        "options": [
+          "वह",
+          "यह",
+          "वे",
+          "तुम"
+        ],
+        "explanation": "‘रवि’ के लिए उपयुक्त सर्वनाम ‘वह’ है।",
+        "correct_index": 0
+      },
+      {
+        "id": "9455894f-b3ff-437b-bc7e-0cd766f1bf96-q3",
+        "prompt": "सीमा और रीना बहनें हैं। ___ किताब पढ़ती हैं।",
+        "options": [
+          "वह",
+          "यह",
+          "वे",
+          "तू"
+        ],
+        "explanation": "एक से अधिक के लिए ‘वे’ प्रयोग होता है।",
+        "correct_index": 2
+      },
+      {
+        "id": "9455894f-b3ff-437b-bc7e-0cd766f1bf96-q4",
+        "prompt": "सेब लाल है। ___ मीठा है।",
+        "options": [
+          "वह",
+          "यह",
+          "वे",
+          "तुम"
+        ],
+        "explanation": "वस्तु के लिए ‘यह’/‘वह’ आता है; यहाँ ‘यह’ उपयुक्त है।",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-36632162-3a96-4eed-8d12-80fad6945ca4",
+    "module_id": "36632162-3a96-4eed-8d12-80fad6945ca4",
+    "title": "कहानी क्रम और समझ",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 2",
+    "instructions": "नीचे दी गई छोटी कहानी पढ़ें और कॉपी में कार्य कीजिए। साफ़ फोटो/PDF जमा कर सकते हैं।\nकहानी: गीता और उसका भाई मोहन स्कूल के बाद बगीचे में जाते हैं। मौसम ठंडा और सुहाना है। गीता नीली पतंग उड़ाती है। पतंग एक छोटी टहनी में फँस जाती है। मोहन डोरी धीरे-धीरे खींचता है। पतंग नीचे आ जाती है और दोनों खुश होते हैं।\n- कार्य 1: घटनाओं को सही क्रम में लिखें (1 से 5 तक दें):\n  क) मोहन डोरी धीरे-धीरे खींचता है।  ख) पतंग टहनी में फँस जाती है।\n  ग) गीता और मोहन बगीचे में जाते हैं।  घ) पतंग नीचे आती है और वे खुश होते हैं।\n  ङ) गीता नीली पतंग उड़ाती है।\n- कार्य 2: पात्रों के नाम लिखिए।\n- कार्य 3: कहानी का स्थान (सेटिंग) लिखिए।\n- कार्य 4: चार प्रश्नों के छोटे उत्तर लिखिए: पतंग किसने उड़ाई? पतंग का रंग क्या था? समस्या क्या हुई? समस्या कैसे हल हुई?\n- कार्य 5: अपना मनपसंद दृश्य बनाइए और उसे शुरुआत/मध्य/अंत में से एक नाम दीजिए।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "36632162-3a96-4eed-8d12-80fad6945ca4-q1",
+        "prompt": "पढ़ें: राना और उसकी माँ बाज़ार गए। उन्होंने ताज़ी सब्ज़ियाँ लीं। बारिश शुरू हुई, तो वे घर भागे। मुख्य पात्र कौन हैं?",
+        "options": [
+          "राना और उसकी माँ",
+          "राना और उसका दोस्त",
+          "एक लड़का और कुत्ता",
+          "दो दुकानदार"
+        ],
+        "explanation": "कहानी में राना और उसकी माँ का वर्णन है।",
+        "correct_index": 0
+      },
+      {
+        "id": "36632162-3a96-4eed-8d12-80fad6945ca4-q2",
+        "prompt": "पढ़ें: राना और उसकी माँ बाज़ार गए... शुरुआत में वे कहाँ जाते हैं?",
+        "options": [
+          "बाज़ार",
+          "स्कूल",
+          "पार्क",
+          "बस स्टॉप"
+        ],
+        "explanation": "पहला स्थान ‘बाज़ार’ बताया गया है।",
+        "correct_index": 0
+      },
+      {
+        "id": "36632162-3a96-4eed-8d12-80fad6945ca4-q3",
+        "prompt": "पढ़ें: राना और उसकी माँ बाज़ार गए... सबसे पहले क्या होता है?",
+        "options": [
+          "वे बाज़ार जाते हैं",
+          "वे घर भागते हैं",
+          "वे मिठाई खाते हैं",
+          "वे फिल्म देखते हैं"
+        ],
+        "explanation": "घटनाओं में पहला कदम बाज़ार जाना है।",
+        "correct_index": 0
+      },
+      {
+        "id": "36632162-3a96-4eed-8d12-80fad6945ca4-q4",
+        "prompt": "पढ़ें: राना और उसकी माँ बाज़ार गए... बारिश शुरू होने पर क्या होता है?",
+        "options": [
+          "वे घर भागते हैं",
+          "वे खिलौना खरीदते हैं",
+          "वे पार्क में खेलते हैं",
+          "वे तैरने जाते हैं"
+        ],
+        "explanation": "बारिश होने पर वे घर भागते हैं।",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-b05ce012-3dea-4df7-8fc4-d1143de4a55e",
+    "module_id": "b05ce012-3dea-4df7-8fc4-d1143de4a55e",
+    "title": "Place Value up to 999: H-T-O Practice",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 2",
+    "instructions": "Work neatly in your notebook. You may upload clear photos or a PDF.\n- Task 1: Make an H-T-O table (Hundreds-Tens-Ones) for each number and fill digits: 406, 230, 719, 580, 195, 999, 100, 342.\n- Task 2: Write the expanded form for these numbers: 384, 560, 703, 215, 940.\n- Task 3: Compare using >, <, or = : 472 ___ 427; 630 ___ 603; 715 ___ 751; 500 ___ 500.\n- Task 4: Order these from smallest to greatest: 382, 208, 473, 290, 438.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "b05ce012-3dea-4df7-8fc4-d1143de4a55e-q1",
+        "prompt": "In 472, which digit is in the tens place?",
+        "options": [
+          "7",
+          "4",
+          "2",
+          "0"
+        ],
+        "explanation": "472 has 4 hundreds, 7 tens, 2 ones.",
+        "correct_index": 0
+      },
+      {
+        "id": "b05ce012-3dea-4df7-8fc4-d1143de4a55e-q2",
+        "prompt": "Which number is the greatest?",
+        "options": [
+          "598",
+          "589",
+          "859",
+          "895"
+        ],
+        "explanation": "Compare hundreds first: 8>5; among 859 and 895, 9 tens vs 5 tens, so 895 is greatest.",
+        "correct_index": 3
+      },
+      {
+        "id": "b05ce012-3dea-4df7-8fc4-d1143de4a55e-q3",
+        "prompt": "Which shows the place value of 306 correctly?",
+        "options": [
+          "3 hundreds, 0 tens, 6 ones",
+          "30 hundreds, 6 ones",
+          "3 tens, 6 ones",
+          "300 tens, 6 ones"
+        ],
+        "explanation": "306 = 3 hundreds + 0 tens + 6 ones.",
+        "correct_index": 0
+      },
+      {
+        "id": "b05ce012-3dea-4df7-8fc4-d1143de4a55e-q4",
+        "prompt": "What number is made by 5 hundreds, 1 ten, and 9 ones?",
+        "options": [
+          "519",
+          "591",
+          "509",
+          "159"
+        ],
+        "explanation": "5 hundreds = 500, 1 ten = 10, 9 ones = 9; total 519.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-cd657eee-3179-4d5b-a2e7-a439c390982b",
+    "module_id": "cd657eee-3179-4d5b-a2e7-a439c390982b",
+    "title": "Add and Subtract with Regrouping Practice",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 2",
+    "instructions": "Do your work neatly on ruled paper. Show all steps.\nTasks:\n1) Solve these 8 sums using place-value columns (Hundreds, Tens, Ones). Show regrouping (carry/borrow) clearly:\n   a) 27 + 15   b) 52 - 19   c) 68 + 27   d) 74 - 58\n   e) 125 + 38  f) 213 - 179  g) 89 + 47   h) 170 - 95\n2) Check any two of your answers using the inverse operation (use addition to check subtraction or subtraction to check addition). Write the check below the sum.\n3) Pick one question and draw a small place-value chart (H T O). Use arrows to show where you carry or borrow.\n4) Write one short word problem that matches any one of the sums above. Then solve it.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "cd657eee-3179-4d5b-a2e7-a439c390982b-q1",
+        "prompt": "What is 27 + 15?",
+        "options": [
+          "32",
+          "42",
+          "30",
+          "22"
+        ],
+        "explanation": "7 + 5 = 12, write 2 and carry 1 ten. 2 + 1 + 1 = 4 tens. Answer = 42.",
+        "correct_index": 1
+      },
+      {
+        "id": "cd657eee-3179-4d5b-a2e7-a439c390982b-q2",
+        "prompt": "What is 52 − 19?",
+        "options": [
+          "33",
+          "43",
+          "41",
+          "31"
+        ],
+        "explanation": "Borrow from tens: 12 − 9 = 3, then 4 − 1 = 3. Answer = 33.",
+        "correct_index": 0
+      },
+      {
+        "id": "cd657eee-3179-4d5b-a2e7-a439c390982b-q3",
+        "prompt": "To check 46 − 19 = 27, which is correct?",
+        "options": [
+          "27 − 19 = 46",
+          "27 + 19 = 46",
+          "46 + 19 = 27",
+          "19 − 27 = 46"
+        ],
+        "explanation": "Use the inverse: subtraction can be checked by addition. 27 + 19 should give 46.",
+        "correct_index": 1
+      },
+      {
+        "id": "cd657eee-3179-4d5b-a2e7-a439c390982b-q4",
+        "prompt": "What is 98 + 7?",
+        "options": [
+          "104",
+          "105",
+          "95",
+          "100"
+        ],
+        "explanation": "8 + 7 = 15, write 5 and carry 1 ten to 9 tens = 10 tens = 100. Total = 105.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-43c44763-ecf5-4838-8562-4ce5e9f54217",
+    "module_id": "43c44763-ecf5-4838-8562-4ce5e9f54217",
+    "title": "Food, Clothing, and Shelter: Our Basic Needs",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 2",
+    "instructions": "Complete all tasks neatly. Use simple words and small drawings.\nTasks:\n1) Match by drawing lines:\n   - Hot summer → cotton clothes\n   - Cold winter → woollen sweater\n   - Rainy day → raincoat/umbrella\n2) Draw a healthy meal plate. Add and label at least 3 foods (for example: roti/rice, dal/beans, vegetables/fruit).\n3) Write one sentence each:\n   - We need food because ______.\n   - We need clothing because ______.\n   - We need shelter because ______.\n4) Draw and label one safe home feature (for example: a strong door lock, window grill, or mosquito net).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "43c44763-ecf5-4838-8562-4ce5e9f54217-q1",
+        "prompt": "Which food helps us grow strong bones and teeth?",
+        "options": [
+          "Milk",
+          "Chips",
+          "Soda",
+          "Candy"
+        ],
+        "explanation": "Milk is healthy and helps our bones and teeth.",
+        "correct_index": 0
+      },
+      {
+        "id": "43c44763-ecf5-4838-8562-4ce5e9f54217-q2",
+        "prompt": "What should we wear on a rainy day?",
+        "options": [
+          "Raincoat",
+          "Woollen cap",
+          "Sunglasses",
+          "Cotton shorts"
+        ],
+        "explanation": "A raincoat keeps us dry in the rain.",
+        "correct_index": 0
+      },
+      {
+        "id": "43c44763-ecf5-4838-8562-4ce5e9f54217-q3",
+        "prompt": "Why do we need shelter (a home)?",
+        "options": [
+          "It keeps us safe from heat, cold, and rain.",
+          "To play loud music.",
+          "To waste water.",
+          "To fly like birds."
+        ],
+        "explanation": "Shelter protects us from weather and keeps us safe.",
+        "correct_index": 0
+      },
+      {
+        "id": "43c44763-ecf5-4838-8562-4ce5e9f54217-q4",
+        "prompt": "Which is a safe home feature?",
+        "options": [
+          "A strong lock on the door",
+          "Wet floor",
+          "Open electric wires",
+          "Broken window"
+        ],
+        "explanation": "A strong lock helps keep the home safe.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-94306c91-9094-401e-8e29-f65bf581b2d6",
+    "module_id": "94306c91-9094-401e-8e29-f65bf581b2d6",
+    "title": "Water and Weather: Observe and Save",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 2",
+    "instructions": "Observe the weather and think about saving water.\nTasks:\n1) Make a 3-day weather chart. For each day: write the day name, draw a small symbol (sun/cloud/rain), and write one word (sunny/cloudy/rainy). Add one line: “Today I wore ______.”\n2) List 4 ways to save water at home (for example: turn off the tap while brushing).\n3) Draw and label two sources of water (for example: rain, river, well, lake).\n4) Write 2 safety tips for rainy days or hot sunny days (choose one type of day).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 2. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "94306c91-9094-401e-8e29-f65bf581b2d6-q1",
+        "prompt": "Which of these is a source of fresh water?",
+        "options": [
+          "River",
+          "Sea",
+          "Smoke",
+          "Sun"
+        ],
+        "explanation": "Rivers carry fresh water. Sea water is salty.",
+        "correct_index": 0
+      },
+      {
+        "id": "94306c91-9094-401e-8e29-f65bf581b2d6-q2",
+        "prompt": "Which action saves water?",
+        "options": [
+          "Turn off the tap while brushing.",
+          "Let the tap run.",
+          "Play with a hose for a long time.",
+          "Throw trash in a river."
+        ],
+        "explanation": "Turning off the tap saves water.",
+        "correct_index": 0
+      },
+      {
+        "id": "94306c91-9094-401e-8e29-f65bf581b2d6-q3",
+        "prompt": "What do dark clouds usually bring?",
+        "options": [
+          "Rain",
+          "Sand",
+          "Fire",
+          "Music"
+        ],
+        "explanation": "Dark clouds often bring rain.",
+        "correct_index": 0
+      },
+      {
+        "id": "94306c91-9094-401e-8e29-f65bf581b2d6-q4",
+        "prompt": "On a cold day, we should wear a _____.",
+        "options": [
+          "Woollen sweater",
+          "Raincoat",
+          "Cotton vest",
+          "Swimsuit"
+        ],
+        "explanation": "Wool keeps us warm in cold weather.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-0215b742-9731-4252-b9dc-20bb0841fdcd",
+    "module_id": "0215b742-9731-4252-b9dc-20bb0841fdcd",
+    "title": "Adjectives and Action Verbs in Use",
+    "subject": "English",
+    "grade_level": "CBSE Class 3",
+    "instructions": "Use neat handwriting. Underline adjectives (describing words). Circle action verbs (doing words).\nTasks:\n1) Underline the adjective and circle the action verb in each sentence:\n   a) The happy dog runs.\n   b) The tall boy jumps.\n   c) I eat a sweet mango.\n   d) The small fish swims.\n   e) She sings a loud song.\n   f) The red kite flies.\n2) Improve the sentences by adding one adjective and changing the verb to a stronger action verb. Rewrite each:\n   a) The girl went to school.\n   b) The cat sat on the mat.\n   c) The boy said the poem.\n   d) The bird flew in the sky.\n3) Use words from this bank to help you: Adjectives – happy, bright, soft, spicy, shiny; Verbs – runs, hops, whispers, gallops, skips.\n4) Draw a quick picture of your playground or room. Write 5 sentences to describe it. Use at least 3 adjectives and 3 action verbs. Underline adjectives and circle verbs.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "0215b742-9731-4252-b9dc-20bb0841fdcd-q1",
+        "prompt": "In the sentence “The tall tree moves,” which word is an adjective?",
+        "options": [
+          "tall",
+          "tree",
+          "moves",
+          "the"
+        ],
+        "explanation": "“Tall” describes the tree. It is an adjective.",
+        "correct_index": 0
+      },
+      {
+        "id": "0215b742-9731-4252-b9dc-20bb0841fdcd-q2",
+        "prompt": "In “Birds fly high,” which word is the action verb?",
+        "options": [
+          "Birds",
+          "fly",
+          "high",
+          "and"
+        ],
+        "explanation": "“Fly” is the action being done.",
+        "correct_index": 1
+      },
+      {
+        "id": "0215b742-9731-4252-b9dc-20bb0841fdcd-q3",
+        "prompt": "Choose the best verb: “The baby _____ loudly.”",
+        "options": [
+          "cries",
+          "blue",
+          "soft",
+          "quickly"
+        ],
+        "explanation": "“Cries” is an action verb. The others are not action verbs.",
+        "correct_index": 0
+      },
+      {
+        "id": "0215b742-9731-4252-b9dc-20bb0841fdcd-q4",
+        "prompt": "Which sentence uses both an adjective and an action verb?",
+        "options": [
+          "The puppy playful.",
+          "The puppy runs fast.",
+          "The happy puppy runs.",
+          "Happy and blue."
+        ],
+        "explanation": "“Happy” is an adjective and “runs” is an action verb.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-dd1af229-01b2-4842-9e63-99f1c20e3bd2",
+    "module_id": "dd1af229-01b2-4842-9e63-99f1c20e3bd2",
+    "title": "Write a Clear Paragraph",
+    "subject": "English",
+    "grade_level": "CBSE Class 3",
+    "instructions": "Write neatly. Keep your paragraph focused on one place.\nTasks:\n1) Plan: Topic – “My favourite place.” List at least 4 ideas (what it looks like, what you do there, how you feel, why you like it).\n2) Write one 8-sentence paragraph. Start with a topic sentence. Add 5–6 supporting sentences. End with a closing sentence.\n3) Use at least three sequence words: First, Next, Then, After that, Finally (choose any three).\n4) Revise with this checklist: capitals and full stops, correct spelling of easy words, stays on the topic, neat handwriting. Underline your topic sentence and circle your closing sentence.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "dd1af229-01b2-4842-9e63-99f1c20e3bd2-q1",
+        "prompt": "What is a topic sentence?",
+        "options": [
+          "A sentence that tells the main idea.",
+          "A word with many letters.",
+          "A question mark.",
+          "A list of names."
+        ],
+        "explanation": "The topic sentence states the main idea of the paragraph.",
+        "correct_index": 0
+      },
+      {
+        "id": "dd1af229-01b2-4842-9e63-99f1c20e3bd2-q2",
+        "prompt": "Choose the best opening for a paragraph about “My School Garden.”",
+        "options": [
+          "My school garden is my favourite place.",
+          "I ate pizza last night.",
+          "Blue and green.",
+          "Garden."
+        ],
+        "explanation": "It clearly introduces the topic and stays focused.",
+        "correct_index": 0
+      },
+      {
+        "id": "dd1af229-01b2-4842-9e63-99f1c20e3bd2-q3",
+        "prompt": "Which word helps to show order in a paragraph?",
+        "options": [
+          "First",
+          "Very",
+          "Garden",
+          "Jump"
+        ],
+        "explanation": "Words like “First” are sequence words that show order.",
+        "correct_index": 0
+      },
+      {
+        "id": "dd1af229-01b2-4842-9e63-99f1c20e3bd2-q4",
+        "prompt": "Which sentence has correct capital letter and full stop?",
+        "options": [
+          "we play in the park",
+          "We play in the park.",
+          "We play in the park",
+          "we play In the park."
+        ],
+        "explanation": "It starts with a capital and ends with a full stop.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-fb34ff74-1d13-479b-882e-70d7bec3cf17",
+    "module_id": "fb34ff74-1d13-479b-882e-70d7bec3cf17",
+    "title": "विशेषण और क्रिया: पहचान और अभ्यास",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 3",
+    "instructions": "अपना काम कॉपी में करें और फोटो/पीडीएफ अपलोड करें। आप चाहें तो अंतिम कार्य का छोटा वीडियो भी अपलोड कर सकते हैं।\n1) नीचे दिए गए 6 वाक्य लिखें और प्रत्येक वाक्य में एक विशेषण (गुण बताने वाला शब्द) को लाल और एक क्रिया (कार्य बताने वाला शब्द) को नीले रंग से रेखांकित करें: (क) सुंदर पक्षी गाता है। (ख) छोटी बिल्ली दौड़ती है। (ग) मीठा आम टोकरी में है। (घ) तेज लड़का पढ़ता है। (ङ) हरी पत्ती गिरती है। (च) ठंडा पानी बहता है।\n2) अपनी कॉपी में दो कॉलम बनाएं: ‘विशेषण’ और ‘क्रिया’। ऊपर के वाक्यों से मिले शब्द अलग-अलग कॉलम में लिखें।\n3) किसी एक चित्र (पशु/फूल/खेल) को देखकर 5 वाक्य लिखें। हर वाक्य में कम से कम 1 विशेषण और 1 क्रिया हो। विशेषण को घेरा लगाएँ और क्रिया को रेखांकित करें।\n4) 10 सेकंड का छोटा वीडियो बनाएं: किसी एक क्रिया (जैसे दौड़ना/लिखना/कूदना) को अभिनय करें और कॉपी में वही क्रिया-शब्द दिखाएँ।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "fb34ff74-1d13-479b-882e-70d7bec3cf17-q1",
+        "prompt": "वाक्य में विशेषण चुनिए: “नीली गेंद उछलती है।”",
+        "options": [
+          "नीली",
+          "गेंद",
+          "उछलती",
+          "है"
+        ],
+        "explanation": "‘नीली’ गुण बताने वाला शब्द है, इसलिए यह विशेषण है।",
+        "correct_index": 0
+      },
+      {
+        "id": "fb34ff74-1d13-479b-882e-70d7bec3cf17-q2",
+        "prompt": "वाक्य में क्रिया चुनिए: “बच्चा मीठा आम खाता है।”",
+        "options": [
+          "बच्चा",
+          "मीठा",
+          "आम",
+          "खाता"
+        ],
+        "explanation": "‘खाता’ काम/कार्य बताने वाला शब्द है, इसलिए यह क्रिया है।",
+        "correct_index": 3
+      },
+      {
+        "id": "fb34ff74-1d13-479b-882e-70d7bec3cf17-q3",
+        "prompt": "नीचे दिए शब्दों में से कौन-सा विशेषण है?",
+        "options": [
+          "तेज",
+          "खेलना",
+          "किताब",
+          "वह"
+        ],
+        "explanation": "‘तेज’ गुण बताता है, इसलिए विशेषण है।",
+        "correct_index": 0
+      },
+      {
+        "id": "fb34ff74-1d13-479b-882e-70d7bec3cf17-q4",
+        "prompt": "नीचे दिए शब्दों में से कौन-सा क्रिया है?",
+        "options": [
+          "बड़ा",
+          "खुश",
+          "लिखता",
+          "मीठा"
+        ],
+        "explanation": "‘लिखता’ काम बताता है, इसलिए यह क्रिया है।",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-6014b2f5-6831-4490-881e-3b311b0e5446",
+    "module_id": "6014b2f5-6831-4490-881e-3b311b0e5446",
+    "title": "सरल अनुच्छेद लेखन: मेरा प्रिय खेल",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 3",
+    "instructions": "अपना काम कॉपी में करें और फोटो/पीडीएफ अपलोड करें।\n1) विषय चुनें: “मेरा प्रिय खेल” (जैसे क्रिकेट/कबड्डी/फुटबॉल)। पहले एक छोटा योजना-खाका बनाएं: (क) परिचय (ख) कहाँ/किसके साथ (ग) क्यों पसंद (घ) सुरक्षा/नियम।\n2) अपनी योजना के आधार पर 8 छोटे-छोटे वाक्यों का अनुच्छेद लिखें। विराम-चिह्न (। , ? !) का सही प्रयोग करें।\n3) अपने अनुच्छेद में क्रम बताने वाले शब्द रेखांकित करें: “पहले, फिर, उसके बाद, अंत में”।\n4) जाँच सूची बनाकर सुधार करें: (क) विषय एक ही रहा? (ख) वाक्य क्रम में हैं? (ग) विराम-चिह्न सही हैं? (घ) गलतियाँ सुधारीं? यदि जरूरत हो तो साफ-सुथरा पुनर्लेखन करें।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "6014b2f5-6831-4490-881e-3b311b0e5446-q1",
+        "prompt": "अनुच्छेद क्या होता है?",
+        "options": [
+          "एक शब्द",
+          "कई अलग-अलग, बेमेल वाक्य",
+          "एक ही विषय पर क्रम से लिखे वाक्य",
+          "केवल चित्र"
+        ],
+        "explanation": "अनुच्छेद एक ही विषय पर क्रमबद्ध वाक्यों का समूह है।",
+        "correct_index": 2
+      },
+      {
+        "id": "6014b2f5-6831-4490-881e-3b311b0e5446-q2",
+        "prompt": "क्रम दिखाने में कौन-सा शब्द मदद करता है?",
+        "options": [
+          "क्योंकि",
+          "और",
+          "फिर",
+          "बहुत"
+        ],
+        "explanation": "‘फिर’ घटनाओं/विचारों का क्रम दिखाने में मदद करता है।",
+        "correct_index": 2
+      },
+      {
+        "id": "6014b2f5-6831-4490-881e-3b311b0e5446-q3",
+        "prompt": "सही विराम-चिह्न वाला वाक्य चुनिए:",
+        "options": [
+          "मुझे क्रिकेट खेलना पसंद है",
+          "मुझे क्रिकेट खेलना पसंद है।",
+          "मुझे क्रिकेट खेलना पसंद है?",
+          "मुझे क्रिकेट खेलना पसंद है! !"
+        ],
+        "explanation": "साधारण कथन वाक्य के अंत में पूर्ण विराम (।) आता है।",
+        "correct_index": 1
+      },
+      {
+        "id": "6014b2f5-6831-4490-881e-3b311b0e5446-q4",
+        "prompt": "“कबड्डी” पर अनुच्छेद की अच्छी शुरुआत कौन-सी है?",
+        "options": [
+          "मैं रोज़ कबड्डी खेलता/खेलती हूँ।",
+          "आम बहुत मीठा होता है।",
+          "मेरे पास पेंसिल है।",
+          "मैंने कल फिल्म देखी।"
+        ],
+        "explanation": "पहला विकल्प विषय (कबड्डी) से सीधे जुड़ा हुआ है।",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-8eebe9f8-fa6d-4832-a65a-a6467fd1b78d",
+    "module_id": "8eebe9f8-fa6d-4832-a65a-a6467fd1b78d",
+    "title": "Multiplication and Division: Arrays, Facts, and Sharing",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 3",
+    "instructions": "Do your work in your notebook and upload clear photos/PDF. You may also record a short video to explain one sharing problem.\n1) Draw and complete 6 arrays for these facts: 3×4, 4×2, 2×5, 5×3, 6×2, 2×6. For each, write rows × columns = total.\n2) Solve these 8 facts: 4×3, 3×5, 2×7, 8×2, 12÷3, 15÷5, 18÷3, 20÷4. Show one quick check using a related fact (e.g., 4×3=12 so 12÷3=4).\n3) Equal sharing: Draw and solve—“12 cookies shared among 3 children”. Show groups and write the division and multiplication facts.\n4) Make 2 small word problems (one multiplication, one division) using equal groups or arrays. Solve and circle your final answers.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "8eebe9f8-fa6d-4832-a65a-a6467fd1b78d-q1",
+        "prompt": "An array with 3 rows and 4 columns has how many dots?",
+        "options": [
+          "7",
+          "12",
+          "10",
+          "8"
+        ],
+        "explanation": "3 rows × 4 columns = 12.",
+        "correct_index": 1
+      },
+      {
+        "id": "8eebe9f8-fa6d-4832-a65a-a6467fd1b78d-q2",
+        "prompt": "12 ÷ 3 = ?",
+        "options": [
+          "4",
+          "6",
+          "9",
+          "3"
+        ],
+        "explanation": "12 shared into 3 equal groups gives 4 in each group.",
+        "correct_index": 0
+      },
+      {
+        "id": "8eebe9f8-fa6d-4832-a65a-a6467fd1b78d-q3",
+        "prompt": "Which equation means 5 groups of 2?",
+        "options": [
+          "5 + 2",
+          "5 × 2",
+          "2 − 5",
+          "5 ÷ 2"
+        ],
+        "explanation": "Repeated equal groups are shown by multiplication: 5 × 2.",
+        "correct_index": 1
+      },
+      {
+        "id": "8eebe9f8-fa6d-4832-a65a-a6467fd1b78d-q4",
+        "prompt": "If 4 × 6 = 24, then 24 ÷ 6 = ?",
+        "options": [
+          "4",
+          "6",
+          "20",
+          "18"
+        ],
+        "explanation": "Division undoes multiplication: 24 ÷ 6 = 4.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-5dd464bc-bb58-477c-901f-8de4f6c822a8",
+    "module_id": "5dd464bc-bb58-477c-901f-8de4f6c822a8",
+    "title": "Introduction to Fractions: Halves, Thirds, and Quarters",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 3",
+    "instructions": "Do your work in your notebook and upload clear photos/PDF.\n1) Draw 3 shapes (circle, rectangle, square). Split each into equal parts and shade: one-half (1/2), one-third (1/3), and one-quarter (1/4). Label each.\n2) Compare unit fractions: write < or > between 1/2 and 1/3; 1/3 and 1/4; 1/2 and 1/4. Explain each in one short line (e.g., more parts means smaller pieces).\n3) Collections: In 12 apples, shade or mark 3 apples. Write the fraction of apples marked. Repeat with 2 out of 8 pencils.\n4) Label the parts of a fraction: Write 1/3 and mark ‘1’ as numerator and ‘3’ as denominator. Give one example from daily life for 1/2 or 1/4 (draw it).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "5dd464bc-bb58-477c-901f-8de4f6c822a8-q1",
+        "prompt": "Which fraction means one out of two equal parts?",
+        "options": [
+          "1/2",
+          "1/3",
+          "1/4",
+          "2/3"
+        ],
+        "explanation": "One of two equal parts is one-half: 1/2.",
+        "correct_index": 0
+      },
+      {
+        "id": "5dd464bc-bb58-477c-901f-8de4f6c822a8-q2",
+        "prompt": "A rectangle is split into 4 equal parts. If 1 part is shaded, what fraction is shaded?",
+        "options": [
+          "1/4",
+          "1/3",
+          "1/2",
+          "3/4"
+        ],
+        "explanation": "One out of four equal parts is 1/4.",
+        "correct_index": 0
+      },
+      {
+        "id": "5dd464bc-bb58-477c-901f-8de4f6c822a8-q3",
+        "prompt": "Which is the smallest fraction?",
+        "options": [
+          "1/2",
+          "1/3",
+          "1/4",
+          "1/1"
+        ],
+        "explanation": "Among unit fractions, more equal parts means smaller pieces: 1/4 is smallest here.",
+        "correct_index": 2
+      },
+      {
+        "id": "5dd464bc-bb58-477c-901f-8de4f6c822a8-q4",
+        "prompt": "In a group of 12 flowers, 3 are red. What fraction are red?",
+        "options": [
+          "3/12",
+          "3/4",
+          "1/3",
+          "4/12"
+        ],
+        "explanation": "Fraction = part/whole = 3 out of 12 = 3/12.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-b7b6e6e8-4056-4ade-ab50-403b31aea3bd",
+    "module_id": "b7b6e6e8-4056-4ade-ab50-403b31aea3bd",
+    "title": "Living, Non-Living, and Habitats: Sort and Connect",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 3",
+    "instructions": "Do your work in your notebook and upload clear photos/PDF.\n1) Sort these 12 into Living or Non-Living: dog, rock, car, tree, river, butterfly, doll, mushroom, cloud, cat, chair, ant. Write two lists and add one reason for any two items (e.g., grows/breathes vs does not).\n2) Draw one habitat (forest/desert/pond). Include at least 3 animals and 2 plants that fit. Label names and one feature (e.g., ‘camel stores fat’).\n3) Match animals to habitats by drawing lines: camel — desert; fish — pond; polar bear — snow/Arctic; frog — pond (land and water). Add one sentence: Why does the camel suit the desert?\n4) Look around home/school: note 2 living and 2 non-living things. Write one reason for each choice.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "b7b6e6e8-4056-4ade-ab50-403b31aea3bd-q1",
+        "prompt": "Which one is a living thing?",
+        "options": [
+          "Stone",
+          "Cat",
+          "Clock",
+          "Car"
+        ],
+        "explanation": "A cat grows, breathes, and moves on its own.",
+        "correct_index": 1
+      },
+      {
+        "id": "b7b6e6e8-4056-4ade-ab50-403b31aea3bd-q2",
+        "prompt": "A fish lives best in which habitat?",
+        "options": [
+          "Desert",
+          "Pond",
+          "Mountain peak",
+          "Sky"
+        ],
+        "explanation": "Fish need water; a pond is a water habitat.",
+        "correct_index": 1
+      },
+      {
+        "id": "b7b6e6e8-4056-4ade-ab50-403b31aea3bd-q3",
+        "prompt": "Which is NOT a feature of living things?",
+        "options": [
+          "They grow",
+          "They need food",
+          "They breathe",
+          "They are made of plastic"
+        ],
+        "explanation": "Being ‘made of plastic’ belongs to many non-living things, not a life feature.",
+        "correct_index": 3
+      },
+      {
+        "id": "b7b6e6e8-4056-4ade-ab50-403b31aea3bd-q4",
+        "prompt": "Which pair matches correctly?",
+        "options": [
+          "Camel — Desert",
+          "Polar bear — Desert",
+          "Cactus — Pond",
+          "Shark — Forest"
+        ],
+        "explanation": "Camels are adapted to live in the desert.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-5a9e2ff3-1292-43e8-9ab7-260e1b3881d5",
+    "module_id": "5a9e2ff3-1292-43e8-9ab7-260e1b3881d5",
+    "title": "Home Waste Audit and the 3Rs",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 3",
+    "instructions": "Write neatly by hand. You may submit a clear photo or PDF of your work.\n1) Do a one-day home waste audit. Draw a two-column table: Biodegradable | Non-biodegradable. List at least 6 waste items from your home.\n2) Next to each item, write R for Reduce, Re for Reuse, or Rc for Recycle (you may write more than one). Then write one example action for each of the 3Rs (one sentence each).\n3) Draw two small pictures of biodegradable items and two small pictures of non-biodegradable items from your audit.\n4) Write 3 simple rules for less waste at home or school (for example, carry a water bottle).\n5) Write one promise sentence: One small change I will start this week is ______.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 3. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "5a9e2ff3-1292-43e8-9ab7-260e1b3881d5-q1",
+        "prompt": "Which item is biodegradable?",
+        "options": [
+          "Banana peel",
+          "Plastic bottle",
+          "Glass marble",
+          "Aluminium foil"
+        ],
+        "explanation": "A banana peel rots and mixes with soil, so it is biodegradable.",
+        "correct_index": 0
+      },
+      {
+        "id": "5a9e2ff3-1292-43e8-9ab7-260e1b3881d5-q2",
+        "prompt": "Which action is an example of reuse?",
+        "options": [
+          "Refill an old glass jar to store buttons",
+          "Throw paper into the dustbin",
+          "Burn dry leaves",
+          "Buy new plastic bags each time"
+        ],
+        "explanation": "Using an old jar again for storage is reuse.",
+        "correct_index": 0
+      },
+      {
+        "id": "5a9e2ff3-1292-43e8-9ab7-260e1b3881d5-q3",
+        "prompt": "Wet kitchen waste like fruit peels should go into which bin?",
+        "options": [
+          "Green bin",
+          "Blue bin",
+          "No bin, throw on the road",
+          "Mix with all waste in one bag"
+        ],
+        "explanation": "In many places, the green bin is for wet/biodegradable waste.",
+        "correct_index": 0
+      },
+      {
+        "id": "5a9e2ff3-1292-43e8-9ab7-260e1b3881d5-q4",
+        "prompt": "Which action best shows 'Reduce'?",
+        "options": [
+          "Buy only what you need and avoid extra packaging",
+          "Use a plastic spoon once",
+          "Leave the tap running",
+          "Print every page twice"
+        ],
+        "explanation": "Reduce means creating less waste by using less in the first place.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-ae00686e-d72f-42d5-ac91-f58866c85b47",
+    "module_id": "ae00686e-d72f-42d5-ac91-f58866c85b47",
+    "title": "Tense Practice: Present, Past, and Future",
+    "subject": "English",
+    "grade_level": "CBSE Class 4",
+    "instructions": "Write neatly by hand. You may submit a clear photo or PDF of your work.\n1) Rewrite each sentence in simple past and simple future: a) I play in the park. b) She reads a story. c) We eat lunch at noon. d) He helps his mother. e) They sing a song. f) The cat sleeps on the sofa. g) My father drives to work. h) The bus stops at our school.\n2) Underline the verb and write the tense (simple present/past/future): a) She will visit the museum. b) Rohan walks to school. c) We played cricket yesterday. d) It rains in July. e) I will help you tomorrow. f) They watched a movie.\n3) Diary time: Write 4–6 sentences. Write at least 2 sentences about yesterday (simple past) and 2 about tomorrow (simple future).\n4) Make 3 original sentences about school: one in simple present, one in simple past, and one in simple future.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "ae00686e-d72f-42d5-ac91-f58866c85b47-q1",
+        "prompt": "Which sentence is in simple present tense?",
+        "options": [
+          "The sun rises in the east.",
+          "The sun rose early.",
+          "The sun will rise soon.",
+          "The sun is rising now."
+        ],
+        "explanation": "'Rises' shows simple present.",
+        "correct_index": 0
+      },
+      {
+        "id": "ae00686e-d72f-42d5-ac91-f58866c85b47-q2",
+        "prompt": "Choose the correct past tense: Yesterday I ____ my homework.",
+        "options": [
+          "do",
+          "did",
+          "doing",
+          "does"
+        ],
+        "explanation": "'Did' is the simple past form of 'do'.",
+        "correct_index": 1
+      },
+      {
+        "id": "ae00686e-d72f-42d5-ac91-f58866c85b47-q3",
+        "prompt": "Identify the tense: She will visit the museum.",
+        "options": [
+          "Simple present",
+          "Simple past",
+          "Simple future",
+          "Present continuous"
+        ],
+        "explanation": "'Will visit' is simple future.",
+        "correct_index": 2
+      },
+      {
+        "id": "ae00686e-d72f-42d5-ac91-f58866c85b47-q4",
+        "prompt": "Choose the correct future form: Tomorrow we ____ a picnic.",
+        "options": [
+          "will have",
+          "have",
+          "had",
+          "having"
+        ],
+        "explanation": "Use 'will' + base verb for simple future: 'will have'.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-dc20f1ba-38d8-4bc0-a9f8-39c77753e9c1",
+    "module_id": "dc20f1ba-38d8-4bc0-a9f8-39c77753e9c1",
+    "title": "Informal Letter with Story Evidence",
+    "subject": "English",
+    "grade_level": "CBSE Class 4",
+    "instructions": "Write neatly by hand. You may submit a clear photo or PDF of your work.\n1) Write an informal letter to a friend recommending a story you read (80–120 words). Include: greeting (Dear ...), a body with at least two reasons to recommend it, and a closing (Yours lovingly/Your friend, + your name). Do not include your home address.\n2) Include one line or event from the story as evidence to support your reasons.\n3) Draw a quick sketch of your favourite scene from the story (small box).\n4) Self-check: Underline your greeting. Put a box around your closing. Circle the story title.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "dc20f1ba-38d8-4bc0-a9f8-39c77753e9c1-q1",
+        "prompt": "Which line is a correct greeting for an informal letter?",
+        "options": [
+          "Dear Riya,",
+          "From, Riya",
+          "Yours lovingly,",
+          "Address: 21 Park Lane"
+        ],
+        "explanation": "Informal letters begin with a greeting like 'Dear Riya,'.",
+        "correct_index": 0
+      },
+      {
+        "id": "dc20f1ba-38d8-4bc0-a9f8-39c77753e9c1-q2",
+        "prompt": "Which is a suitable closing for an informal letter?",
+        "options": [
+          "Yours lovingly,",
+          "To whom it may concern,",
+          "Best regards to,",
+          "Bye!"
+        ],
+        "explanation": "'Yours lovingly,' (or 'Your friend,') is a common informal closing.",
+        "correct_index": 0
+      },
+      {
+        "id": "dc20f1ba-38d8-4bc0-a9f8-39c77753e9c1-q3",
+        "prompt": "Which sentence gives evidence from a story?",
+        "options": [
+          "I like the story.",
+          "The story is nice.",
+          "In the story, the tortoise wins the race because the hare sleeps.",
+          "You should read it."
+        ],
+        "explanation": "It mentions a specific event that supports the opinion.",
+        "correct_index": 2
+      },
+      {
+        "id": "dc20f1ba-38d8-4bc0-a9f8-39c77753e9c1-q4",
+        "prompt": "Which part should come first in your letter (as used in this homework)?",
+        "options": [
+          "Greeting (Dear ...)",
+          "Closing (Yours ...)",
+          "Signature only",
+          "P.S. note"
+        ],
+        "explanation": "Start with the greeting before the body and closing.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-231c4749-29cc-4fd6-af6f-8b23542d5bd2",
+    "module_id": "231c4749-29cc-4fd6-af6f-8b23542d5bd2",
+    "title": "काल अभ्यास: वर्तमान, भूत और भविष्य",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 4",
+    "instructions": "साफ-सुथरा हाथ से लिखें। आप स्पष्ट फोटो या PDF अपलोड कर सकते हैं।\n1) नीचे दिए वाक्यों का काल पहचानकर लिखें (वर्तमान/भूत/भविष्य): a) बच्चे मैदान में खेलते हैं। b) रीमा ने कहानी पढ़ी। c) हम पिकनिक पर जाएँगे। d) वह स्कूल बस से जाता है। e) कल रात बारिश हुई। f) अगली छुट्टी में दादी के घर चलेंगे।\n2) वाक्यों का काल बदलें (कोष्ठक में दिया निर्देश मानें): a) मैं किताब पढ़ता हूँ। (भूत काल) b) वे क्रिकेट खेलते हैं। (भविष्य काल) c) वह गीत गाती है। (भूत काल) d) हम बाज़ार जाते हैं। (भविष्य काल) e) रघु ने पानी पिया। (वर्तमान काल) f) बच्चे चित्र बनाएँगे। (वर्तमान काल) g) मीना स्कूल गई। (भविष्य काल) h) कुत्ता भौंकता है। (भूत काल)\n3) बीते कल के बारे में 2–3 वाक्य (भूत काल) और आने वाले दिन के बारे में 2–3 वाक्य (भविष्य काल) लिखें।\n4) अपने तीन वाक्य लिखें: एक वर्तमान काल, एक भूत काल, एक भविष्य काल।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "231c4749-29cc-4fd6-af6f-8b23542d5bd2-q1",
+        "prompt": "सही वर्तमान काल वाक्य चुनें:",
+        "options": [
+          "मैं फल खाता हूँ।",
+          "मैं फल खाऊँगा।",
+          "मैंने फल खाया।",
+          "फल खा।"
+        ],
+        "explanation": "'खाता हूँ' वर्तमान काल को दिखाता है.",
+        "correct_index": 0
+      },
+      {
+        "id": "231c4749-29cc-4fd6-af6f-8b23542d5bd2-q2",
+        "prompt": "रिक्त स्थान भरें: मैंने खाना ____.",
+        "options": [
+          "खाया",
+          "खाती",
+          "खा रहा",
+          "खाऊँगा"
+        ],
+        "explanation": "'मैंने खाना खाया' भूत काल का सही रूप है.",
+        "correct_index": 0
+      },
+      {
+        "id": "231c4749-29cc-4fd6-af6f-8b23542d5bd2-q3",
+        "prompt": "वह अगले सोमवार स्कूल ____.",
+        "options": [
+          "जाएगा",
+          "गया",
+          "जाता है",
+          "जाओ"
+        ],
+        "explanation": "'अगले सोमवार' भविष्य समय बताता है, इसलिए 'जाएगा' सही है.",
+        "correct_index": 0
+      },
+      {
+        "id": "231c4749-29cc-4fd6-af6f-8b23542d5bd2-q4",
+        "prompt": "वाक्य 'बच्चे मैदान में खेलते हैं।' कौन-सा काल है?",
+        "options": [
+          "वर्तमान काल",
+          "भूत काल",
+          "भविष्य काल",
+          "आज्ञा वाच्य"
+        ],
+        "explanation": "'खेलते हैं' वर्तमान काल का संकेत है.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-050c6d45-661b-443e-b09d-ee9fb8171068",
+    "module_id": "050c6d45-661b-443e-b09d-ee9fb8171068",
+    "title": "अनौपचारिक पत्र: छुट्टियों का अनुभव",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 4",
+    "instructions": "साफ-सुथरा हाथ से लिखें। आप स्पष्ट फोटो या PDF अपलोड कर सकते हैं।\n1) अपने मित्र/मित्रा को छुट्टियों के अनुभव पर 80–120 शब्दों का अनौपचारिक पत्र लिखें। इसमें शामिल करें: संबोधन (प्रिय ...,), मुख्य भाग में कम-से-कम दो विवरण, समापन (तुम्हारा मित्र/मित्रा, + अपना नाम)। अपना पता न लिखें।\n2) पत्र में एक कारण वाला वाक्य लिखें (क्योंकि/इसलिए का प्रयोग करें)।\n3) पत्र से जुड़ा एक छोटा चित्र बनाएं (जैसे घूमने की जगह)।\n4) स्वयं-जांच: संबोधन को रेखांकित करें और समापन पर एक बॉक्स बनाएं।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "050c6d45-661b-443e-b09d-ee9fb8171068-q1",
+        "prompt": "अनौपचारिक पत्र में संबोधन का सही उदाहरण कौन-सा है?",
+        "options": [
+          "प्रिय सीमा,",
+          "माननीय महोदय,",
+          "हेलो!",
+          "From,"
+        ],
+        "explanation": "अनौपचारिक पत्र में 'प्रिय नाम,' उपयुक्त संबोधन है.",
+        "correct_index": 0
+      },
+      {
+        "id": "050c6d45-661b-443e-b09d-ee9fb8171068-q2",
+        "prompt": "समापन का सही उदाहरण कौन-सा है?",
+        "options": [
+          "तुम्हारा मित्र,",
+          "धन्यवाद सहित,",
+          "अलविदा",
+          "Regards,"
+        ],
+        "explanation": "अनौपचारिक पत्र में 'तुम्हारा मित्र,' जैसे समापन उपयुक्त है.",
+        "correct_index": 0
+      },
+      {
+        "id": "050c6d45-661b-443e-b09d-ee9fb8171068-q3",
+        "prompt": "अनौपचारिक पत्र सामान्यतः किसे लिखा जाता है?",
+        "options": [
+          "मित्र या परिवार के सदस्य",
+          "बैंक प्रबंधक",
+          "प्रधानाचार्य",
+          "अज्ञात व्यक्ति"
+        ],
+        "explanation": "अनौपचारिक पत्र निजी/घनिष्ठ संबंधों के लिए लिखे जाते हैं.",
+        "correct_index": 0
+      },
+      {
+        "id": "050c6d45-661b-443e-b09d-ee9fb8171068-q4",
+        "prompt": "किस वाक्य में दो विवरण हैं?",
+        "options": [
+          "मैंने पहाड़ देखे और बर्फ में खेला।",
+          "मेरी छुट्टी अच्छी थी।",
+          "हम घूमने गए।",
+          "बहुत मज़ा आया।"
+        ],
+        "explanation": "पहले वाक्य में दो अलग विवरण हैं: पहाड़ देखना और बर्फ में खेलना.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-fcebbf5b-e40f-4430-b27d-6ad1a02612fe",
+    "module_id": "fcebbf5b-e40f-4430-b27d-6ad1a02612fe",
+    "title": "Reading, Rounding, and Operations up to One Lakh",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 4",
+    "instructions": "Write your work by hand. Upload a clear photo/PDF, or a short video explaining your steps. Complete all tasks.\n1) Place value: Use the Indian place-value chart (L, TTh, Th, H, T, O). For each number, write the digit in each place: 48,506; 90,032; 1,00,000; 75,409.\n2) Expanded and word form: Write expanded form and word form for: 67,320; 10,405; 39,018.\n3) Compare numbers: Use >, <, or = to compare: (a) 82,530 ___ 82,350 (b) 49,999 ___ 50,000 (c) 9,045 ___ 9,450.\n4) Rounding: Round to the place asked: (a) 49,268 to nearest 1,000 (b) 76,554 to nearest 100 (c) 20,015 to nearest 10 (d) 1,00,000 to nearest 1,000 (e) 5,499 to nearest 1,000 (f) 88,881 to nearest 10.\n5) Word problems: Show steps and a final statement: (a) A school has 35,420 books. It buys 4,580 more. How many books now? (b) A city had 92,350 people. 2,700 moved out. How many people are left? (c) Rina saved 48,750 rupees. She spent 12,425 on a cycle. How much is left? (d) A factory made 27,325 toys on Monday and 29,675 on Tuesday. How many in two days?",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "fcebbf5b-e40f-4430-b27d-6ad1a02612fe-q1",
+        "prompt": "In 67,845, which digit is in the ten-thousands place?",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "5"
+        ],
+        "explanation": "Places (left to right): TTh 6, Th 7, H 8, T 4, O 5. Ten-thousands is 6.",
+        "correct_index": 0
+      },
+      {
+        "id": "fcebbf5b-e40f-4430-b27d-6ad1a02612fe-q2",
+        "prompt": "Round 49,268 to the nearest thousand.",
+        "options": [
+          "49,000",
+          "49,300",
+          "49,500",
+          "50,000"
+        ],
+        "explanation": "Check the hundreds digit (2). It is less than 5, so round down to 49,000.",
+        "correct_index": 0
+      },
+      {
+        "id": "fcebbf5b-e40f-4430-b27d-6ad1a02612fe-q3",
+        "prompt": "Choose the correct comparison: 82,530 ___ 82,350",
+        "options": [
+          ">",
+          "<",
+          "=",
+          "Cannot be compared"
+        ],
+        "explanation": "82,530 is greater than 82,350.",
+        "correct_index": 0
+      },
+      {
+        "id": "fcebbf5b-e40f-4430-b27d-6ad1a02612fe-q4",
+        "prompt": "What is 35,420 + 4,580?",
+        "options": [
+          "39,000",
+          "40,000",
+          "41,000",
+          "40,500"
+        ],
+        "explanation": "35,420 + 4,580 = 40,000.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-14fef9e5-6097-4fb8-8d82-1d015989bd50",
+    "module_id": "14fef9e5-6097-4fb8-8d82-1d015989bd50",
+    "title": "Angles, Perimeter, and Symmetry Practice",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 4",
+    "instructions": "Write your work by hand. Upload a clear photo/PDF, or a short video explaining your steps and drawings.\n1) Draw and name one example each: acute angle, right angle, obtuse angle. Label each drawing.\n2) Draw and label: (a) a triangle, (b) a quadrilateral, (c) a pentagon. For each, write the number of sides and vertices.\n3) Measure any rectangular book/box with a ruler. Record length and width (in cm). Calculate its perimeter using P = 2 × (l + w). Show working.\n4) Find the perimeter: (a) square with side 6 cm (b) rectangle 9 cm by 4 cm (c) triangle with sides 5 cm, 5 cm, 7 cm.\n5) Lines of symmetry: Draw a rectangle, a square, and an equilateral triangle. Draw all lines of symmetry you can find in each and write how many each has.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "14fef9e5-6097-4fb8-8d82-1d015989bd50-q1",
+        "prompt": "Which angle is smaller than a right angle?",
+        "options": [
+          "Acute angle",
+          "Obtuse angle",
+          "Straight angle",
+          "Right angle"
+        ],
+        "explanation": "An acute angle is less than 90°.",
+        "correct_index": 0
+      },
+      {
+        "id": "14fef9e5-6097-4fb8-8d82-1d015989bd50-q2",
+        "prompt": "A rectangle has length 7 cm and width 3 cm. What is its perimeter?",
+        "options": [
+          "10 cm",
+          "14 cm",
+          "20 cm",
+          "22 cm"
+        ],
+        "explanation": "Perimeter = 2 × (7 + 3) = 20 cm.",
+        "correct_index": 2
+      },
+      {
+        "id": "14fef9e5-6097-4fb8-8d82-1d015989bd50-q3",
+        "prompt": "How many sides does a pentagon have?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "explanation": "‘Penta’ means five.",
+        "correct_index": 2
+      },
+      {
+        "id": "14fef9e5-6097-4fb8-8d82-1d015989bd50-q4",
+        "prompt": "Which shape usually has exactly one line of symmetry?",
+        "options": [
+          "Isosceles triangle",
+          "Rectangle",
+          "Square",
+          "Scalene triangle"
+        ],
+        "explanation": "An isosceles triangle has one line of symmetry through its vertex and the midpoint of the base.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-4792de5a-7191-4198-afd4-b4b945878156",
+    "module_id": "4792de5a-7191-4198-afd4-b4b945878156",
+    "title": "Digestive System and Balanced Plate",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 4",
+    "instructions": "Write and draw by hand. Upload a clear photo/PDF, or a short video describing your work.\n1) Draw and label the main parts in order: mouth, oesophagus (food pipe), stomach, small intestine, large intestine.\n2) In 4–5 simple sentences, trace the path of a bite of roti through your digestive system. Write one job each organ does.\n3) Sort these foods into three groups (energy-giving, body-building, protective): rice, roti, dal, egg, curd, spinach, banana, milk. You may list any “sometimes” foods separately.\n4) Design a balanced lunch plate: draw the plate and label portions for grains, protein (pulses/egg), vegetables/fruits, and a glass of water/curd. Write one sentence on why it is balanced.\n5) Write two hygiene habits that help digestion (for example: wash hands before eating).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "4792de5a-7191-4198-afd4-b4b945878156-q1",
+        "prompt": "Choose the correct order of the main parts of the digestive system.",
+        "options": [
+          "Mouth → Oesophagus → Stomach → Small intestine → Large intestine",
+          "Mouth → Stomach → Oesophagus → Large intestine → Small intestine",
+          "Mouth → Small intestine → Oesophagus → Stomach → Large intestine",
+          "Oesophagus → Mouth → Stomach → Large intestine → Small intestine"
+        ],
+        "explanation": "Food goes from mouth to oesophagus, then stomach, small intestine, and large intestine.",
+        "correct_index": 0
+      },
+      {
+        "id": "4792de5a-7191-4198-afd4-b4b945878156-q2",
+        "prompt": "What is the main job of the stomach?",
+        "options": [
+          "Pumps blood",
+          "Absorbs most nutrients",
+          "Stores waste",
+          "Churns and mixes food"
+        ],
+        "explanation": "The stomach churns and mixes food with juices.",
+        "correct_index": 3
+      },
+      {
+        "id": "4792de5a-7191-4198-afd4-b4b945878156-q3",
+        "prompt": "Which is a protective food?",
+        "options": [
+          "Bread",
+          "Rice",
+          "Carrot",
+          "Ghee"
+        ],
+        "explanation": "Fruits and vegetables (like carrot) protect us from illness.",
+        "correct_index": 2
+      },
+      {
+        "id": "4792de5a-7191-4198-afd4-b4b945878156-q4",
+        "prompt": "Which habit helps good digestion?",
+        "options": [
+          "Skip breakfast",
+          "Eat very fast",
+          "Chew food well",
+          "Drink very little water"
+        ],
+        "explanation": "Chewing well helps the body digest food better.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-26c41adc-6b95-48f5-bcdb-f70c84945d22",
+    "module_id": "26c41adc-6b95-48f5-bcdb-f70c84945d22",
+    "title": "Map Drawing, Directions, and Transport Safety",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 4",
+    "instructions": "Do all tasks by hand. Upload a clear photo/PDF, or a short video explaining your map and directions.\n1) Draw a simple map from your home to a nearby place (school/park/shop). Include: a North arrow, at least 5 symbols, and a key (legend) that explains the symbols.\n2) Add a simple scale to your map (for example, 1 cm = 100 m). Mark distances for at least two parts of the route.\n3) Write step-by-step directions using N, S, E, W and words like left/right. Example: “Walk east for one block, turn right to go south…”.\n4) Mark at least two landmarks on the map and label them.\n5) Write one transport safety rule you follow on this route (for example: use the footpath, look both ways before crossing).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 4. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "26c41adc-6b95-48f5-bcdb-f70c84945d22-q1",
+        "prompt": "On most maps, which direction is at the top?",
+        "options": [
+          "North",
+          "South",
+          "East",
+          "West"
+        ],
+        "explanation": "By convention, North is shown at the top.",
+        "correct_index": 0
+      },
+      {
+        "id": "26c41adc-6b95-48f5-bcdb-f70c84945d22-q2",
+        "prompt": "What does a map key (legend) tell us?",
+        "options": [
+          "The weather",
+          "The meaning of symbols",
+          "How many roads there are",
+          "The time"
+        ],
+        "explanation": "The key explains what each symbol stands for.",
+        "correct_index": 1
+      },
+      {
+        "id": "26c41adc-6b95-48f5-bcdb-f70c84945d22-q3",
+        "prompt": "You are walking east and you turn right. Which direction are you facing now?",
+        "options": [
+          "North",
+          "South",
+          "West",
+          "East"
+        ],
+        "explanation": "A right turn from east points you to the south.",
+        "correct_index": 1
+      },
+      {
+        "id": "26c41adc-6b95-48f5-bcdb-f70c84945d22-q4",
+        "prompt": "Which transport is best for a short distance and reduces pollution?",
+        "options": [
+          "Car",
+          "Bus",
+          "Bicycle",
+          "Airplane"
+        ],
+        "explanation": "A bicycle is good for short trips and is non-polluting.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-195de7b1-b826-4987-a00f-b5c8b1fa89b5",
+    "module_id": "195de7b1-b826-4987-a00f-b5c8b1fa89b5",
+    "title": "Subject-Verb Agreement and Editing",
+    "subject": "English",
+    "grade_level": "CBSE Class 5",
+    "instructions": "Write your answers by hand. Upload a clear photo/PDF, or a short video reading your corrections and explaining your rules.\n1) Correct these 10 sentences for subject-verb agreement, spelling, and punctuation:\n   a) The dogs barks at night.\n   b) My sister walk to school every day.\n   c) There is many books on the table.\n   d) he goes to mumbai in june.\n   e) The pair of shoes are new.\n   f) Don’t it look amazing\n   g) The children plays in the park.\n   h) Meera and Riya is best friends.\n   i) Where is the keys\n   j) Mom bake a cake yesterday.\n2) Choose the correct verb and rewrite the sentence; underline the subject: (a) The bouquet of roses (is/are) lovely. (b) Either the teacher or the students (has/have) the books. (c) Mathematics (is/are) my favorite subject. (d) There (is/are) many reasons to smile. (e) The news (was/were) surprising.\n3) Edit this short paragraph for capitals, punctuation, and tense if needed: \"on sunday, arun and i visit the city museum we see old coins paintings and a big map it was fun\"\n4) Explain any four of your corrections. Name the rule used (for example: subject-verb agreement, capital letter for proper noun, end punctuation).\n5) Write two original sentences: (a) one with “There is/There are”, (b) one with a tricky subject like “A group of … ”",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "195de7b1-b826-4987-a00f-b5c8b1fa89b5-q1",
+        "prompt": "Choose the correct verb: The bouquet of flowers ____ on the table.",
+        "options": [
+          "are",
+          "is",
+          "were",
+          "be"
+        ],
+        "explanation": "The subject is ‘bouquet’ (singular), so use ‘is’.",
+        "correct_index": 1
+      },
+      {
+        "id": "195de7b1-b826-4987-a00f-b5c8b1fa89b5-q2",
+        "prompt": "Which sentence is punctuated and capitalized correctly?",
+        "options": [
+          "we went to delhi on monday",
+          "We went to delhi on Monday.",
+          "We went to Delhi on Monday",
+          "We went to Delhi on Monday."
+        ],
+        "explanation": "Begin with a capital, capitalize proper nouns (Delhi, Monday), and end with a period.",
+        "correct_index": 3
+      },
+      {
+        "id": "195de7b1-b826-4987-a00f-b5c8b1fa89b5-q3",
+        "prompt": "Choose the correct sentence.",
+        "options": [
+          "There is many pencils in the box.",
+          "There are many pencils in the box.",
+          "There be many pencils in the box.",
+          "There were many pencil in the box."
+        ],
+        "explanation": "‘Pencils’ is plural, so use ‘There are …’",
+        "correct_index": 1
+      },
+      {
+        "id": "195de7b1-b826-4987-a00f-b5c8b1fa89b5-q4",
+        "prompt": "Select the correct correction for: \"He do not like mangoes.\"",
+        "options": [
+          "He do not likes mangoes.",
+          "He does not like mangoes.",
+          "He does not likes mangoes.",
+          "He don’t like mangoes."
+        ],
+        "explanation": "With ‘he’, use ‘does not’ and the base verb: ‘like’.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-eda133db-e06d-402a-ac66-e6a3b0367d12",
+    "module_id": "eda133db-e06d-402a-ac66-e6a3b0367d12",
+    "title": "Picture-Prompt Narrative with Dialogue (160–200 words)",
+    "subject": "English",
+    "grade_level": "CBSE Class 5",
+    "instructions": "Handwrite your work neatly. Submit a clear photo or PDF. You may also upload a short reading video if you like.\n1) Picture prompt: It is a rainy evening in a park. A girl with a red umbrella sees a small puppy near a bench. A kite is stuck in a tree. The park guard is about to close the gate.\n2) Plan your story using a story map: Setting (where and when), Characters, Problem, Three events in order, At least two lines of dialogue, Ending (how the problem is solved).\n3) Write a 160–200 word story with a title. Use sequence words like first, then, after that, finally.\n4) Revise with this checklist: clear beginning, sequence is logical, dialogue has quotation marks and commas, sensory details (at least one sound or sight), correct spelling of common words, clear ending.\n5) Mark your draft: underline dialogue, circle sequence words, and put a star next to the sentence that shows the resolution.\n6) Submit a photo/PDF of your plan and story. Optional: upload a 30-second video reading your favorite part.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "eda133db-e06d-402a-ac66-e6a3b0367d12-q1",
+        "prompt": "Which sentence best shows the setting of a story?",
+        "options": [
+          "The sun was setting behind the tall trees in the city park.",
+          "I think dogs are the best pets.",
+          "Run faster!",
+          "“Please help me,” said the boy."
+        ],
+        "explanation": "Setting tells where and when the story happens.",
+        "correct_index": 0
+      },
+      {
+        "id": "eda133db-e06d-402a-ac66-e6a3b0367d12-q2",
+        "prompt": "Which group shows sequence words that help order events?",
+        "options": [
+          "blue, big, bright",
+          "first, then, finally",
+          "happy, sad, funny",
+          "who, what, why"
+        ],
+        "explanation": "Sequence words guide the order of events.",
+        "correct_index": 1
+      },
+      {
+        "id": "eda133db-e06d-402a-ac66-e6a3b0367d12-q3",
+        "prompt": "Which sentence uses dialogue punctuation correctly?",
+        "options": [
+          "“Where is the puppy?” asked Mira.",
+          "“Where is the puppy”? asked Mira.",
+          "“Where is the puppy? asked Mira”.",
+          "“Where is the puppy? asked” Mira."
+        ],
+        "explanation": "Quotation marks enclose the spoken words and the comma comes before the closing quote when followed by a dialogue tag.",
+        "correct_index": 0
+      },
+      {
+        "id": "eda133db-e06d-402a-ac66-e6a3b0367d12-q4",
+        "prompt": "What is a good ending for a narrative?",
+        "options": [
+          "It repeats the beginning exactly.",
+          "It suddenly stops in the middle of the action.",
+          "It solves the main problem or shows what changed.",
+          "It adds many new characters."
+        ],
+        "explanation": "A strong ending resolves the problem or shows the result.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-1038e74a-e244-483b-b3e8-818f1d00b59a",
+    "module_id": "1038e74a-e244-483b-b3e8-818f1d00b59a",
+    "title": "लिंग, वचन और वाक्य सुधार अभ्यास",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 5",
+    "instructions": "अपना कार्य साफ-साफ हाथ से लिखें। फोटो/PDF अपलोड करें।\n1) लिंग बदलें (केवल शब्द लिखें): राजा, बहन, गायक, अध्यापिका, पुत्री।\n2) वचन बदलें (एकवचन ↔ बहुवचन): लड़की, बच्चा, पुस्तक, खिलौने, पेड़।\n3) नीचे दिए वाक्यों में लिंग/वचन/क्रिया-सम्मति की गलती सुधारकर वाक्य पुनः लिखें और बदले हुए शब्दों को रेखांकित करें:\n   (i) वे लड़कियाँ खेल रहा है।\n   (ii) ये बच्चे मिठाई खाता है।\n   (iii) वह बहन अच्छा छात्र है।\n   (iv) मेज पर किताब रखा है।\n   (v) ये फूल सुंदर है।\n   (vi) वह अध्यापिका देर से आया।\n   (vii) किसान अपने खेत में जाती हैं।\n   (viii) यह लड़का और लड़की जा रही है।\n   (ix) वह गाय दूध देता है।\n   (x) वे बच्चे कहानी सुन रही है।\n4) ऊपर के किसी चार सुधारों का ‘कारण’ एक-एक पंक्ति में लिखें (जैसे: स्त्रीलिंग के साथ ‘आई’ आता है/ बहुवचन के साथ ‘हैं’ आदि)।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "1038e74a-e244-483b-b3e8-818f1d00b59a-q1",
+        "prompt": "‘गायक’ का स्त्रीलिंग रूप क्या है?",
+        "options": [
+          "गायिका",
+          "गाय",
+          "गायें",
+          "गायकाएँ"
+        ],
+        "explanation": "‘गायक’ (पुल्लिंग) का स्त्रीलिंग ‘गायिका’ होता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "1038e74a-e244-483b-b3e8-818f1d00b59a-q2",
+        "prompt": "‘बच्चा’ का सही बहुवचन कौन सा है?",
+        "options": [
+          "बच्चे",
+          "बच्चों",
+          "बच्चियाँ",
+          "बच्ची"
+        ],
+        "explanation": "‘बच्चा’ का बहुवचन साधारण रूप से ‘बच्चे’ होता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "1038e74a-e244-483b-b3e8-818f1d00b59a-q3",
+        "prompt": "सही क्रिया-सम्मति वाला वाक्य चुनें:",
+        "options": [
+          "ये लड़कियाँ नाच रहा है।",
+          "ये लड़कियाँ नाच रही हैं।",
+          "ये लड़कियाँ नाच रहे है।",
+          "ये लड़की नाच रही हैं।"
+        ],
+        "explanation": "बहुवचन स्त्रीलिंग के साथ ‘रही हैं’ आता है: लड़कियाँ नाच रही हैं।",
+        "correct_index": 1
+      },
+      {
+        "id": "1038e74a-e244-483b-b3e8-818f1d00b59a-q4",
+        "prompt": "सही सुधरा वाक्य कौन सा है?",
+        "options": [
+          "वह अध्यापिका जल्दी आया।",
+          "वह अध्यापिका जल्दी आई।",
+          "वह अध्यापिका जल्दी आए।",
+          "वह अध्यापिका जल्दी आओ।"
+        ],
+        "explanation": "‘अध्यापिका’ स्त्रीलिंग है, इसलिए क्रिया ‘आई’ सही है।",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-d55fbd34-f850-40c1-8f74-b5b0fb18f8e4",
+    "module_id": "d55fbd34-f850-40c1-8f74-b5b0fb18f8e4",
+    "title": "अपठित गद्यांश पर आधारित उत्तर लेखन",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 5",
+    "instructions": "हाथ से साफ लिखें और फोटो/PDF अपलोड करें।\nगद्यांश: हमारे विद्यालय के ‘हरित क्लब’ ने इस वर्ष परिसर को हरा-भरा बनाने का लक्ष्य रखा। क्लब के बच्चों ने शनिवार को मिलकर दस पौधे लगाए और पेड़ों पर पानी देने की सूची बनाई। अध्यापिका ने समझाया कि स्वच्छ हवा और छाया के लिए वृक्षों का संरक्षण जरूरी है। कुछ बच्चों ने घरों में भी परिवार को प्रेरित किया कि वे एक-एक पौधा अपनाएँ। अगले महीने क्लब पौधों की ऊँचाई नापकर रिपोर्ट तैयार करेगा। इस तरह छोटे-छोटे प्रयास मिलकर बड़े बदलाव ला सकते हैं।\nकार्य:\n1) गद्यांश को दो बार पढ़ें और ‘लक्ष्य, संरक्षण, प्रेरित’ जैसे मुख्य शब्द रेखांकित करें।\n2) नीचे दिए 6 प्रश्नों के उत्तर पूर्ण वाक्यों में लिखें:\n   (i) हरित क्लब ने क्या लक्ष्य रखा?\n   (ii) बच्चों ने शनिवार को क्या किया?\n   (iii) अध्यापिका ने किस बात की जरूरत बताई?\n   (iv) कुछ बच्चों ने घर पर क्या किया?\n   (v) अगले महीने क्लब क्या तैयार करेगा?\n   (vi) गद्यांश के अनुसार छोटे प्रयास क्यों महत्वपूर्ण हैं?\n3) गद्यांश का मुख्य विचार 1–2 पंक्तियों में लिखें।\n4) संदर्भ से शब्दार्थ लिखें: उद्देश्य/लक्ष्य, संरक्षण, प्रेरित।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "d55fbd34-f850-40c1-8f74-b5b0fb18f8e4-q1",
+        "prompt": "‘मुख्य विचार’ से क्या तात्पर्य है?",
+        "options": [
+          "सबसे मज़ेदार पंक्ति",
+          "गद्यांश का सबसे महत्वपूर्ण संदेश",
+          "पहला वाक्य",
+          "कठिन शब्दों की सूची"
+        ],
+        "explanation": "मुख्य विचार गद्यांश का केंद्रीय संदेश होता है।",
+        "correct_index": 1
+      },
+      {
+        "id": "d55fbd34-f850-40c1-8f74-b5b0fb18f8e4-q2",
+        "prompt": "‘संदर्भ से शब्दार्थ निकालना’ का अर्थ है:",
+        "options": [
+          "शब्दकोश याद करना",
+          "वाक्य में शब्द के प्रयोग से अर्थ समझना",
+          "शब्द को कई बार लिखना",
+          "शब्द को रटना"
+        ],
+        "explanation": "संदर्भ यानी प्रसंग देखकर अर्थ पहचानना।",
+        "correct_index": 1
+      },
+      {
+        "id": "d55fbd34-f850-40c1-8f74-b5b0fb18f8e4-q3",
+        "prompt": "निम्न में से ‘तथ्य’ का उदाहरण कौन सा है?",
+        "options": [
+          "पेड़ बहुत सुंदर होते हैं।",
+          "क्लब ने दस पौधे लगाए।",
+          "मुझे पौधे अच्छे लगते हैं।",
+          "पेड़ सबसे अच्छे मित्र हैं।"
+        ],
+        "explanation": "‘दस पौधे लगाए’ जाँचने योग्य तथ्य है।",
+        "correct_index": 1
+      },
+      {
+        "id": "d55fbd34-f850-40c1-8f74-b5b0fb18f8e4-q4",
+        "prompt": "अच्छे उत्तर लेखन का एक नियम है:",
+        "options": [
+          "केवल एक शब्द लिखना",
+          "पूरा वाक्य और प्रश्न से जुड़ी जानकारी लिखना",
+          "उत्तर को खाली छोड़ देना",
+          "हर उत्तर में कहानी लिखना"
+        ],
+        "explanation": "अच्छा उत्तर पूर्ण वाक्य में और प्रश्न से संबंधित होता है.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-f06ad469-41e2-466b-b5dc-5f2911276d73",
+    "module_id": "f06ad469-41e2-466b-b5dc-5f2911276d73",
+    "title": "Fractions and Decimals Mixed Practice",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 5",
+    "instructions": "Handwrite all steps. Show models where asked. Upload a clear photo/PDF.\n1) Compare and write >, <, or =: 5/8 __ 3/8\n2) Add: 4/10 + 3/10 = ____\n3) Subtract: 9/12 − 5/12 = ____\n4) Write as a decimal: 7/10 = ____\n5) Write as a decimal: 34/100 = ____\n6) On a 0–1 number line, mark and label 0.6 and 0.65.\n7) Draw a 10×10 grid and shade to show 0.23. Write its fraction form.\n8) Word problem: Ria walked 3/10 km in the morning and 4/10 km in the evening. How many kilometers in all? Show working.\nExplanation: For any two problems above, draw a visual model (e.g., fraction bars or grids) and write one sentence explaining your thinking.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "f06ad469-41e2-466b-b5dc-5f2911276d73-q1",
+        "prompt": "Which is greater?",
+        "options": [
+          "5/12",
+          "7/12",
+          "They are equal",
+          "Not enough information"
+        ],
+        "explanation": "With like denominators, the fraction with the larger numerator is greater.",
+        "correct_index": 1
+      },
+      {
+        "id": "f06ad469-41e2-466b-b5dc-5f2911276d73-q2",
+        "prompt": "0.7 is equal to which fraction?",
+        "options": [
+          "7/10",
+          "7/100",
+          "70/1000",
+          "1/7"
+        ],
+        "explanation": "The digit 7 is in the tenths place, so 7/10.",
+        "correct_index": 0
+      },
+      {
+        "id": "f06ad469-41e2-466b-b5dc-5f2911276d73-q3",
+        "prompt": "3/10 + 5/10 =",
+        "options": [
+          "7/10",
+          "8/10",
+          "5/20",
+          "3/20"
+        ],
+        "explanation": "Add numerators for like fractions: 3+5=8, denominator 10.",
+        "correct_index": 1
+      },
+      {
+        "id": "f06ad469-41e2-466b-b5dc-5f2911276d73-q4",
+        "prompt": "In 0.36, which digit is in the hundredths place?",
+        "options": [
+          "3",
+          "6",
+          "36",
+          "0"
+        ],
+        "explanation": "Hundredths is the second place to the right of the decimal: 6.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-9a768d5f-9ce8-44a7-a157-871106dbdcdb",
+    "module_id": "9a768d5f-9ce8-44a7-a157-871106dbdcdb",
+    "title": "Measuring Area, Perimeter, and Building Volume",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 5",
+    "instructions": "Handwrite measurements, calculations, and drawings. Upload a clear photo/PDF.\n1) Measure two rectangular household surfaces (e.g., a book cover, a mat). Record length and width in cm. Calculate perimeter P = 2(l + w) and area A = l × w. Show units.\n2) On grid paper (or draw a grid), make two different rectangles with area 24 square units (e.g., 3×8 and 4×6). For each, write its perimeter and compare them in one sentence.\n3) Build or sketch a rectangular prism using unit cubes. Example: 3 layers of 2×4. Label L, W, H and count total cubes. Write: Volume = L × W × H = ____ cubic units.\n4) Reflection (one line): If two rectangles have the same perimeter, do they always have the same area? Explain with one example from Task 2.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "9a768d5f-9ce8-44a7-a157-871106dbdcdb-q1",
+        "prompt": "A rectangle has length 8 cm and width 5 cm. What is its perimeter?",
+        "options": [
+          "26 cm",
+          "40 cm",
+          "13 cm",
+          "16 cm"
+        ],
+        "explanation": "P = 2(l + w) = 2(8 + 5) = 26 cm.",
+        "correct_index": 0
+      },
+      {
+        "id": "9a768d5f-9ce8-44a7-a157-871106dbdcdb-q2",
+        "prompt": "Find the area of a rectangle with length 7 cm and width 6 cm.",
+        "options": [
+          "42 cm²",
+          "13 cm²",
+          "26 cm²",
+          "40 cm²"
+        ],
+        "explanation": "A = l × w = 7 × 6 = 42 cm².",
+        "correct_index": 0
+      },
+      {
+        "id": "9a768d5f-9ce8-44a7-a157-871106dbdcdb-q3",
+        "prompt": "A box measures 3 units by 2 units by 4 units. What is its volume?",
+        "options": [
+          "24 cubic units",
+          "9 cubic units",
+          "12 cubic units",
+          "20 cubic units"
+        ],
+        "explanation": "V = L × W × H = 3 × 2 × 4 = 24.",
+        "correct_index": 0
+      },
+      {
+        "id": "9a768d5f-9ce8-44a7-a157-871106dbdcdb-q4",
+        "prompt": "Two rectangles have the same perimeter of 20 cm. Which is true?",
+        "options": [
+          "They must have the same area.",
+          "They can have different areas.",
+          "They must be squares.",
+          "They cannot be drawn."
+        ],
+        "explanation": "Different length–width pairs can give the same perimeter but different areas.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-554aeb73-cbdd-44a6-8fd5-446011a28590",
+    "module_id": "554aeb73-cbdd-44a6-8fd5-446011a28590",
+    "title": "Natural Resources and How We Can Save Them",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 5",
+    "instructions": "Do your work neatly on paper. You may submit clear photos or a PDF. 1) Make a two-column table: Renewable and Non-renewable. List at least five examples in each column from daily life. Put a star next to the ones you use often. 2) Pick any two items at home (for example: notebook, plastic bottle). For each, write what resource it mainly comes from and one problem caused by wasting it. 3) Create a small poster titled Save Water and Energy with three short slogans and three simple drawings or symbols. 4) Write five actions you and your family or school can take to conserve resources. For each action, name the resource saved and why it helps. 5) In 4–5 lines, reflect on one conservation habit you will start this week and how you will track it.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "554aeb73-cbdd-44a6-8fd5-446011a28590-q1",
+        "prompt": "Which resource is renewable?",
+        "options": [
+          "Coal",
+          "Petroleum",
+          "Sunlight",
+          "Natural gas"
+        ],
+        "explanation": "Sunlight is naturally replenished and does not run out.",
+        "correct_index": 2
+      },
+      {
+        "id": "554aeb73-cbdd-44a6-8fd5-446011a28590-q2",
+        "prompt": "Which one is a non-renewable resource?",
+        "options": [
+          "Wind",
+          "Coal",
+          "Rain",
+          "Sunlight"
+        ],
+        "explanation": "Coal takes millions of years to form, so it is non-renewable.",
+        "correct_index": 1
+      },
+      {
+        "id": "554aeb73-cbdd-44a6-8fd5-446011a28590-q3",
+        "prompt": "Which action best conserves water at home?",
+        "options": [
+          "Keep tap running while brushing",
+          "Turn off the tap while brushing",
+          "Wash the car with a running hose for a long time",
+          "Throw leftover clean water away"
+        ],
+        "explanation": "Turning off the tap reduces water waste.",
+        "correct_index": 1
+      },
+      {
+        "id": "554aeb73-cbdd-44a6-8fd5-446011a28590-q4",
+        "prompt": "Reduce, Reuse, Recycle mainly means we should",
+        "options": [
+          "Use more new things",
+          "Use less, use again, and make new things from old",
+          "Burn waste to make space",
+          "Store all waste at home"
+        ],
+        "explanation": "The 3Rs mean reducing use, reusing items, and recycling materials.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-1d4f5c41-a80e-4c08-9fe0-08b171972b0a",
+    "module_id": "1d4f5c41-a80e-4c08-9fe0-08b171972b0a",
+    "title": "Healthy Habits for a Healthy Body",
+    "subject": "EVS",
+    "grade_level": "CBSE Class 5",
+    "instructions": "Write your answers on paper and submit photos or a PDF. 1) Make a one-day health plan from morning to night. Include meals, water, exercise, hygiene, screen time, and sleep. 2) Draw and label four organs: heart, lungs, stomach, brain. For each, write one habit that supports it. 3) List four hygiene practices and the problem or disease they help prevent. 4) Create a balanced plate for lunch. Name the foods and the nutrient each gives. 5) In 4–5 lines, explain how two of your habits protect others from getting sick.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 5. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "1d4f5c41-a80e-4c08-9fe0-08b171972b0a-q1",
+        "prompt": "Which habit mainly supports the digestive system?",
+        "options": [
+          "Taking a brisk walk daily",
+          "Eating fiber-rich fruits and vegetables",
+          "Listening to loud music",
+          "Skipping breakfast"
+        ],
+        "explanation": "Fiber helps digestion and keeps the digestive system healthy.",
+        "correct_index": 1
+      },
+      {
+        "id": "1d4f5c41-a80e-4c08-9fe0-08b171972b0a-q2",
+        "prompt": "Which organ pumps blood through the body?",
+        "options": [
+          "Lungs",
+          "Brain",
+          "Heart",
+          "Stomach"
+        ],
+        "explanation": "The heart pumps blood to all parts of the body.",
+        "correct_index": 2
+      },
+      {
+        "id": "1d4f5c41-a80e-4c08-9fe0-08b171972b0a-q3",
+        "prompt": "What is the best way to stop germs from spreading?",
+        "options": [
+          "Share water bottles",
+          "Wash hands with soap before eating and after toilet",
+          "Cough without covering your mouth",
+          "Never clean your nails"
+        ],
+        "explanation": "Handwashing with soap removes many germs and prevents illness.",
+        "correct_index": 1
+      },
+      {
+        "id": "1d4f5c41-a80e-4c08-9fe0-08b171972b0a-q4",
+        "prompt": "Why is good sleep important for students?",
+        "options": [
+          "So you can skip exercise",
+          "To rest, repair, and grow",
+          "To play more games at night",
+          "To eat more junk food"
+        ],
+        "explanation": "Sleep helps the body and brain rest, repair, and grow.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-cbab690f-15ff-4c57-a0b5-63084e3eabf9",
+    "module_id": "cbab690f-15ff-4c57-a0b5-63084e3eabf9",
+    "title": "Parts of Speech in Action",
+    "subject": "English",
+    "grade_level": "CBSE Class 6",
+    "instructions": "Complete these tasks on paper and upload clear images or a PDF. 1) Take a short passage of 6–8 sentences from your textbook. Underline nouns, circle verbs, box adjectives, and double-underline adverbs. Add a key at the top. 2) Replace the underlined noun in four given sentences with a suitable pronoun. Write both versions. 3) Join four pairs of short sentences using a suitable conjunction like and, but, or, because. 4) Add one adverb to each of four sentences to show how or when the action happens. 5) Fill in four blanks with correct prepositions (for example: in, on, under, behind) based on the picture or hints your teacher provides.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "cbab690f-15ff-4c57-a0b5-63084e3eabf9-q1",
+        "prompt": "In the sentence The quick fox jumped over the fence, which word is an adjective?",
+        "options": [
+          "fox",
+          "quick",
+          "jumped",
+          "fence"
+        ],
+        "explanation": "Quick describes the noun fox, so it is an adjective.",
+        "correct_index": 1
+      },
+      {
+        "id": "cbab690f-15ff-4c57-a0b5-63084e3eabf9-q2",
+        "prompt": "Which word is a conjunction?",
+        "options": [
+          "and",
+          "runs",
+          "quickly",
+          "India"
+        ],
+        "explanation": "And connects words or parts of a sentence.",
+        "correct_index": 0
+      },
+      {
+        "id": "cbab690f-15ff-4c57-a0b5-63084e3eabf9-q3",
+        "prompt": "Choose the correct preposition to complete the sentence: The book is ___ the table.",
+        "options": [
+          "on",
+          "quick",
+          "runs",
+          "and"
+        ],
+        "explanation": "On shows the relation between the book and the table.",
+        "correct_index": 0
+      },
+      {
+        "id": "cbab690f-15ff-4c57-a0b5-63084e3eabf9-q4",
+        "prompt": "Identify the adverb: She sings beautifully.",
+        "options": [
+          "She",
+          "sings",
+          "beautifully",
+          "song"
+        ],
+        "explanation": "Beautifully tells how she sings, so it is an adverb.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-a33a0b2d-093e-4b38-84d0-45dfa712d19f",
+    "module_id": "a33a0b2d-093e-4b38-84d0-45dfa712d19f",
+    "title": "Formal Summary and Email Practice",
+    "subject": "English",
+    "grade_level": "CBSE Class 6",
+    "instructions": "Write on paper and upload clear photos or a PDF. 1) Read an informational passage of 150–200 words from your textbook or teacher handout. 2) Write a 90–120 word summary. Include the main idea and 2–3 key points. Use your own words. Do not add opinions. 3) Write a formal email to the Principal requesting one improvement at school (for example: repair playground swings, extend library hours, improve clean drinking water). Include a clear subject line, greeting, purpose, two evidence-based points, polite request, and closing. Sign as Student, Class 6 only. Do not add personal contact details. 4) Make a self-checklist of five items, for example: clear subject, formal tone, facts included, polite closing, word limit. 5) Optional: record a 1-minute video explaining how you chose the main points for your summary and upload it.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "a33a0b2d-093e-4b38-84d0-45dfa712d19f-q1",
+        "prompt": "What is the main purpose of a summary?",
+        "options": [
+          "To copy the passage word for word",
+          "To briefly present the main idea and key points",
+          "To give personal opinions",
+          "To list every small detail"
+        ],
+        "explanation": "A summary is a short, clear version of the main idea and key points.",
+        "correct_index": 1
+      },
+      {
+        "id": "a33a0b2d-093e-4b38-84d0-45dfa712d19f-q2",
+        "prompt": "Which greeting is most appropriate for a formal email to the Principal?",
+        "options": [
+          "Hey!",
+          "Hi buddy,",
+          "Dear Principal,",
+          "What’s up,"
+        ],
+        "explanation": "Dear Principal, is a respectful and formal greeting.",
+        "correct_index": 2
+      },
+      {
+        "id": "a33a0b2d-093e-4b38-84d0-45dfa712d19f-q3",
+        "prompt": "Which sentence is best for a formal request email?",
+        "options": [
+          "The swings are super lame lol.",
+          "I request repair of the broken swings; several students have minor injuries.",
+          "Fix this now!!!",
+          "We want new swings because we are bored."
+        ],
+        "explanation": "It is polite, clear, and gives a reason based on evidence.",
+        "correct_index": 1
+      },
+      {
+        "id": "a33a0b2d-093e-4b38-84d0-45dfa712d19f-q4",
+        "prompt": "What should you avoid in a summary?",
+        "options": [
+          "Main idea",
+          "Key facts",
+          "Your personal opinions",
+          "Clear language"
+        ],
+        "explanation": "A good summary does not include personal opinions.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-a1b91225-3dc3-43fe-b7b9-ac85e87f70db",
+    "module_id": "a1b91225-3dc3-43fe-b7b9-ac85e87f70db",
+    "title": "शब्द-भेद अभ्यास: संज्ञा, सर्वनाम, विशेषण, क्रिया",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 6",
+    "instructions": "अपना काम कागज़ पर साफ-सुथरा लिखें और फोटो या PDF अपलोड करें। 1) 60–80 शब्द का एक छोटा गद्यांश चुनें (पाठ्यपुस्तक से)। संज्ञा को एक रेखा, सर्वनाम को दोहरी रेखा, विशेषण को घेरा, और क्रिया को चौकोर बॉक्स से चिह्नित करें। 2) आठ वाक्यों को निर्देशानुसार बदलें: (क) संज्ञा को उपयुक्त सर्वनाम से बदलें – 2 वाक्य, (ख) उपयुक्त विशेषण जोड़ें – 2 वाक्य, (ग) क्रिया का काल सही करें – 2 वाक्य, (घ) एक वाक्य में दो विभिन्न क्रियाएँ प्रयोग कर एक संयुक्त वाक्य बनाएं – 2 वाक्य। 3) चार मौलिक वाक्य लिखें जिनमें प्रत्येक वाक्य में कम-से-कम दो अलग शब्द-भेद (जैसे संज्ञा+क्रिया, सर्वनाम+विशेषण) हों। 4) कठिन शब्दों की एक छोटी सूची (5 शब्द) बनाकर उनके शब्द-भेद लिखें।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "a1b91225-3dc3-43fe-b7b9-ac85e87f70db-q1",
+        "prompt": "वाक्य सीता बुद्धिमान छात्रा है। में विशेषण कौन-सा है?",
+        "options": [
+          "सीता",
+          "बुद्धिमान",
+          "छात्रा",
+          "है"
+        ],
+        "explanation": "बुद्धिमान संज्ञा छात्रा का गुण बताता है, इसलिए यह विशेषण है।",
+        "correct_index": 1
+      },
+      {
+        "id": "a1b91225-3dc3-43fe-b7b9-ac85e87f70db-q2",
+        "prompt": "वाक्य वे स्कूल जा रहे हैं। में सर्वनाम कौन-सा है?",
+        "options": [
+          "वे",
+          "स्कूल",
+          "जा",
+          "रहे"
+        ],
+        "explanation": "वे किसी समूह को दर्शाने वाला सर्वनाम है।",
+        "correct_index": 0
+      },
+      {
+        "id": "a1b91225-3dc3-43fe-b7b9-ac85e87f70db-q3",
+        "prompt": "वाक्य चिड़िया उड़ती है। में संज्ञा कौन-सी है?",
+        "options": [
+          "चिड़िया",
+          "उड़ती",
+          "है",
+          "तेज"
+        ],
+        "explanation": "चिड़िया एक वस्तु/प्राणी का नाम है, इसलिए संज्ञा है।",
+        "correct_index": 0
+      },
+      {
+        "id": "a1b91225-3dc3-43fe-b7b9-ac85e87f70db-q4",
+        "prompt": "वाक्य सीमा दौड़ रही है। में मुख्य क्रिया कौन-सी है?",
+        "options": [
+          "सीमा",
+          "दौड़",
+          "रही",
+          "है"
+        ],
+        "explanation": "दौड़ मुख्य क्रिया है; रही और है सहायक रूप हैं।",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-519b9c7a-c7ee-4d5f-bdb4-a2f4298e5a40",
+    "module_id": "519b9c7a-c7ee-4d5f-bdb4-a2f4298e5a40",
+    "title": "औपचारिक पत्र और अनुच्छेद: विद्यालय सुधार",
+    "subject": "Hindi",
+    "grade_level": "CBSE Class 6",
+    "instructions": "नीचे दिए गए काम हाथ से साफ़-सुथरे ढंग से करें। आप उत्तर की फोटो/PDF अपलोड कर सकते हैं या वीडियो में पढ़कर समझा सकते हैं।\n- कार्य 1: प्रधानाचार्य/प्रधानाचार्या को विद्यालय सुधार (जैसे पुस्तकालय, स्वच्छता, खेल सामग्री) के लिए एक औपचारिक पत्र लिखिए (120–150 शब्द)। प्रारूप ज़रूर रखें: प्रेषक का पता, दिनांक, प्राप्तकर्ता का पता, विषय, संबोधन, मुख्य भाग (2–3 छोटे अनुच्छेद), समापन, हस्ताक्षर।\n- कार्य 2: \"विद्यालय सुधार क्यों और कैसे\" विषय पर 120 शब्द का अनुच्छेद लिखिए। एक मुख्य विचार पर केंद्रित रहिए और उदाहरण दीजिए।\n- कार्य 3: अपने पत्र में विषय पंक्ति को रेखांकित करें और भाषा शिष्ट, स्पष्ट तथा तर्कपूर्ण रखें।\n- कार्य 4: वर्तनी, विराम-चिह्न और अनुच्छेद-विन्यास की स्वयं जाँच करके अंतिम प्रति लिखें।",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Spelling and language",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "519b9c7a-c7ee-4d5f-bdb4-a2f4298e5a40-q1",
+        "prompt": "औपचारिक पत्र में \"विषय\" सामान्यतः कहाँ लिखा जाता है?",
+        "options": [
+          "प्राप्तकर्ता के पते के नीचे",
+          "पत्र के अंत में",
+          "दिनांक के ऊपर",
+          "हस्ताक्षर के ऊपर"
+        ],
+        "explanation": "औपचारिक पत्र में विषय प्राप्तकर्ता के पते के नीचे और संबोधन से पहले लिखा जाता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "519b9c7a-c7ee-4d5f-bdb4-a2f4298e5a40-q2",
+        "prompt": "औपचारिक पत्र के लिए उचित संबोधन कौन-सा है?",
+        "options": [
+          "आदरणीय महोदय/महोदया",
+          "प्रिय मित्र",
+          "प्यारे पिताजी",
+          "नमस्ते दोस्त"
+        ],
+        "explanation": "औपचारिक पत्र में शिष्ट और औपचारिक संबोधन \"आदरणीय महोदय/महोदया\" लिखा जाता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "519b9c7a-c7ee-4d5f-bdb4-a2f4298e5a40-q3",
+        "prompt": "अनुच्छेद लेखन के बारे में सही बात चुनिए।",
+        "options": [
+          "एक मुख्य विचार पर केंद्रित रहता है",
+          "हर वाक्य अलग विषय पर हो",
+          "बहुत सारे चित्र जरूरी हैं",
+          "तिथि और पता लिखना अनिवार्य है"
+        ],
+        "explanation": "अच्छा अनुच्छेद एक ही मुख्य विचार पर तार्किक क्रम में लिखा जाता है।",
+        "correct_index": 0
+      },
+      {
+        "id": "519b9c7a-c7ee-4d5f-bdb4-a2f4298e5a40-q4",
+        "prompt": "विद्यालय सुधार पर औपचारिक पत्र का उद्देश्य क्या होना चाहिए?",
+        "options": [
+          "शिकायत/सुझाव को स्पष्ट और विनम्र रूप में रखना",
+          "चुटकुले सुनाना",
+          "निजी भावनाएँ विस्तार से बताना",
+          "बिना विषय के लंबा पत्र लिखना"
+        ],
+        "explanation": "औपचारिक पत्र का उद्देश्य साफ़, संक्षिप्त और विनम्र रूप से सुझाव या शिकायत रखना होता है।",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-ac2253d4-5c11-45ab-ab1e-98d273f288cd",
+    "module_id": "ac2253d4-5c11-45ab-ab1e-98d273f288cd",
+    "title": "Integers and Number Line: Plot, Compare, Operate",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 6",
+    "instructions": "Complete the tasks by hand. You may upload clear photos/PDF or a short video explaining your steps.\n- Task 1: Draw a number line from −10 to +10. Plot these integers: −8, −6, −3, −1, 0, 2, 4, 5, 7, 10. Label each point.\n- Task 2: Write >, <, or = for each pair: (−4, −7), (0, −1), (5, 5), (8, −2). Briefly say which one is to the right on the number line.\n- Task 3: Do these operations and show number-line jumps or working: (−6)+9, (−3)+(−5), 7+(−10), (−12)−(−4), 0−(−7), (−8)−3, (−2)+5, 15−(−6).\n- Task 4: Write two real-life situations where integers are used (for example: temperature below 0°C, money owed as negative, floors below ground). State what the negative and positive signs mean.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "ac2253d4-5c11-45ab-ab1e-98d273f288cd-q1",
+        "prompt": "Which number is greater?",
+        "options": [
+          "-3",
+          "-5",
+          "They are equal",
+          "Cannot be compared"
+        ],
+        "explanation": "On the number line, −3 is to the right of −5, so −3 is greater.",
+        "correct_index": 0
+      },
+      {
+        "id": "ac2253d4-5c11-45ab-ab1e-98d273f288cd-q2",
+        "prompt": "Moving left on a number line makes the value:",
+        "options": [
+          "Increase",
+          "Decrease",
+          "Become positive",
+          "Stay the same"
+        ],
+        "explanation": "Left movement on the number line means smaller (decreasing) numbers.",
+        "correct_index": 1
+      },
+      {
+        "id": "ac2253d4-5c11-45ab-ab1e-98d273f288cd-q3",
+        "prompt": "Evaluate: (−2) + 5",
+        "options": [
+          "3",
+          "-7",
+          "-3",
+          "7"
+        ],
+        "explanation": "Adding 5 to −2 moves 5 steps right from −2, landing at 3.",
+        "correct_index": 0
+      },
+      {
+        "id": "ac2253d4-5c11-45ab-ab1e-98d273f288cd-q4",
+        "prompt": "The opposite (additive inverse) of +7 is:",
+        "options": [
+          "-7",
+          "+7",
+          "0",
+          "+14"
+        ],
+        "explanation": "Opposites are equal in size and opposite in sign; +7 and −7 sum to 0.",
+        "correct_index": 0
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-1139f163-9a62-4700-8a6e-e23ffed86d60",
+    "module_id": "1139f163-9a62-4700-8a6e-e23ffed86d60",
+    "title": "Introduction to Algebra: Expressions, Patterns, Equations",
+    "subject": "Mathematics",
+    "grade_level": "CBSE Class 6",
+    "instructions": "Write all work neatly by hand and show steps. Upload photos/PDF or a short video explanation if you wish.\n- Task 1: Translate into algebraic expressions: (a) a number n increased by 9 (b) three less than a number x (c) double of a number p plus 5 (d) sum of y and 12 (e) half of a number m (f) 7 times a number k decreased by 4.\n- Task 2: Extend patterns: (a) 2, 5, 8, 11, ... write the next 3 terms (b) 1², 2², 3², ... write the next 3 square numbers.\n- Task 3: Solve and check by substitution: x+7=12, 3y=18, z−4=9, p/5=3, q+12=20, 6r=42.\n- Task 4: Make one real-life sentence and write its expression (example: “Tickets cost Rs 50 each; cost for t tickets = 50t”).",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "1139f163-9a62-4700-8a6e-e23ffed86d60-q1",
+        "prompt": "Which expression means “a number n increased by 4”?",
+        "options": [
+          "n − 4",
+          "4n",
+          "n + 4",
+          "n/4"
+        ],
+        "explanation": "“Increased by 4” means add 4: n + 4.",
+        "correct_index": 2
+      },
+      {
+        "id": "1139f163-9a62-4700-8a6e-e23ffed86d60-q2",
+        "prompt": "If x − 5 = 9, then x equals:",
+        "options": [
+          "14",
+          "4",
+          "-14",
+          "5"
+        ],
+        "explanation": "Add 5 to both sides: x = 9 + 5 = 14.",
+        "correct_index": 0
+      },
+      {
+        "id": "1139f163-9a62-4700-8a6e-e23ffed86d60-q3",
+        "prompt": "In 3y + 2, the constant term is:",
+        "options": [
+          "3",
+          "y",
+          "2",
+          "5"
+        ],
+        "explanation": "The constant term does not change with the variable; it is 2.",
+        "correct_index": 2
+      },
+      {
+        "id": "1139f163-9a62-4700-8a6e-e23ffed86d60-q4",
+        "prompt": "Next term of the pattern 1, 4, 7, 10, ... is:",
+        "options": [
+          "11",
+          "12",
+          "13",
+          "15"
+        ],
+        "explanation": "The pattern increases by 3 each time; 10 + 3 = 13.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-78f3279c-b8a7-47eb-9897-db615b3bcc54",
+    "module_id": "78f3279c-b8a7-47eb-9897-db615b3bcc54",
+    "title": "Components of Food: Identify, Classify, Improve",
+    "subject": "Science",
+    "grade_level": "CBSE Class 6",
+    "instructions": "Do the tasks by hand. You may upload clear photos/PDF or a short video description of your chart.\n- Task 1: Make a one-day meal chart (breakfast, lunch, dinner, snacks). List the main foods you ate or plan to eat.\n- Task 2: For each food item, write the main nutrient(s): carbohydrates, proteins, fats, vitamins, minerals, roughage (fiber), and water.\n- Task 3: Match each major nutrient to one key function (e.g., carbs → energy, proteins → growth and repair, vitamins/minerals → protection, fats → stored energy, roughage → helps bowel movement).\n- Task 4: Check your chart for any missing nutrient group. Suggest two simple improvements to make it more balanced (e.g., add a fruit/vegetable, include dal/egg/milk, reduce extra oil/sugar).\n- Task 5: Draw a simple “My Balanced Plate” showing portions of cereals, pulses, vegetables, fruits, and a glass of water.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "78f3279c-b8a7-47eb-9897-db615b3bcc54-q1",
+        "prompt": "Which nutrient mainly gives energy to our body?",
+        "options": [
+          "Carbohydrates",
+          "Vitamins",
+          "Water",
+          "Minerals"
+        ],
+        "explanation": "Carbohydrates are the primary energy-giving nutrients.",
+        "correct_index": 0
+      },
+      {
+        "id": "78f3279c-b8a7-47eb-9897-db615b3bcc54-q2",
+        "prompt": "Which food is a good source of protein?",
+        "options": [
+          "Sugar",
+          "Pulses (dal)",
+          "Oil",
+          "Tea"
+        ],
+        "explanation": "Pulses (dal), eggs, and milk are rich in proteins needed for growth and repair.",
+        "correct_index": 1
+      },
+      {
+        "id": "78f3279c-b8a7-47eb-9897-db615b3bcc54-q3",
+        "prompt": "Deficiency of Vitamin C can cause:",
+        "options": [
+          "Rickets",
+          "Scurvy",
+          "Night blindness",
+          "Goitre"
+        ],
+        "explanation": "Lack of Vitamin C causes scurvy (bleeding gums, poor healing).",
+        "correct_index": 1
+      },
+      {
+        "id": "78f3279c-b8a7-47eb-9897-db615b3bcc54-q4",
+        "prompt": "Roughage (fiber) mainly helps in:",
+        "options": [
+          "Building strong bones only",
+          "Making blood only",
+          "Proper bowel movement",
+          "Giving high energy"
+        ],
+        "explanation": "Roughage helps food move through the intestine and prevents constipation.",
+        "correct_index": 2
+      }
+    ],
+    "due_label": "Due Friday"
+  },
+  {
+    "id": "hw-ea7ae3bc-7e4b-4b13-be77-479e2f5f3a29",
+    "module_id": "ea7ae3bc-7e4b-4b13-be77-479e2f5f3a29",
+    "title": "Motion and Measurement: Measure and Classify",
+    "subject": "Science",
+    "grade_level": "CBSE Class 6",
+    "instructions": "Complete neatly by hand. Upload photos/PDF or a short video explaining how you measured.\n- Task 1: Measure any five objects at home/school (e.g., pencil, book width, bottle height, table length, door height). Record the value with correct units and the tool used (ruler/meter scale/measuring tape).\n- Task 2: For two measurements, also convert units (e.g., 23 cm = 230 mm; 1.2 m = 120 cm). Show your working.\n- Task 3: Write two safety tips for accurate measuring (e.g., start at zero mark; keep your eye straight above the scale to avoid parallax error).\n- Task 4: Classify the motion in these six examples as rectilinear, circular/rotational, or periodic (some may have two): (a) a moving car on a straight road (b) a rotating fan (c) a swinging pendulum (d) the second hand of a clock (e) a boy running around a circular track (f) Earth going around the Sun.\n- Task 5: Draw one diagram showing how you aligned the scale correctly for one object.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "mcq",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Concept accuracy",
+        "description": "The visible work demonstrates correct understanding of the assigned module.",
+        "max_points": 50.0
+      },
+      {
+        "name": "Required work completed",
+        "description": "The student visibly attempted every required question or activity.",
+        "max_points": 20.0
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "Writing, labels, and working are readable and organized for CBSE Class 6. Do not judge handwriting style or decorative quality.",
+        "max_points": 15.0
+      },
+      {
+        "name": "Labels, symbols, and terminology",
+        "description": "Spelling, labels, mathematical notation, or subject vocabulary are appropriate for the student's class level.",
+        "max_points": 15.0
+      }
+    ],
+    "mcq_questions": [
+      {
+        "id": "ea7ae3bc-7e4b-4b13-be77-479e2f5f3a29-q1",
+        "prompt": "The SI unit of length is:",
+        "options": [
+          "Metre (m)",
+          "Centimetre (cm)",
+          "Kilometre (km)",
+          "Inch (in)"
+        ],
+        "explanation": "The standard SI unit for length is metre.",
+        "correct_index": 0
+      },
+      {
+        "id": "ea7ae3bc-7e4b-4b13-be77-479e2f5f3a29-q2",
+        "prompt": "The motion of a simple pendulum is best described as:",
+        "options": [
+          "Random motion",
+          "Periodic motion",
+          "Rectilinear motion only",
+          "At rest"
+        ],
+        "explanation": "A pendulum repeats its path at regular intervals, so it is periodic motion.",
+        "correct_index": 1
+      },
+      {
+        "id": "ea7ae3bc-7e4b-4b13-be77-479e2f5f3a29-q3",
+        "prompt": "1 metre equals how many centimetres?",
+        "options": [
+          "10 cm",
+          "100 cm",
+          "1000 cm",
+          "50 cm"
+        ],
+        "explanation": "1 m = 100 cm.",
+        "correct_index": 1
+      },
+      {
+        "id": "ea7ae3bc-7e4b-4b13-be77-479e2f5f3a29-q4",
+        "prompt": "The best tool to measure the width of a notebook is a:",
+        "options": [
+          "Thermometer",
+          "30 cm ruler (scale)",
+          "5 m measuring tape",
+          "Weighing scale"
+        ],
+        "explanation": "A 30 cm ruler is convenient and accurate for small lengths like a notebook’s width.",
+        "correct_index": 1
+      }
+    ],
+    "due_label": "Due Friday"
+  }
+]

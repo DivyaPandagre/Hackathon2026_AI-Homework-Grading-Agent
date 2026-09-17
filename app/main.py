@@ -1,3 +1,5 @@
+import base64
+import binascii
 from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
@@ -12,12 +14,17 @@ from .config import Settings, get_settings
 from .models import (
     AssessmentCreate,
     AssessmentRecord,
+    AssessmentResult,
     AssessmentStatus,
     AuditEvent,
+    ConfidenceDetails,
+    CriterionEvaluation,
     ExecutionTraceEvent,
     HealthResponse,
+    HomeworkDefinition,
     LearningModule,
     LearningModuleCreate,
+    ModuleRubricUpdate,
     ReviewAction,
     ReviewRequest,
     StudentProfile,
@@ -30,6 +37,7 @@ from .models import (
     utc_now,
 )
 from .module_store import ModuleStore
+from .homework_store import HomeworkStore
 from .store import AssessmentStore
 from .verification_store import VerificationStore
 
@@ -42,6 +50,7 @@ module_store = ModuleStore(
 )
 consent_store = ConsentStore(BASE_DIR / "data" / "student_profiles.json")
 verification_store = VerificationStore()
+homework_store = HomeworkStore(BASE_DIR / "data" / "default_homeworks.json")
 
 app = FastAPI(
     title="EduGrade AI",
@@ -79,6 +88,11 @@ async def list_modules() -> list[LearningModule]:
     return module_store.list()
 
 
+@app.get("/api/homeworks", response_model=list[HomeworkDefinition])
+async def list_homeworks() -> list[HomeworkDefinition]:
+    return [homework_with_module_rubric(item) for item in homework_store.list()]
+
+
 @app.post(
     "/api/modules",
     response_model=LearningModule,
@@ -86,6 +100,17 @@ async def list_modules() -> list[LearningModule]:
 )
 async def create_module(request: LearningModuleCreate) -> LearningModule:
     return module_store.save(LearningModule(**request.model_dump()))
+
+
+@app.put("/api/modules/{module_id}/rubric", response_model=LearningModule)
+async def update_module_rubric(
+    module_id: str,
+    request: ModuleRubricUpdate,
+) -> LearningModule:
+    module = module_store.update_rubric(module_id, request.rubric)
+    if module is None:
+        raise HTTPException(status_code=404, detail="Learning module not found.")
+    return module
 
 
 @app.post(
@@ -197,6 +222,38 @@ async def create_assessment(
     settings: Settings = Depends(get_settings),
 ) -> AssessmentRecord:
     profile = consent_store.get(request.student_id) if request.student_id else None
+    homework = homework_store.get(request.homework_id) if request.homework_id else None
+    if homework is not None:
+        homework = homework_with_module_rubric(homework)
+    if request.submission_type != "typed_text":
+        if homework is None:
+            raise HTTPException(status_code=404, detail="Assigned homework not found.")
+        if request.submission_type not in homework.allowed_submission_types:
+            raise HTTPException(
+                status_code=422,
+                detail="This submission type is not allowed for the selected homework.",
+            )
+        if profile is None:
+            raise HTTPException(
+                status_code=403,
+                detail="Verified student registration is required before submission.",
+            )
+        module = module_store.get(homework.module_id)
+        if module is None:
+            raise HTTPException(
+                status_code=409,
+                detail="The learning module linked to this homework is unavailable.",
+            )
+        request.assignment_title = homework.title
+        request.assignment_prompt = homework.instructions
+        request.module_title = module.title
+        request.module_content = module.content
+        request.rubric = module.evaluation_rubric
+        request.student_name = profile.student_name
+
+    if request.attachment:
+        validate_attachment_payload(request)
+
     if request.submission_type == "video_and_handnote":
         if profile is None:
             raise HTTPException(
@@ -213,12 +270,16 @@ async def create_assessment(
                 status_code=422,
                 detail="Raw video cannot be sent to the AI grading module. An externally generated transcript is required.",
             )
-    try:
-        result = await agent.evaluate(request)
-    except AgentConfigurationError as exc:
-        raise HTTPException(status_code=503, detail=str(exc)) from exc
-    except AgentResponseError as exc:
-        raise HTTPException(status_code=502, detail=str(exc)) from exc
+    if request.submission_type == "mcq":
+        validate_mcq_answers(homework, request)
+        result = score_mcq(homework, request)
+    else:
+        try:
+            result = await agent.evaluate(request)
+        except AgentConfigurationError as exc:
+            raise HTTPException(status_code=503, detail=str(exc)) from exc
+        except AgentResponseError as exc:
+            raise HTTPException(status_code=502, detail=str(exc)) from exc
 
     review_required = result.confidence.score < settings.confidence_review_threshold
     record = AssessmentRecord(
@@ -239,7 +300,9 @@ async def create_assessment(
                     + (
                         "Stored parent consent and video approval verified."
                         if request.submission_type == "video_and_handnote"
-                        else "No video-specific consent required."
+                        else "Stored registration and academic processing consent verified."
+                        if profile
+                        else "Legacy text evaluation; no media consent required."
                     )
                 ),
                 responsible_ai=True,
@@ -256,7 +319,11 @@ async def create_assessment(
                     f"Raw media excluded; sanitized transcript receipt "
                     f"{request.media_processing_reference} verified."
                     if request.submission_type == "video_and_handnote"
-                    else "Typed submission passed directly; no raw video processed."
+                    else "Handwritten work provided as an approved image or PDF."
+                    if request.submission_type in {"handwritten_image", "handwritten_pdf"}
+                    else "Portal MCQ answers scored without sending student work to AI."
+                    if request.submission_type == "mcq"
+                    else "Legacy text submission processed."
                 ),
                 responsible_ai=True,
             ),
@@ -264,8 +331,12 @@ async def create_assessment(
                 stage="assessment",
                 label="Rubric assessment agent",
                 detail=(
-                    f"Evaluated {len(request.rubric)} criteria using deployment "
-                    f"{settings.azure_openai_deployment}."
+                    f"Evaluated {len(request.rubric)} criteria "
+                    + (
+                        "using deterministic answer-key scoring."
+                        if request.submission_type == "mcq"
+                        else f"using deployment {settings.azure_openai_deployment}."
+                    )
                 ),
             ),
             ExecutionTraceEvent(
@@ -305,6 +376,154 @@ async def create_assessment(
         ],
     )
     return store.save(record)
+
+
+def homework_with_module_rubric(homework: HomeworkDefinition) -> HomeworkDefinition:
+    module = module_store.get(homework.module_id)
+    if module is None:
+        return homework
+    return homework.model_copy(update={"rubric": module.evaluation_rubric})
+
+
+def validate_attachment_payload(request: AssessmentCreate) -> None:
+    attachment = request.attachment
+    if attachment is None:
+        return
+    expected_prefix = f"data:{attachment.mime_type};base64,"
+    if not attachment.data_url.startswith(expected_prefix):
+        raise HTTPException(
+            status_code=422,
+            detail="The uploaded file payload does not match its media type.",
+        )
+    try:
+        payload = base64.b64decode(
+            attachment.data_url.removeprefix(expected_prefix),
+            validate=True,
+        )
+    except (binascii.Error, ValueError) as exc:
+        raise HTTPException(
+            status_code=422,
+            detail="The uploaded file payload is not valid base64 data.",
+        ) from exc
+    if len(payload) != attachment.size_bytes:
+        raise HTTPException(
+            status_code=422,
+            detail="The uploaded file size does not match its declared size.",
+        )
+    signatures = {
+        "image/jpeg": (b"\xff\xd8\xff",),
+        "image/png": (b"\x89PNG\r\n\x1a\n",),
+        "image/webp": (b"RIFF",),
+        "application/pdf": (b"%PDF-",),
+    }
+    allowed_signatures = signatures.get(attachment.mime_type)
+    if allowed_signatures is None:
+        raise HTTPException(status_code=422, detail="Unsupported uploaded file type.")
+    if not any(payload.startswith(signature) for signature in allowed_signatures):
+        raise HTTPException(
+            status_code=422,
+            detail="The uploaded file contents do not match its media type.",
+        )
+    if attachment.mime_type == "image/webp" and payload[8:12] != b"WEBP":
+        raise HTTPException(
+            status_code=422,
+            detail="The uploaded file contents do not match its media type.",
+        )
+
+
+def validate_mcq_answers(
+    homework: HomeworkDefinition | None,
+    request: AssessmentCreate,
+) -> None:
+    if homework is None or not homework.mcq_questions:
+        raise HTTPException(
+            status_code=422,
+            detail="This homework does not have MCQ questions.",
+        )
+    questions = {question.id: question for question in homework.mcq_questions}
+    if set(request.mcq_answers) != set(questions):
+        raise HTTPException(
+            status_code=422,
+            detail="Every MCQ question must be answered exactly once.",
+        )
+    if any(
+        selected < 0 or selected >= len(questions[question_id].options)
+        for question_id, selected in request.mcq_answers.items()
+    ):
+        raise HTTPException(
+            status_code=422,
+            detail="One or more MCQ answers are outside the available options.",
+        )
+
+
+def score_mcq(
+    homework: HomeworkDefinition | None,
+    request: AssessmentCreate,
+) -> AssessmentResult:
+    if homework is None or not homework.mcq_questions:
+        raise HTTPException(
+            status_code=422,
+            detail="This homework does not have an MCQ answer key.",
+        )
+    points_each = 100 / len(homework.mcq_questions)
+    evaluations = []
+    correct = 0
+    for question in homework.mcq_questions:
+        selected = request.mcq_answers.get(question.id)
+        is_correct = selected == question.correct_index
+        if is_correct:
+            correct += 1
+        evaluations.append(
+            CriterionEvaluation(
+                criterion=question.prompt,
+                score=points_each if is_correct else 0,
+                max_points=points_each,
+                rationale=(
+                    "Correct answer selected."
+                    if is_correct
+                    else f"Review this concept. {question.explanation}"
+                ),
+                evidence=[
+                    (
+                        question.options[selected]
+                        if selected is not None and 0 <= selected < len(question.options)
+                        else "No answer selected"
+                    )
+                ],
+            )
+        )
+    total = correct * points_each
+    percentage = correct / len(homework.mcq_questions) * 100
+    return AssessmentResult(
+        criterion_evaluations=evaluations,
+        total_score=total,
+        max_score=100,
+        percentage=percentage,
+        strengths=[
+            f"{correct} of {len(homework.mcq_questions)} concepts answered correctly."
+        ],
+        learning_gaps=(
+            ["Review the explanations for the questions answered incorrectly."]
+            if correct < len(homework.mcq_questions)
+            else []
+        ),
+        personalized_feedback=(
+            f"You answered {correct} of {len(homework.mcq_questions)} questions correctly. "
+            "Review each explanation and try the concepts again."
+        ),
+        personalized_feedback_hi=(
+            f"आपने {len(homework.mcq_questions)} में से {correct} प्रश्न सही किए। "
+            "समझाए गए उत्तरों को दोहराएँ और फिर प्रयास करें।"
+        ),
+        recommendations=["Practise the concepts that were answered incorrectly."],
+        confidence=ConfidenceDetails(
+            score=1,
+            rationale="MCQ score was calculated directly from the teacher answer key.",
+            uncertainty_factors=[],
+        ),
+        module_alignment="The MCQ questions are linked directly to the assigned module.",
+        safety_check="Passed - deterministic scoring; no student traits evaluated.",
+    )
 
 
 @app.post(
