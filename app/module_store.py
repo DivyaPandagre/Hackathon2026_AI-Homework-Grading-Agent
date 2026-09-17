@@ -6,10 +6,20 @@ from .models import LearningModule
 
 
 class ModuleStore:
-    def __init__(self, path: Path) -> None:
+    def __init__(self, path: Path, default_path: Path | None = None) -> None:
         self.path = path
         self._lock = Lock()
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        if not self.path.exists() and default_path and default_path.exists():
+            defaults = json.loads(default_path.read_text(encoding="utf-8"))
+            validated = [
+                LearningModule.model_validate(item).model_dump(mode="json")
+                for item in defaults
+            ]
+            self.path.write_text(
+                json.dumps(validated, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
 
     def list(self) -> list[LearningModule]:
         with self._lock:

@@ -36,7 +36,10 @@ from .verification_store import VerificationStore
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR = BASE_DIR / "static"
 store = AssessmentStore(BASE_DIR / "data" / "assessments.json")
-module_store = ModuleStore(BASE_DIR / "data" / "modules.json")
+module_store = ModuleStore(
+    BASE_DIR / "data" / "modules.json",
+    BASE_DIR / "data" / "default_modules.json",
+)
 consent_store = ConsentStore(BASE_DIR / "data" / "student_profiles.json")
 verification_store = VerificationStore()
 

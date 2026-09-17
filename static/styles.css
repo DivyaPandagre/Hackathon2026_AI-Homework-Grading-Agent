@@ -281,6 +281,11 @@ textarea { resize: vertical; line-height: 1.55; }
 .flow-list strong { margin-bottom: 3px; font-size: 12px; }
 .flow-list span { color: #bfcbd8; font-size: 10px; line-height: 1.45; }
 .module-library { margin-top: 18px; padding: 22px; }
+.module-filters { display: grid; gap: 8px; margin: 15px 0 8px; }
+.module-filters input, .module-filters select { padding: 9px 10px; font-size: 10px; }
+.module-filters select { cursor: pointer; }
+.module-results-count { margin: 9px 0; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+#module-list { max-height: 480px; padding-right: 5px; overflow-y: auto; scrollbar-width: thin; }
 .module-item { padding: 13px 0; border-bottom: 1px solid var(--line); }
 .module-item:last-child { border: 0; }
 .module-item strong, .module-item span { display: block; }

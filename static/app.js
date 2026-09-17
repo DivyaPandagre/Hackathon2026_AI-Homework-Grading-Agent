@@ -196,16 +196,44 @@ async function loadModules() {
       state.modules.map((module) =>
         `<option value="${module.id}">${escapeHtml(module.title)} · ${escapeHtml(module.grade_level)}</option>`
       ).join("");
-    list.innerHTML = state.modules.length
-      ? state.modules.map((module) => `
-          <div class="module-item">
-            <strong>${escapeHtml(module.title)}</strong>
-            <span>${escapeHtml(module.subject)} · ${escapeHtml(module.grade_level)} · ${escapeHtml(module.source_type.replaceAll("_", " "))}</span>
-          </div>`).join("")
-      : '<div class="empty-state"><p>No modules uploaded yet.</p></div>';
+    const gradeFilter = $("#module-grade-filter");
+    const subjectFilter = $("#module-subject-filter");
+    const selectedGrade = gradeFilter.value;
+    const selectedSubject = subjectFilter.value;
+    const grades = [...new Set(state.modules.map((module) => module.grade_level))].sort();
+    const subjects = [...new Set(state.modules.map((module) => module.subject))].sort();
+    gradeFilter.innerHTML = '<option value="">All classes</option>' +
+      grades.map((grade) => `<option value="${escapeHtml(grade)}">${escapeHtml(grade)}</option>`).join("");
+    subjectFilter.innerHTML = '<option value="">All subjects</option>' +
+      subjects.map((subject) => `<option value="${escapeHtml(subject)}">${escapeHtml(subject)}</option>`).join("");
+    gradeFilter.value = selectedGrade;
+    subjectFilter.value = selectedSubject;
+    renderModuleLibrary();
   } catch (error) {
     list.innerHTML = `<div class="error-message">${escapeHtml(error.message)}</div>`;
   }
+}
+
+function renderModuleLibrary() {
+  const query = $("#module-search").value.trim().toLowerCase();
+  const grade = $("#module-grade-filter").value;
+  const subject = $("#module-subject-filter").value;
+  const filtered = state.modules.filter((module) => {
+    const matchesQuery = !query ||
+      `${module.title} ${module.subject} ${module.grade_level}`.toLowerCase().includes(query);
+    return matchesQuery &&
+      (!grade || module.grade_level === grade) &&
+      (!subject || module.subject === subject);
+  });
+  $("#module-results-count").textContent =
+    `${filtered.length} of ${state.modules.length} modules`;
+  $("#module-list").innerHTML = filtered.length
+    ? filtered.map((module) => `
+        <div class="module-item">
+          <strong>${escapeHtml(module.title)}</strong>
+          <span>${escapeHtml(module.subject)} · ${escapeHtml(module.grade_level)} · ${escapeHtml(module.source_type.replaceAll("_", " "))}</span>
+        </div>`).join("")
+    : '<div class="empty-state"><p>No modules match these filters.</p></div>';
 }
 
 function getStoredStudent() {
@@ -535,6 +563,10 @@ $("#module-file").addEventListener("change", async (event) => {
   $("#module-content").value = await file.text();
   if (!$("#module-title").value) $("#module-title").value = file.name.replace(/\.[^.]+$/, "");
 });
+
+$("#module-search").addEventListener("input", renderModuleLibrary);
+$("#module-grade-filter").addEventListener("change", renderModuleLibrary);
+$("#module-subject-filter").addEventListener("change", renderModuleLibrary);
 
 $("#submission-type").addEventListener("change", (event) => {
   const isVideo = event.target.value === "video_and_handnote";

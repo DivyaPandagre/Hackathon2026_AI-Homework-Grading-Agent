@@ -16,6 +16,12 @@ explainable confidence score, and routes uncertain results through educator revi
   a sanitized transcript and processing receipt enter the assessment agent
 - Collapsible owner Agent Inspector showing execution stages and every
   Responsible AI control invoked during an assessment
+- A built-in catalog of 50 CBSE modules: two Pre-Primary modules and two
+  modules each for English, Hindi, Mathematics, and EVS/Science in Classes 1–6
+
+The default module catalog is stored in `data/default_modules.json`. On first
+run, the application copies it into the git-ignored runtime module registry.
+Admin users can then add more modules without changing the tracked catalog.
 
 ## Deployment and Microsoft sign-in
 
