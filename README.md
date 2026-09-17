@@ -4,6 +4,14 @@ EduGrade AI is a hackathon-ready assessment agent that evaluates student work
 against an instructor rubric, generates personalized feedback, calculates an
 explainable confidence score, and routes uncertain results through educator review.
 
+## Architecture guide
+
+See **[EduGrade AI Agent: How It Works](docs/EduGrade_AI_Agent_Workflow.md)**
+for the end-to-end flow, module rubric design, Azure AI assessment boundary,
+API-key usage, Responsible AI controls, and Teacher approval model. A
+presentation-ready Word version is available at
+[`docs/EduGrade_AI_Agent_Workflow.docx`](docs/EduGrade_AI_Agent_Workflow.docx).
+
 ## Demo capabilities
 
 - Class- and subject-specific module rubrics with criterion-level rationale and evidence
