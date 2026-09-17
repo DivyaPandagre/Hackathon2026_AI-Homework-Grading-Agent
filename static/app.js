@@ -158,6 +158,7 @@ function startLiveTrace() {
     ["Confidence governance", "Calculating uncertainty and teacher-review routing.", true],
   ];
   $("#trace-panel").classList.remove("collapsed");
+  document.body.classList.add("trace-open");
   $("#trace-live-status").textContent = "Agent execution in progress";
   let visible = 1;
   const draw = () => {
@@ -511,9 +512,14 @@ $("#registration-form").addEventListener("submit", async (event) => {
 
 $("#trace-toggle").addEventListener("click", () => {
   $("#trace-panel").classList.toggle("collapsed");
+  document.body.classList.toggle(
+    "trace-open",
+    !$("#trace-panel").classList.contains("collapsed")
+  );
 });
 $("#trace-collapse").addEventListener("click", () => {
   $("#trace-panel").classList.add("collapsed");
+  document.body.classList.remove("trace-open");
 });
 
 addCriterion("Accuracy", "The response is factually correct and addresses the prompt.", 40);
