@@ -311,6 +311,7 @@ textarea { resize: vertical; line-height: 1.55; }
 }
 .consent-banner h3 { margin: 3px 0; }
 .consent-banner p { margin: 0; max-width: 760px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.consent-reference-display { margin-top: 5px !important; color: var(--forest) !important; font-weight: 700; }
 .consent-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--forest); color: white; font-weight: 800; }
 .video-consent-panel { margin-top: 16px; padding: 18px; border: 1px solid #ebc981; border-radius: 13px; background: #fffaf0; }
 .video-consent-panel.hidden { display: none; }

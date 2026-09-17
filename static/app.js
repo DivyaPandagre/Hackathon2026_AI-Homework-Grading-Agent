@@ -224,12 +224,15 @@ function updateConsentStatus() {
   if (!state.student) {
     badge.textContent = "First login required";
     badge.className = "status-badge needs_review";
+    $("#consent-reference-display").textContent = "";
     return;
   }
   badge.textContent = state.student.video_processing_approved
     ? "Parent consent verified · video approved"
     : "Parent consent verified · video disabled";
   badge.className = "status-badge ready_for_approval";
+  $("#consent-reference-display").textContent =
+    `Consent record: ${state.student.consent_reference} · Version ${state.student.consent_version}`;
   $("#student-name").value = state.student.student_name;
 }
 

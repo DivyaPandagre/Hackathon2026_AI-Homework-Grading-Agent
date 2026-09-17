@@ -293,7 +293,8 @@ async def create_assessment(
                     f"{result.confidence.score:.0%}; "
                     f"{'instructor review required' if review_required else 'ready for approval'}. "
                     f"Submission type: {request.submission_type}; permission verified. "
-                    f"Parent consent: {'verified at first login' if profile else 'not required'}. "
+                    f"Parent consent: "
+                    f"{'verified at first login under ' + profile.consent_reference if profile else 'not required'}. "
                     f"Raw media sent to grading model: no. "
                     f"External processing receipt: {request.media_processing_reference or 'not applicable'}."
                 ),
