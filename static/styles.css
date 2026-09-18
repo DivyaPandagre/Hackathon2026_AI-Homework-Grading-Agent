@@ -450,6 +450,13 @@ textarea { resize: vertical; line-height: 1.55; }
   width: min(720px, 100%); max-height: calc(100vh - 40px); overflow: auto;
   padding: 34px; border-radius: 22px; background: white; box-shadow: 0 30px 90px rgba(0,0,0,.3);
 }
+.registration-close {
+  position: sticky; top: 0; z-index: 2; float: right; display: flex; align-items: center; gap: 7px;
+  margin: -14px -14px 4px 16px; padding: 9px 12px; border: 1px solid #d8e0db; border-radius: 999px;
+  color: var(--forest); background: rgba(255,255,255,.96); font-weight: 800; cursor: pointer;
+}
+.registration-close span { font-size: 19px; line-height: 1; }
+.registration-close:hover { border-color: var(--forest); background: var(--mint); }
 .registration-card h2 { margin: 8px 0; font-size: 28px; }
 .registration-copy { margin: 0 0 10px; color: var(--muted); font-size: 12px; line-height: 1.55; }
 .registration-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; font: 700 17px "Manrope"; }

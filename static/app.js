@@ -390,6 +390,10 @@ function requireStudentRegistration() {
   if (!state.student) $("#registration-overlay").classList.remove("hidden");
 }
 
+function closeRegistration() {
+  $("#registration-overlay").classList.add("hidden");
+}
+
 async function sendVerification(kind) {
   const isStudent = kind === "student";
   const emailInput = isStudent ? $("#register-student-email") : $("#parent-email");
@@ -829,12 +833,23 @@ $("#registration-form").addEventListener("submit", async (event) => {
         parent_email_verification_token: state.verification.parent.token,
       }),
     });
+
     localStorage.setItem("edugrade_student", JSON.stringify(profile));
     state.student = profile;
     updateConsentStatus();
     $("#registration-overlay").classList.add("hidden");
   } catch (error) {
     errorBox.textContent = error.message;
+  }
+});
+
+$("#close-registration").addEventListener("click", closeRegistration);
+$("#registration-overlay").addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) closeRegistration();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !$("#registration-overlay").classList.contains("hidden")) {
+    closeRegistration();
   }
 });
 
