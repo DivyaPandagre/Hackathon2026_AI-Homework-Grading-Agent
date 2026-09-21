@@ -66,6 +66,7 @@ verification_store = VerificationStore()
 homework_store = HomeworkStore(
     BASE_DIR / "data" / "default_homeworks.json",
     [BASE_DIR / "data" / "wes_homeworks.json"],
+    BASE_DIR / "data" / "homeworks.json",
 )
 
 app = FastAPI(
@@ -79,6 +80,7 @@ app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 @app.on_event("startup")
 async def validate_startup_configuration() -> None:
     get_settings()
+    publish_missing_module_homeworks()
 
 
 def get_demo_access_session(settings: Settings) -> str:
@@ -360,7 +362,9 @@ async def create_module(
     request: LearningModuleCreate,
     principal: Principal = Depends(require_roles("teacher", "admin")),
 ) -> LearningModule:
-    return module_store.save(LearningModule(**request.model_dump()))
+    module = module_store.save(LearningModule(**request.model_dump()))
+    publish_module_as_homework(module)
+    return module
 
 
 @app.put("/api/modules/{module_id}/rubric", response_model=LearningModule)
@@ -907,6 +911,58 @@ def homework_with_module_rubric(homework: HomeworkDefinition) -> HomeworkDefinit
     if module is None or module.source_status != "approved":
         return homework
     return homework.model_copy(update={"rubric": module.evaluation_rubric})
+
+
+def publish_module_as_homework(module: LearningModule) -> HomeworkDefinition | None:
+    if module.source_status != "approved":
+        return None
+    normalized_grade = module.grade_level.strip().lower()
+    learner_type = (
+        "adult_trainee"
+        if any(
+            term in normalized_grade
+            for term in ("teacher", "training", "sample", "fellow", "adult")
+        )
+        else "minor"
+    )
+    homework = HomeworkDefinition(
+        id=f"hw-{module.id}",
+        module_id=module.id,
+        title=module.title,
+        subject=module.subject,
+        grade_level=module.grade_level,
+        instructions=(
+            f'Complete the assignment using the approved module "{module.title}".\n'
+            "Review the module content and complete the requested academic work.\n"
+            "You may submit clear handwritten images, a PDF, or an optional local video. "
+            "For video, EduGrade creates a local Whisper transcript and sends only that "
+            "transcript to the assessment agent."
+        ),
+        allowed_submission_types=[
+            "handwritten_image",
+            "handwritten_pdf",
+            "video_and_handnote",
+        ],
+        rubric=module.evaluation_rubric,
+        due_label="No due date set",
+        learner_type=learner_type,
+        module_match_terms=[
+            module.title.lower(),
+            module.subject.lower(),
+            module.grade_level.lower(),
+        ],
+    )
+    return homework_store.save(homework)
+
+
+def publish_missing_module_homeworks() -> None:
+    linked_module_ids = {item.module_id for item in homework_store.list()}
+    for module in module_store.list():
+        if module.id in linked_module_ids:
+            continue
+        homework = publish_module_as_homework(module)
+        if homework is not None:
+            linked_module_ids.add(module.id)
 
 
 def validate_attachment_payload(attachment) -> None:

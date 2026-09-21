@@ -16,6 +16,7 @@ from app.models import (
 )
 from app.store import AssessmentStore
 from app.consent_store import ConsentStore
+from app.homework_store import HomeworkStore
 from app.module_store import ModuleStore
 from app.verification_store import VerificationStore
 import app.main as main_module
@@ -324,9 +325,9 @@ def test_homework_catalog_hides_mcq_answer_keys():
 
     assert response.status_code == 200
     homeworks = response.json()
-    assert len(homeworks) == 53
+    assert len(homeworks) >= 53
     assert sum(len(item["mcq_questions"]) == 4 for item in homeworks) == 50
-    assert sum(item["learner_type"] == "adult_trainee" for item in homeworks) == 2
+    assert sum(item["learner_type"] == "adult_trainee" for item in homeworks) >= 2
     assert "correct_index" not in json.dumps(homeworks)
 
 
@@ -1081,6 +1082,50 @@ def test_module_rubrics_vary_by_class_and_drive_homework(tmp_path: Path):
         ]
     finally:
         main_module.module_store = original_module_store
+
+
+def test_saved_module_is_published_as_student_homework(tmp_path: Path):
+    original_module_store = main_module.module_store
+    original_homework_store = main_module.homework_store
+    module_defaults = tmp_path / "module-defaults.json"
+    homework_defaults = tmp_path / "homework-defaults.json"
+    module_defaults.write_text("[]", encoding="utf-8")
+    homework_defaults.write_text("[]", encoding="utf-8")
+    main_module.module_store = ModuleStore(
+        tmp_path / "modules.json",
+        module_defaults,
+    )
+    main_module.homework_store = HomeworkStore(
+        homework_defaults,
+        writable_path=tmp_path / "homeworks.json",
+    )
+    try:
+        client = TestClient(app)
+        response = client.post(
+            "/api/modules",
+            json={
+                "title": "Water conservation project",
+                "subject": "Environmental Science",
+                "grade_level": "Class 6",
+                "content": "Explain three ways to conserve water at home and school.",
+                "source_type": "text",
+            },
+        )
+
+        assert response.status_code == 201
+        module = response.json()
+        homeworks = client.get("/api/homeworks").json()
+        assert len(homeworks) == 1
+        homework = homeworks[0]
+        assert homework["id"] == f"hw-{module['id']}"
+        assert homework["module_id"] == module["id"]
+        assert homework["grade_level"] == "Class 6"
+        assert homework["title"] == "Water conservation project"
+        assert "video_and_handnote" in homework["allowed_submission_types"]
+        assert sum(item["max_points"] for item in homework["rubric"]) == 100
+    finally:
+        main_module.module_store = original_module_store
+        main_module.homework_store = original_homework_store
 
 
 def test_optional_demo_access_gate(monkeypatch):

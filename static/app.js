@@ -1179,6 +1179,11 @@ function effectiveStudentGrade() {
   return state.modules.find((module) => module.title === latest.input.module_title)?.grade_level || "";
 }
 
+function sameGrade(left, right) {
+  return String(left || "").trim().toLowerCase() ===
+    String(right || "").trim().toLowerCase();
+}
+
 function selectedTestingGrade() {
   const value = $("#student-testing-class")?.value || "__registered__";
   if (value === "__registered__") return effectiveStudentGrade();
@@ -1191,7 +1196,7 @@ function filteredTestingHomeworks() {
   const moduleValue = $("#student-testing-module")?.value || "__all__";
   const grade = selectedTestingGrade();
   return state.homeworks.filter((homework) =>
-    (classValue === "__all__" || homework.grade_level === grade) &&
+    (classValue === "__all__" || sameGrade(homework.grade_level, grade)) &&
     (moduleValue === "__all__" || homework.module_id === moduleValue)
   );
 }
@@ -1214,7 +1219,7 @@ function populateStudentTestingFilters() {
   const grade = selectedTestingGrade();
   const moduleIds = new Set(
     state.homeworks
-      .filter((homework) => classSelect.value === "__all__" || homework.grade_level === grade)
+      .filter((homework) => classSelect.value === "__all__" || sameGrade(homework.grade_level, grade))
       .map((homework) => homework.module_id)
   );
   const modules = state.modules
@@ -1459,7 +1464,7 @@ function renderStudentAssignments() {
     return;
   }
   const registeredHomeworks = state.homeworks.filter(
-    (homework) => homework.grade_level === registeredGrade
+    (homework) => sameGrade(homework.grade_level, registeredGrade)
   );
   const testingHomeworks = filteredTestingHomeworks();
   const testingClass = $("#student-testing-class")?.value || "__registered__";
@@ -2600,8 +2605,8 @@ $("#module-form").addEventListener("submit", async (event) => {
       }),
     });
     event.target.reset();
-    await loadModules();
-    announceAppStatus("Learning module added successfully.");
+    await Promise.all([loadModules(), loadHomeworks()]);
+    announceAppStatus("Learning module saved and published to Student assignments.");
   } catch (error) {
     errorBox.textContent = error.message;
     announceAppStatus(error.message, "error");

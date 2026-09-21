@@ -5,6 +5,7 @@ __pycache__/
 *.pyc
 data/assessments.json
 data/assessments.quarantine.json
+data/homeworks.json
 data/modules.json
 data/student_profiles.json
 data/wes_submissions_manifest.json
