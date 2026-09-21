@@ -374,6 +374,7 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "Optional module drill-down" in response.text
     assert "teacher-submission-section" in response.text
     app_script = client.get("/static/app.js").text
+    styles = client.get("/static/styles.css").text
     assert "Hindi Phonetic" in app_script
     assert 'if (action === "approve")' in app_script
     assert 'showView("teacher")' in app_script
@@ -432,6 +433,8 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "Your learning progress" in response.text
     assert "Bars show submitted assignments" in response.text
     assert '"Not started"' in app_script
+    assert "@media (max-width: 1280px)" in styles
+    assert ".student-opportunity-panel," in styles
     assert "function refreshSharedAssessmentState()" in app_script
     assert 'new BroadcastChannel("edugrade-assessment-updates")' in app_script
     assert "notifyAssessmentChanged" in app_script
