@@ -453,6 +453,10 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "@media (max-width: 1280px)" in styles
     assert ".student-opportunity-panel," in styles
     assert "function refreshSharedAssessmentState()" in app_script
+    assert "function inlineReviewIsActive()" in app_script
+    assert "protectOpenReview: true" in app_script
+    assert "inlineReviewIsActive()" in app_script
+    assert 'notifyAssessmentChanged("submitted", assessment.id)' not in app_script
     assert 'new BroadcastChannel("edugrade-assessment-updates")' in app_script
     assert "notifyAssessmentChanged" in app_script
     assert "new MutationObserver" in app_script

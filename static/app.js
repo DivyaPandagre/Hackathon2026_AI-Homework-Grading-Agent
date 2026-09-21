@@ -409,22 +409,30 @@ async function checkHealth() {
   }
 }
 
-async function loadQueue({ showLoading = true } = {}) {
+function inlineReviewIsActive() {
+  return Boolean(document.querySelector(".inline-review:not(.hidden)"));
+}
+
+async function loadQueue({ showLoading = true, protectOpenReview = false } = {}) {
   const container = $("#queue-list");
   if (showLoading) {
     container.innerHTML = '<div class="empty-state">Loading assessments...</div>';
   }
   try {
     state.assessments = await api("/api/assessments");
-    notifyAssessmentChanged("submitted", assessment.id);
     syncAssessmentRunHistory();
-    refreshTeacherSurfaces();
+    const keepReviewOpen = protectOpenReview && inlineReviewIsActive();
+    if (!keepReviewOpen) refreshTeacherSurfaces();
     renderStudentSubmissions();
     renderStudentFeedback();
     renderStudentAssignments();
     return true;
   } catch (error) {
-    container.innerHTML = `<div class="empty-state">${escapeHtml(error.message)}</div>`;
+    if (!(protectOpenReview && inlineReviewIsActive())) {
+      container.innerHTML = `<div class="empty-state">${escapeHtml(error.message)}</div>`;
+    } else {
+      announceAppStatus("Background refresh paused while this review is open.", "warning");
+    }
     return false;
   }
 }
@@ -3063,10 +3071,15 @@ initializeApp();
 
 let sharedRefreshInFlight = false;
 async function refreshSharedAssessmentState() {
-  if (sharedRefreshInFlight || document.hidden || state.agentTraceActive) return;
+  if (
+    sharedRefreshInFlight ||
+    document.hidden ||
+    state.agentTraceActive ||
+    inlineReviewIsActive()
+  ) return;
   sharedRefreshInFlight = true;
   try {
-    await loadQueue({ showLoading: false });
+    await loadQueue({ showLoading: false, protectOpenReview: true });
   } finally {
     sharedRefreshInFlight = false;
   }
