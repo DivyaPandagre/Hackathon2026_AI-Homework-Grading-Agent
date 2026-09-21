@@ -8,7 +8,7 @@ EduGrade AI helps teachers evaluate assigned homework consistently. It combines:
 - Class- and subject-specific evaluation rubrics
 - Handwritten image and PDF assessment
 - Portal MCQs
-- Externally transcribed video homework
+- Locally transcribed video homework
 - Responsible AI controls
 - Teacher review before feedback is released
 
@@ -30,8 +30,9 @@ potential.
 7. Portal MCQs are scored directly from the private answer key. AI is not used.
 8. Handwritten images and PDFs are sent to Azure AI with the trusted module,
    homework instructions, and rubric.
-9. Raw video is never sent to the grading model. Only a sanitized transcript and
-   external-processing receipt can enter the AI assessment step.
+9. Raw video is never sent to the grading model. The local FastAPI app runs
+   Faster-Whisper as a background job, and only its transcript and local-processing
+   reference can enter the AI assessment step.
 10. EduGrade validates the AI response, calculates confidence, and routes the
     result to the Teacher.
 11. The Teacher selects the class and subject to view the real dashboard, then
@@ -76,7 +77,7 @@ and confidence.
 | Homework and module lookup | No | Trusted application catalog |
 | File type and size validation | No | Backend validation |
 | Portal MCQ scoring | No | Private answer-key comparison |
-| Raw video processing | No grading AI | Separate external media boundary |
+| Raw video processing | No grading AI | Local background Faster-Whisper boundary |
 | Handwritten image evaluation | Yes | Azure AI evaluates academic evidence |
 | Handwritten PDF evaluation | Yes | Azure AI evaluates academic evidence |
 | Sanitized video transcript evaluation | Yes | Azure AI evaluates transcript text only |

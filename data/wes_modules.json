@@ -48,45 +48,39 @@
   {
     "id": "84e1af7a-011d-5274-b2f6-7b2db8d5d8ae",
     "created_at": "2026-09-18T00:00:00+00:00",
-    "title": "Sample Module 2 - Delegating Tasks and Time Management",
+    "title": "Day 12 - 71-TS | Delegating Tasks - Time Management",
     "subject": "English Reading, Listening & Speaking",
     "grade_level": "Sample Test",
-    "source_type": "owner_approved_sample",
-    "content": "Article: Empowering the Classroom: The Strength of Delegating Tasks.\nTopic: Delegating Tasks - Time Management.\n\nThe task asks the trainee to read the article aloud, write out the tough words with their Hindi meanings, and record the key points of the article in their own hand.\n\nTough words and their Hindi meanings (15):\n1. Effectively - प्रभावी ढंग से\n2. Environment - वातावरण\n3. Delegation - कार्य सौंपना\n4. Management - प्रबंधन\n5. Overwhelming - अत्यधिक\n6. Dedicated - समर्पित\n7. Strategy - रणनीति\n8. Responsibilities - जिम्मेदारियाँ\n9. Inclusive - समावेशी\n10. Engagement - जुड़ाव\n11. Synergy - सहक्रिया\n12. Partnership - साझेदारी\n13. Accountability - जवाबदेही\n14. Administrative - प्रशासनिक\n15. Empowered - सशक्त\n\nKey points of the article (10):\n1. Delegate tasks daily.\n2. Share responsibilities fairly.\n3. Build students' confidence.\n4. Create inclusive spaces.\n5. Trust your students.\n6. Teach teamwork skills.\n7. Focus on teaching.\n8. Value every child.\n9. Encourage shared leadership.\n10. Inspire future leaders.\n\nSAMPLE SCOPE: The word list and key points above are the complete content used for this sample evaluation.",
-    "source_reference": "WesFellow Hub / Wazir Education Society",
+    "source_type": "owner_approved_wes_task_pdf",
+    "content": "WES TASK 71-TS | Delegating Tasks - Time Management | Subtopic 3 of Topic 11 - Teaching Skill\nCreated: August 18, 2026. Due: August 25, 2026.\n\nREAD ALOUD ARTICLE: Empowering the Classroom: The Strength of Delegating Tasks\n\nEvery morning, educators in rural and underserved communities meet amazing young minds, many of whom are first-generation learners. To provide the best education, teachers manage heavy workloads daily. From planning lessons to tracking resources, duties can feel overwhelming. However, 21st-century teaching offers a beautiful way to manage time effectively while building an inclusive environment: delegating tasks.\n\nDelegation means sharing simple classroom responsibilities with students. For a dedicated educator, this is about building a student-centered space. Tasks like distributing notebooks or recording attendance take precious minutes away from active learning. By giving these duties to students, you create powerful opportunities for growth, responsibility, and teamwork.\n\nIn an inclusive classroom, delegation must be done with fairness. Every child should get a turn, especially quiet students who rarely speak. Assigning a role like \"Book Guardian\" sends a strong message that they are valued. This builds immense confidence and helps them feel they belong to the school community.\n\nFurthermore, delegation develops life skills and team synergy. When students work together to arrange benches or materials, they learn respect and partnership. The classroom transforms from a teacher-controlled model into a joyful space of shared leadership and collective effort.\n\nEffective delegation gives teachers extra time to focus on impactful lessons and individual support. We can help a child with a tough concept instead of being exhausted by administrative tasks. Ultimately, this practice inspires students to become independent, confident leaders ready to shape a better society.\n\n15 TOUGH WORDS AND HINDI MEANINGS\n1. Effectively - प्रभावी ढंग से\n2. Environment - वातावरण\n3. Delegation - कार्य सौंपना\n4. Management - प्रबंधन\n5. Overwhelming - अत्यधिक\n6. Dedicated - समर्पित\n7. Strategy - रणनीति\n8. Responsibilities - जिम्मेदारियाँ\n9. Inclusive - समावेशी\n10. Engagement - जुड़ाव\n11. Synergy - सहक्रिया\n12. Partnership - साझेदारी\n13. Accountability - जवाबदेही\n14. Administrative - प्रशासनिक\n15. Empowered - सशक्त\n\n10 SIMPLE SENTENCES\n1. Delegate tasks daily.\n2. Share responsibilities fairly.\n3. Build student confidence.\n4. Create inclusive spaces.\n5. Trust your students.\n6. Teach teamwork skills.\n7. Focus on teaching.\n8. Value every child.\n9. Encourage shared leadership.\n10. Inspire future leaders.\n\nASSESSMENT BOUNDARY\nFor a video submission, local Whisper converts the recording into text. The AI assessment agent receives the transcript only, never the raw video, audio, frames, face, surroundings, or voice characteristics. Transcript scoring checks article coverage and recognized academic content; it does not claim to measure accent, emotion, personality, or visual presentation.",
+    "source_reference": "71 - TS Delegating Tasks - Time Management, Subtopic 3 of Topic 11 - Teaching Skill.pdf",
     "source_status": "approved",
     "answer_key_complete": true,
-    "source_notes": "Owner-approved sample scope. Evaluate only against the content available in this module.",
+    "source_notes": "Owner-approved WES task scope transcribed from the supplied two-page PDF. The complete English article, 15 tough words with Hindi meanings, and 10 simple sentences are included.",
     "prohibited_submission_hashes": [],
     "evaluation_rubric": [
       {
-        "name": "Tough words and Hindi meanings",
-        "description": "All 15 words are expected. Each English word is written and paired with a correct Hindi meaning.",
+        "name": "Article coverage and reading accuracy",
+        "description": "The locally produced transcript covers the supplied article and preserves its central statements about fair delegation, student responsibility, inclusion, teamwork, shared leadership, and time for individual support. Score only from transcript text.",
         "max_points": 40.0,
-        "scoring_mode": "automatic"
+        "scoring_mode": "requires_transcript"
       },
       {
-        "name": "Key points recorded",
-        "description": "The main points of the article are written out and match what the article actually says.",
+        "name": "Key ideas communicated",
+        "description": "The submission communicates the article’s main ideas, including fair sharing of classroom responsibilities, confidence for quiet learners, teamwork, and more teacher time for learning support.",
         "max_points": 25.0,
         "scoring_mode": "automatic"
       },
       {
-        "name": "Spoken reading",
-        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
-        "max_points": 15.0,
-        "scoring_mode": "requires_transcript"
-      },
-      {
-        "name": "Required work completed",
-        "description": "Every part of the task - the word list, the meanings, and the key points - is visibly attempted.",
-        "max_points": 10.0,
+        "name": "Tough vocabulary coverage",
+        "description": "The submission includes or correctly uses the task vocabulary where relevant. For written evidence, check the 15 English words and Hindi meanings from the approved module; for video, use only words recognized in the transcript.",
+        "max_points": 20.0,
         "scoring_mode": "automatic"
       },
       {
-        "name": "Legibility and organization",
-        "description": "The page is readable and laid out clearly. Do not judge handwriting style or neatness as a personal quality.",
-        "max_points": 10.0,
+        "name": "Required task completed",
+        "description": "The submitted evidence completes the selected task format. A video submission must contain a usable local transcript; written work should include the requested vocabulary and simple sentences.",
+        "max_points": 15.0,
         "scoring_mode": "automatic"
       }
     ]

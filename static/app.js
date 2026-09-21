@@ -494,6 +494,54 @@ function startLiveTrace() {
   return setInterval(draw, 1100);
 }
 
+function showTranscriptionProgress(fileName) {
+  $("#trace-panel").classList.remove("collapsed");
+  document.body.classList.add("trace-open");
+  $("#trace-live-status").className = "trace-live-status running";
+  $("#trace-live-status").textContent = "Local video transcription in progress";
+  $("#live-inspector-status").textContent = "Local Whisper is converting the selected video to text";
+  $("#live-inspector-events").innerHTML = `
+    <div class="trace-event rai running">
+      <span class="rai-label">Responsible AI control</span>
+      <strong>Local video transcription</strong>
+      <span>${escapeHtml(fileName)} remains on this machine. Only its transcript will be sent to the assessment agent.</span>
+      <small>Running</small>
+    </div>`;
+  $("#trace-events").innerHTML = $("#live-inspector-events").innerHTML;
+}
+
+async function waitForLocalTranscription(statusUrl) {
+  const deadline = Date.now() + 30 * 60 * 1000;
+  let transientFailures = 0;
+  while (Date.now() < deadline) {
+    try {
+      const response = await fetch(statusUrl, { cache: "no-store" });
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload.detail || "Could not check local transcription status.");
+      }
+      transientFailures = 0;
+      if (payload.status === "ready") return payload.transcription;
+      if (payload.status === "failed") {
+        const failure = new Error(payload.detail || "Local Whisper could not transcribe this video.");
+        failure.terminal = true;
+        throw failure;
+      }
+      const elapsedMinutes = Math.max(1, Math.ceil((30 * 60 * 1000 - (deadline - Date.now())) / 60000));
+      $("#live-inspector-status").textContent =
+        `Local Whisper is transcribing the video · ${elapsedMinutes} min elapsed`;
+      $("#local-video-status").querySelector("small").textContent =
+        `Local Whisper transcription is running (${elapsedMinutes} min). Keep this portal open.`;
+    } catch (error) {
+      if (error.terminal) throw error;
+      transientFailures += 1;
+      if (transientFailures >= 3) throw error;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2500));
+  }
+  throw new Error("Local transcription is still running after 30 minutes. The video remains saved locally; retry after checking the server.");
+}
+
 async function openAssessment(id) {
   state.current = await api(`/api/assessments/${id}`);
   renderAssessment(state.current);
@@ -1845,9 +1893,10 @@ async function uploadLocalVideo(file) {
   }
   $("#media-processing-reference").value = payload.reference;
   const statusBox = $("#local-video-status");
-  statusBox.innerHTML = `<strong>Saved on this machine</strong><span>${escapeHtml(payload.storage_location)}</span><small>The AI agent receives no video bytes or frames.</small>`;
+  statusBox.innerHTML = `<strong>Saved on this machine</strong><span>${escapeHtml(payload.storage_location)}</span><small>Local Whisper transcription is starting. The AI agent receives no video bytes or frames.</small>`;
   statusBox.classList.remove("hidden");
-  return payload;
+  const transcription = await waitForLocalTranscription(payload.transcription_status_url);
+  return { ...payload, transcription };
 }
 
 function buildLocalVideoEvidence(transcription) {
@@ -1864,7 +1913,7 @@ function buildLocalVideoEvidence(transcription) {
         .map((position) => Math.round(durationSeconds * position * 10) / 10)
         .filter((value, index, values) => values.indexOf(value) === index);
   return {
-    method: "deterministic_local_browser",
+    method: "local_whisper",
     duration_seconds: Math.round(durationSeconds * 10) / 10,
     transcript_word_count: transcriptWordCount,
     estimated_words_per_minute: Math.round(estimatedWordsPerMinute * 10) / 10,
@@ -2343,7 +2392,7 @@ $("#assessment-form").addEventListener("submit", async (event) => {
   button.disabled = true;
   const inspectorAllowed = hasRole("owner", "admin");
   if (inspectorAllowed) $("#loading-overlay").classList.remove("hidden");
-  const traceTimer = inspectorAllowed ? startLiveTrace() : null;
+  let traceTimer = null;
   let runContext = {};
   let completedAssessment = null;
   try {
@@ -2351,6 +2400,9 @@ $("#assessment-form").addEventListener("submit", async (event) => {
     const submissionType = $("#submission-type").value;
     if (!homework) throw new Error("Select an assigned homework.");
     if (!submissionType) throw new Error("Select a submission format.");
+    if (inspectorAllowed && submissionType !== "video_and_handnote") {
+      traceTimer = startLiveTrace();
+    }
     runContext = {
       assignment: homework.title,
       module: state.modules.find((module) => module.id === homework.module_id)?.title || "",
@@ -2384,6 +2436,7 @@ $("#assessment-form").addEventListener("submit", async (event) => {
     } else if (submissionType === "video_and_handnote") {
       const video = state.recordedVideo || $("#submission-file").files[0];
       if (!video) throw new Error("Select an existing video or record one in the portal.");
+      if (inspectorAllowed) showTranscriptionProgress(video.name);
       const localVideo = await uploadLocalVideo(video);
       submission = localVideo.transcription.transcript;
       localVideoEvidence = buildLocalVideoEvidence(localVideo.transcription);
@@ -2391,6 +2444,7 @@ $("#assessment-form").addEventListener("submit", async (event) => {
         "beforeend",
         `<small>Local Whisper transcription complete · ${escapeHtml(localVideo.transcription.language || "language auto-detected")} · ${localVideoEvidence.duration_seconds.toFixed(1)} seconds · ${localVideoEvidence.transcript_word_count} words · approximately ${localVideoEvidence.estimated_words_per_minute.toFixed(1)} words/minute.</small>`
       );
+      if (inspectorAllowed) traceTimer = startLiveTrace();
     }
 
     const payload = {

@@ -77,9 +77,11 @@ development default preserves the current local demo workflow.
 For video assignments, parent consent is captured once during first-login
 registration. In the local test environment, the selected or recorded video is
 uploaded only to the locally hosted FastAPI app and stored under
-`data/submission_videos`. Remote-host uploads are rejected. A separate local
-Faster-Whisper Medium transcription component generates the transcript and
-speech timestamps automatically; students do not supply transcript files.
+`data/submission_videos`. Remote-host uploads are rejected. The upload returns
+immediately while a background Faster-Whisper Small transcription job generates
+the transcript and speech timestamps; the portal polls its real status and
+students do not supply transcript files. Set `LOCAL_WHISPER_MODEL` to use a
+different local model.
 Recording in the portal is optional because an existing video can be selected.
 The grading agent receives only the transcript and text/numeric timing values.
 Raw video, audio, images, and frame pixels are never included in the Azure model

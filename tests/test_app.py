@@ -486,11 +486,17 @@ def test_video_upload_is_saved_only_in_local_storage(tmp_path: Path, monkeypatch
         },
     )
 
-    assert response.status_code == 201
+    assert response.status_code == 202
     payload = response.json()
     assert payload["reference"].startswith("LOCAL-VIDEO-")
     assert payload["storage_location"].startswith("data\\submission_videos\\")
-    assert payload["transcription"]["transcript"] == "A locally generated transcript."
+    assert payload["transcription_status"] == "pending"
+    transcription_response = client.get(payload["transcription_status_url"])
+    assert transcription_response.status_code == 200
+    assert transcription_response.json()["status"] == "ready"
+    assert transcription_response.json()["transcription"]["transcript"] == (
+        "A locally generated transcript."
+    )
     stored_files = list(local_video_dir.glob("*__*"))
     assert len(stored_files) == 1
     assert stored_files[0].read_bytes() == b"local-video-bytes"
@@ -801,11 +807,27 @@ def test_wes_modules_are_approved_for_owner_defined_sample_scope():
     assert all(module.answer_key_complete is True for module in sample_modules)
     assert all(module.grade_level == "Sample Test" for module in sample_modules)
     assert all(module.prohibited_submission_hashes == [] for module in sample_modules)
-    assert all(
-        module.source_notes
-        == "Owner-approved sample scope. Evaluate only against the content available in this module."
-        for module in sample_modules
+    assert sample_modules[0].source_notes == (
+        "Owner-approved sample scope. Evaluate only against the content available in this module."
     )
+    day12_module = sample_modules[1]
+    assert day12_module.title == (
+        "Day 12 - 71-TS | Delegating Tasks - Time Management"
+    )
+    assert day12_module.source_type == "owner_approved_wes_task_pdf"
+    assert "Every morning, educators in rural and underserved communities" in (
+        day12_module.content
+    )
+    assert "15 TOUGH WORDS AND HINDI MEANINGS" in day12_module.content
+    assert "10 SIMPLE SENTENCES" in day12_module.content
+    assert sum(item.max_points for item in day12_module.evaluation_rubric) == 100
+    assert day12_module.evaluation_rubric[0].scoring_mode == "requires_transcript"
+    day12_homework = main_module.homework_store.get(
+        "hw-84e1af7a-011d-5274-b2f6-7b2db8d5d8ae"
+    )
+    assert day12_homework.title == day12_module.title
+    assert day12_homework.due_label == "Due Aug 25, 2026"
+    assert "upload an existing video from your computer" in day12_homework.instructions
 
     journey_module = main_module.module_store.get(
         "5d080f59-23c1-57f4-bc80-e4fc5baaf5c9"

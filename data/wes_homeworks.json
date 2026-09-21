@@ -2,7 +2,7 @@
   {
     "id": "hw-30947567-f645-5d38-93ed-a4b094fe7605",
     "module_id": "30947567-f645-5d38-93ed-a4b094fe7605",
-    "title": "Day 12 - Task 2: Read Aloud and Tough Words",
+    "title": "Speaking Practice - Helping Students Overcome Fear of Speaking English",
     "subject": "English Reading, Listening & Speaking",
     "grade_level": "Sample Test",
     "instructions": "Read the article 'Helping Students Overcome Fear of Speaking English' aloud, using a calm and encouraging voice. Pause after important points.\n- Write the tough words from the module with their Hindi meanings.\n- Write the key points of the article in your own hand.\n- Record yourself reading the article aloud.\nSubmit a clear photo or PDF of your written page. If you also submit the recording, its transcript is produced outside the grading module before anything is marked.",
@@ -47,7 +47,6 @@
     "due_label": "Due May 10, 2026",
     "learner_type": "adult_trainee",
     "module_match_terms": [
-      "day 12",
       "helping students overcome fear",
       "teacher english speaking training"
     ]
@@ -55,10 +54,10 @@
   {
     "id": "hw-84e1af7a-011d-5274-b2f6-7b2db8d5d8ae",
     "module_id": "84e1af7a-011d-5274-b2f6-7b2db8d5d8ae",
-    "title": "71-TS: Delegating Tasks - Tough Words and Key Points",
+    "title": "Day 12 - 71-TS | Delegating Tasks - Time Management",
     "subject": "English Reading, Listening & Speaking",
     "grade_level": "Sample Test",
-    "instructions": "Read the article 'Empowering the Classroom: The Strength of Delegating Tasks' aloud.\n- Write the 15 tough words with their Hindi meanings.\n- Write the 10 key points of the article in your own hand.\n- Record yourself reading the article aloud.\nSubmit a clear photo or PDF of your written page. If you also submit the recording, its transcript is produced outside the grading module before anything is marked.",
+    "instructions": "Read aloud the complete article \"Empowering the Classroom: The Strength of Delegating Tasks\" from the approved Day 12 module.\n- You may upload an existing video from your computer; recording inside the portal is optional.\n- The locally hosted app saves the video locally and uses Whisper to create a transcript.\n- Only the transcript is sent to the AI assessment agent for rubric-based feedback; raw video and audio are not sent.\n- For written evidence, include the 15 tough words with Hindi meanings and the 10 simple sentences from the task.",
     "allowed_submission_types": [
       "handwritten_image",
       "handwritten_pdf",
@@ -66,43 +65,39 @@
     ],
     "rubric": [
       {
-        "name": "Tough words and Hindi meanings",
-        "description": "All 15 words are expected. Each English word is written and paired with a correct Hindi meaning.",
+        "name": "Article coverage and reading accuracy",
+        "description": "The locally produced transcript covers the supplied article and preserves its central statements about fair delegation, student responsibility, inclusion, teamwork, shared leadership, and time for individual support. Score only from transcript text.",
         "max_points": 40.0,
-        "scoring_mode": "automatic"
+        "scoring_mode": "requires_transcript"
       },
       {
-        "name": "Key points recorded",
-        "description": "The main points of the article are written out and match what the article actually says.",
+        "name": "Key ideas communicated",
+        "description": "The submission communicates the article’s main ideas, including fair sharing of classroom responsibilities, confidence for quiet learners, teamwork, and more teacher time for learning support.",
         "max_points": 25.0,
         "scoring_mode": "automatic"
       },
       {
-        "name": "Spoken reading",
-        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
-        "max_points": 15.0,
-        "scoring_mode": "requires_transcript"
-      },
-      {
-        "name": "Required work completed",
-        "description": "Every part of the task - the word list, the meanings, and the key points - is visibly attempted.",
-        "max_points": 10.0,
+        "name": "Tough vocabulary coverage",
+        "description": "The submission includes or correctly uses the task vocabulary where relevant. For written evidence, check the 15 English words and Hindi meanings from the approved module; for video, use only words recognized in the transcript.",
+        "max_points": 20.0,
         "scoring_mode": "automatic"
       },
       {
-        "name": "Legibility and organization",
-        "description": "The page is readable and laid out clearly. Do not judge handwriting style or neatness as a personal quality.",
-        "max_points": 10.0,
+        "name": "Required task completed",
+        "description": "The submitted evidence completes the selected task format. A video submission must contain a usable local transcript; written work should include the requested vocabulary and simple sentences.",
+        "max_points": 15.0,
         "scoring_mode": "automatic"
       }
     ],
     "mcq_questions": [],
-    "due_label": "Due date not recorded on the submitted pages",
+    "due_label": "Due Aug 25, 2026",
     "learner_type": "adult_trainee",
     "module_match_terms": [
+      "day 12",
       "71 ts",
       "delegating tasks",
-      "time management"
+      "time management",
+      "empowering the classroom"
     ]
   },
   {

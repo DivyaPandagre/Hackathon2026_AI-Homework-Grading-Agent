@@ -9,11 +9,9 @@ from pathlib import Path
 from urllib.parse import unquote
 from uuid import uuid4
 
-from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
+from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from starlette.concurrency import run_in_threadpool
-
 from .agent import AgentConfigurationError, AgentResponseError, AssessmentAgent
 from .auth import Principal, get_principal, principal_from_request, require_roles
 from .consent_store import ConsentStore
@@ -186,6 +184,44 @@ def read_video_metadata(video_id: str) -> dict:
     except (OSError, json.JSONDecodeError):
         return {}
     return value if isinstance(value, dict) else {}
+
+
+def write_video_metadata(video_id: str, value: dict) -> None:
+    path = video_metadata_path(video_id)
+    temp_path = path.with_suffix(".tmp")
+    temp_path.write_text(
+        json.dumps(value, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    temp_path.replace(path)
+
+
+def transcribe_stored_video(video_id: str, path: Path) -> None:
+    metadata = read_video_metadata(video_id)
+    try:
+        metadata["transcription"] = transcribe_local_video(path)
+        metadata["transcription_status"] = "ready"
+        metadata["transcription_completed_at"] = utc_now().isoformat()
+    except LocalTranscriptionError as exc:
+        metadata["transcription_status"] = "failed"
+        metadata["transcription_error"] = str(exc)
+        metadata["transcription_completed_at"] = utc_now().isoformat()
+    write_video_metadata(video_id, metadata)
+
+
+def require_local_video_metadata(video_id: str, principal: Principal) -> dict:
+    if not re.fullmatch(r"[0-9a-fA-F-]{36}", video_id):
+        raise HTTPException(status_code=404, detail="Local video not found.")
+    metadata = read_video_metadata(video_id)
+    if not metadata:
+        raise HTTPException(status_code=404, detail="Local video not found.")
+    if (
+        not principal.is_local_demo
+        and not principal.roles.intersection({"teacher", "admin", "owner"})
+        and metadata.get("owner_principal_id") != principal.id
+    ):
+        raise HTTPException(status_code=404, detail="Local video not found.")
+    return metadata
 
 
 @app.middleware("http")
@@ -541,9 +577,10 @@ async def get_assessment_evidence(
     return FileResponse(path, media_type=asset.mime_type, filename=asset.file_name)
 
 
-@app.post("/api/local-videos", status_code=status.HTTP_201_CREATED)
+@app.post("/api/local-videos", status_code=status.HTTP_202_ACCEPTED)
 async def save_local_video(
     request: Request,
+    background_tasks: BackgroundTasks,
     settings: Settings = Depends(get_settings),
     principal: Principal = Depends(require_roles("student", "teacher", "admin")),
 ) -> dict:
@@ -579,22 +616,17 @@ async def save_local_video(
     stored_name = f"{video_id}__{safe_name}"
     path = LOCAL_VIDEO_DIR / stored_name
     path.write_bytes(body)
-    try:
-        transcription = await run_in_threadpool(transcribe_local_video, path)
-    except LocalTranscriptionError as exc:
-        path.unlink(missing_ok=True)
-        raise HTTPException(status_code=422, detail=str(exc)) from exc
-    video_metadata_path(video_id).write_text(
-        json.dumps(
-            {
-                "owner_principal_id": principal.id,
-                "created_at": utc_now().isoformat(),
-                "file_name": safe_name,
-                "size_bytes": len(body),
-            }
-        ),
-        encoding="utf-8",
+    write_video_metadata(
+        video_id,
+        {
+            "owner_principal_id": principal.id,
+            "created_at": utc_now().isoformat(),
+            "file_name": safe_name,
+            "size_bytes": len(body),
+            "transcription_status": "pending",
+        },
     )
+    background_tasks.add_task(transcribe_stored_video, video_id, path)
     return {
         "id": video_id,
         "reference": f"LOCAL-VIDEO-{video_id}",
@@ -602,8 +634,32 @@ async def save_local_video(
         "size_bytes": len(body),
         "content_url": f"/api/local-videos/{video_id}",
         "storage_location": f"data\\submission_videos\\{stored_name}",
-        "transcription": transcription,
+        "transcription_status": "pending",
+        "transcription_status_url": f"/api/local-videos/{video_id}/transcription",
     }
+
+
+@app.get("/api/local-videos/{video_id}/transcription")
+async def get_local_video_transcription(
+    video_id: str,
+    principal: Principal = Depends(
+        require_roles("student", "teacher", "admin", "owner")
+    ),
+) -> dict:
+    metadata = require_local_video_metadata(video_id, principal)
+    response = {
+        "id": video_id,
+        "reference": f"LOCAL-VIDEO-{video_id}",
+        "status": metadata.get("transcription_status", "pending"),
+    }
+    if response["status"] == "ready":
+        response["transcription"] = metadata.get("transcription", {})
+    elif response["status"] == "failed":
+        response["detail"] = metadata.get(
+            "transcription_error",
+            "Local Whisper transcription failed.",
+        )
+    return response
 
 
 @app.get("/api/local-videos/{video_id}")
@@ -613,17 +669,9 @@ async def get_local_video(
         require_roles("student", "teacher", "admin", "owner")
     ),
 ) -> FileResponse:
-    if not re.fullmatch(r"[0-9a-fA-F-]{36}", video_id):
-        raise HTTPException(status_code=404, detail="Local video not found.")
+    require_local_video_metadata(video_id, principal)
     matches = list(LOCAL_VIDEO_DIR.glob(f"{video_id}__*"))
     if len(matches) != 1:
-        raise HTTPException(status_code=404, detail="Local video not found.")
-    metadata = read_video_metadata(video_id)
-    if (
-        not principal.is_local_demo
-        and not principal.roles.intersection({"teacher", "admin", "owner"})
-        and metadata.get("owner_principal_id") != principal.id
-    ):
         raise HTTPException(status_code=404, detail="Local video not found.")
     path = matches[0]
     file_name = path.name.split("__", 1)[1]

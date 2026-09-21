@@ -57,7 +57,7 @@ class StoredEvidenceAsset(BaseModel):
 
 
 class LocalVideoEvidenceSummary(BaseModel):
-    method: Literal["deterministic_local_browser"] = "deterministic_local_browser"
+    method: Literal["local_whisper", "deterministic_local_browser"] = "local_whisper"
     duration_seconds: float = Field(ge=0, le=7200)
     transcript_word_count: int = Field(ge=0, le=10000)
     estimated_words_per_minute: float = Field(ge=0, le=1000)

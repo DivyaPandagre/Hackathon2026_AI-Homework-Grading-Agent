@@ -16,7 +16,7 @@ def _model():
             "Local transcription is not installed. Install project requirements."
         ) from exc
 
-    model_name = os.getenv("LOCAL_WHISPER_MODEL", "medium")
+    model_name = os.getenv("LOCAL_WHISPER_MODEL", "small")
     try:
         return WhisperModel(model_name, device="cpu", compute_type="int8")
     except Exception as exc:
