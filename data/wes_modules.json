@@ -1,0 +1,146 @@
+[
+  {
+    "id": "30947567-f645-5d38-93ed-a4b094fe7605",
+    "created_at": "2026-09-18T00:00:00+00:00",
+    "title": "Sample Module 1 - Teacher English Speaking Training",
+    "subject": "English Reading, Listening & Speaking",
+    "grade_level": "Sample Test",
+    "source_type": "owner_approved_sample",
+    "content": "Instruction to the teacher: Use a calm but encouraging voice. Pause after important points. Smile gently. Keep steady eye contact to show reassurance and support.\n\nArticle: Helping Students Overcome Fear of Speaking English (405 words).\n\nFear of speaking English is common among students, especially in classrooms where English is not their first language. This fear often comes from worry about mistakes, pronunciation, or being laughed at. Teachers have a powerful role in reducing this fear and helping students speak with confidence and comfort.\n\nThe first step is creating a safe environment. Students must feel that the classroom is a place of learning, not judgment. Teachers should clearly state that mistakes are part of progress. When teachers respond calmly to errors, students learn that speaking is more important than perfection.\n\nTeachers should use simple and clear English while speaking. This makes students feel that English is manageable. Using familiar examples and repeating important phrases helps students understand and feel confident using similar language.\n\nRegular speaking practice reduces fear gradually. Short speaking activities, such as answering simple questions or reading aloud, help students practise without pressure. Pair work is especially useful, as students feel less nervous speaking to one classmate than to the entire class.\n\nEncouragement makes a strong difference. Teachers should praise effort and bravery. Saying \"Good try\" or \"You spoke clearly\" motivates students to speak again. Harsh correction or public criticism increases fear and silence.\n\nTeachers should also model confidence. Speaking clearly, calmly, and positively shows students how to speak English with ease. When teachers enjoy speaking, students feel inspired to try.\n\nFear reduces only with time, patience, and support. Teachers should be consistent and kind in their approach. As fear decreases, confidence grows. Students who overcome speaking fear become active learners and strong communicators. Helping students speak without fear is one of the most valuable gifts a teacher can give, shaping confidence that stays with them beyond the classroom.\n\nTough words for this sample task (complete evaluation set: 11):\n1. Fear (FEER) - डर\n2. Confidence (KON-fi-dens) - आत्मविश्वास\n3. Pronunciation (pro-nun-see-AY-shun) - उच्चारण\n4. Judgment (JUJ-ment) - निर्णय\n5. Environment (en-VAI-run-ment) - वातावरण\n6. Manageable (MAN-i-juh-bul) - प्रबंधनीय\n7. Gradually (GRAJ-oo-uh-lee) - धीरे-धीरे\n8. Pressure (PRESH-er) - दबाव\n9. Encourage (en-KUH-rij) - प्रोत्साहित करना\n10. Bravery (BRAY-vuh-ree) - साहस\n11. Criticism (KRIT-i-siz-um) - आलोचना\n\nSAMPLE SCOPE: The 11 words above are the complete word set used for this sample evaluation.",
+    "source_reference": "WesFellow Hub / Wazir Education Society",
+    "source_status": "approved",
+    "answer_key_complete": true,
+    "source_notes": "Owner-approved sample scope. Evaluate only against the content available in this module.",
+    "prohibited_submission_hashes": [],
+    "evaluation_rubric": [
+      {
+        "name": "Tough words and Hindi meanings",
+        "description": "All 11 words in the approved sample module are expected. Each English word is written and paired with a correct Hindi meaning.",
+        "max_points": 40.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Key points recorded",
+        "description": "The main points of the article are written out and match what the article actually says.",
+        "max_points": 25.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Spoken reading",
+        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
+        "max_points": 15.0,
+        "scoring_mode": "requires_transcript"
+      },
+      {
+        "name": "Required work completed",
+        "description": "Every part of the task - the word list, the meanings, and the key points - is visibly attempted.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "The page is readable and laid out clearly. Do not judge handwriting style or neatness as a personal quality.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      }
+    ]
+  },
+  {
+    "id": "84e1af7a-011d-5274-b2f6-7b2db8d5d8ae",
+    "created_at": "2026-09-18T00:00:00+00:00",
+    "title": "Sample Module 2 - Delegating Tasks and Time Management",
+    "subject": "English Reading, Listening & Speaking",
+    "grade_level": "Sample Test",
+    "source_type": "owner_approved_sample",
+    "content": "Article: Empowering the Classroom: The Strength of Delegating Tasks.\nTopic: Delegating Tasks - Time Management.\n\nThe task asks the trainee to read the article aloud, write out the tough words with their Hindi meanings, and record the key points of the article in their own hand.\n\nTough words and their Hindi meanings (15):\n1. Effectively - प्रभावी ढंग से\n2. Environment - वातावरण\n3. Delegation - कार्य सौंपना\n4. Management - प्रबंधन\n5. Overwhelming - अत्यधिक\n6. Dedicated - समर्पित\n7. Strategy - रणनीति\n8. Responsibilities - जिम्मेदारियाँ\n9. Inclusive - समावेशी\n10. Engagement - जुड़ाव\n11. Synergy - सहक्रिया\n12. Partnership - साझेदारी\n13. Accountability - जवाबदेही\n14. Administrative - प्रशासनिक\n15. Empowered - सशक्त\n\nKey points of the article (10):\n1. Delegate tasks daily.\n2. Share responsibilities fairly.\n3. Build students' confidence.\n4. Create inclusive spaces.\n5. Trust your students.\n6. Teach teamwork skills.\n7. Focus on teaching.\n8. Value every child.\n9. Encourage shared leadership.\n10. Inspire future leaders.\n\nSAMPLE SCOPE: The word list and key points above are the complete content used for this sample evaluation.",
+    "source_reference": "WesFellow Hub / Wazir Education Society",
+    "source_status": "approved",
+    "answer_key_complete": true,
+    "source_notes": "Owner-approved sample scope. Evaluate only against the content available in this module.",
+    "prohibited_submission_hashes": [],
+    "evaluation_rubric": [
+      {
+        "name": "Tough words and Hindi meanings",
+        "description": "All 15 words are expected. Each English word is written and paired with a correct Hindi meaning.",
+        "max_points": 40.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Key points recorded",
+        "description": "The main points of the article are written out and match what the article actually says.",
+        "max_points": 25.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Spoken reading",
+        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
+        "max_points": 15.0,
+        "scoring_mode": "requires_transcript"
+      },
+      {
+        "name": "Required work completed",
+        "description": "Every part of the task - the word list, the meanings, and the key points - is visibly attempted.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "The page is readable and laid out clearly. Do not judge handwriting style or neatness as a personal quality.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      }
+    ]
+  },
+  {
+    "id": "5d080f59-23c1-57f4-bc80-e4fc5baaf5c9",
+    "created_at": "2026-09-21T09:23:47+00:00",
+    "title": "Project 01 - My Journey Begins",
+    "subject": "Career Planning, AI & Communication",
+    "grade_level": "Class 6",
+    "source_type": "owner_approved_wes_task_export",
+    "content": "OBJECTIVE\nThis project is about the learner's future, dreams, and personal growth. The Fellowship is not only about learning computers; it supports self-discovery and the skills needed to create the life the learner wants.\n\nORIGINAL WES TASK: 150 POINTS\n\n1. MY DREAM - 20 POINTS\nWrite about:\n- Who do I want to become?\n- Why?\n- What inspires me?\n\n2. MY 2-YEAR PLAN - 30 POINTS\nCreate a simple roadmap covering:\n- The first 3 months\n- The next 4 months\n- The following 4 months\n- What the learner wants to achieve each year\n\n3. AI AND MY FUTURE - 20 POINTS\nExplain how AI, computers, and technology can help the learner achieve their dream.\n\n4. MY FELLOWSHIP JOURNEY - 30 POINTS\nExplain how the Fellowship will help the learner become a better version of themselves. Consider skills, English, communication, confidence, discipline, and leadership.\n\n5. PRESENTATION - 20 POINTS\nCreate a 5-7 slide presentation describing the learner's journey.\n\n6. VISION VIDEO - 30 POINTS\nRecord a 2-minute video covering:\n- Who are you?\n- What is your dream?\n- Why did you join this Fellowship?\n- What do you hope to learn?\n- Why should we believe in you?\nSpeak naturally rather than reading a script.\n\nREQUIRED WES SUBMISSION SET\n- Presentation\n- Handwritten notes\n- Vision video folder link\n\nWES MESSAGE\nDream big. Work hard. Stay humble. Your journey starts today.\n\nEDUGRADE ASSESSMENT NOTE\nThe original WES task totals 150 points. EduGrade uses the normalized 100-point rubric below so the module fits the common assessment workflow. Personal ambition is not judged as right or wrong; scoring focuses on completion, clarity, reflection, connection to the Fellowship, and evidence in the submitted work. Video is evaluated only from a locally produced transcript and permitted timing metadata; raw video never enters the grading model.",
+    "source_reference": "WesFellow Hub PDF export supplied by owner; Task ID 2026-07-CCCEMPFellow-015; https://academy-test-theta.vercel.app/tasks/Project%2001%20%E2%80%93%20My%20Journey%20Begins%20%F0%9F%9A%80",
+    "source_status": "approved",
+    "answer_key_complete": true,
+    "source_notes": "Owner-approved WES task scope extracted from the attached seven-page PDF on 2026-09-21. Student names, submission links, and historical feedback were intentionally excluded from the module knowledge source.",
+    "prohibited_submission_hashes": [],
+    "evaluation_rubric": [
+      {
+        "name": "Dream and inspiration",
+        "description": "Clearly explains the learner's desired future, reasons for that goal, and sources of inspiration. Evaluate reflection and clarity, not the social value or prestige of the chosen dream.",
+        "max_points": 13.33,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Two-year roadmap",
+        "description": "Provides a practical staged plan covering the first three months, the next two four-month periods, and intended yearly achievements.",
+        "max_points": 20.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "AI and technology connection",
+        "description": "Explains specific, realistic ways AI, computers, or technology could support the learner's goals while avoiding unsupported guarantees.",
+        "max_points": 13.33,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Fellowship development plan",
+        "description": "Connects the Fellowship to growth in relevant areas such as skills, English, communication, confidence, discipline, and leadership.",
+        "max_points": 20.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Presentation completeness",
+        "description": "The 5-7 slide presentation communicates the journey in a clear sequence and includes the required project components. Teacher review is required when slide evidence is unavailable.",
+        "max_points": 13.34,
+        "scoring_mode": "teacher_only"
+      },
+      {
+        "name": "Vision video reflection",
+        "description": "The two-minute reflection addresses identity, dream, reason for joining, learning hopes, and personal commitment. Score only from a transcript produced outside the grading model; never infer personality, sincerity, or emotion from appearance or voice.",
+        "max_points": 20.0,
+        "scoring_mode": "requires_transcript"
+      }
+    ]
+  }
+]

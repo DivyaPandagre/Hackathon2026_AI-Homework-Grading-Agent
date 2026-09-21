@@ -4,5 +4,9 @@ __pycache__/
 .pytest_cache/
 *.pyc
 data/assessments.json
+data/assessments.quarantine.json
 data/modules.json
 data/student_profiles.json
+data/wes_submissions_manifest.json
+data/submission_evidence/
+data/submission_videos/

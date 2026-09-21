@@ -1,0 +1,168 @@
+[
+  {
+    "id": "hw-30947567-f645-5d38-93ed-a4b094fe7605",
+    "module_id": "30947567-f645-5d38-93ed-a4b094fe7605",
+    "title": "Day 12 - Task 2: Read Aloud and Tough Words",
+    "subject": "English Reading, Listening & Speaking",
+    "grade_level": "Sample Test",
+    "instructions": "Read the article 'Helping Students Overcome Fear of Speaking English' aloud, using a calm and encouraging voice. Pause after important points.\n- Write the tough words from the module with their Hindi meanings.\n- Write the key points of the article in your own hand.\n- Record yourself reading the article aloud.\nSubmit a clear photo or PDF of your written page. If you also submit the recording, its transcript is produced outside the grading module before anything is marked.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Tough words and Hindi meanings",
+        "description": "All 11 words in the approved sample module are expected. Each English word is written and paired with a correct Hindi meaning.",
+        "max_points": 40.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Key points recorded",
+        "description": "The main points of the article are written out and match what the article actually says.",
+        "max_points": 25.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Spoken reading",
+        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
+        "max_points": 15.0,
+        "scoring_mode": "requires_transcript"
+      },
+      {
+        "name": "Required work completed",
+        "description": "Every part of the task - the word list, the meanings, and the key points - is visibly attempted.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "The page is readable and laid out clearly. Do not judge handwriting style or neatness as a personal quality.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      }
+    ],
+    "mcq_questions": [],
+    "due_label": "Due May 10, 2026",
+    "learner_type": "adult_trainee",
+    "module_match_terms": [
+      "day 12",
+      "helping students overcome fear",
+      "teacher english speaking training"
+    ]
+  },
+  {
+    "id": "hw-84e1af7a-011d-5274-b2f6-7b2db8d5d8ae",
+    "module_id": "84e1af7a-011d-5274-b2f6-7b2db8d5d8ae",
+    "title": "71-TS: Delegating Tasks - Tough Words and Key Points",
+    "subject": "English Reading, Listening & Speaking",
+    "grade_level": "Sample Test",
+    "instructions": "Read the article 'Empowering the Classroom: The Strength of Delegating Tasks' aloud.\n- Write the 15 tough words with their Hindi meanings.\n- Write the 10 key points of the article in your own hand.\n- Record yourself reading the article aloud.\nSubmit a clear photo or PDF of your written page. If you also submit the recording, its transcript is produced outside the grading module before anything is marked.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Tough words and Hindi meanings",
+        "description": "All 15 words are expected. Each English word is written and paired with a correct Hindi meaning.",
+        "max_points": 40.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Key points recorded",
+        "description": "The main points of the article are written out and match what the article actually says.",
+        "max_points": 25.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Spoken reading",
+        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
+        "max_points": 15.0,
+        "scoring_mode": "requires_transcript"
+      },
+      {
+        "name": "Required work completed",
+        "description": "Every part of the task - the word list, the meanings, and the key points - is visibly attempted.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Legibility and organization",
+        "description": "The page is readable and laid out clearly. Do not judge handwriting style or neatness as a personal quality.",
+        "max_points": 10.0,
+        "scoring_mode": "automatic"
+      }
+    ],
+    "mcq_questions": [],
+    "due_label": "Due date not recorded on the submitted pages",
+    "learner_type": "adult_trainee",
+    "module_match_terms": [
+      "71 ts",
+      "delegating tasks",
+      "time management"
+    ]
+  },
+  {
+    "id": "hw-5d080f59-23c1-57f4-bc80-e4fc5baaf5c9",
+    "module_id": "5d080f59-23c1-57f4-bc80-e4fc5baaf5c9",
+    "title": "Project 01 - My Journey Begins",
+    "subject": "Career Planning, AI & Communication",
+    "grade_level": "Class 6",
+    "instructions": "Complete the My Journey project using the WES module.\n1. Write about your dream: who you want to become, why, and what inspires you.\n2. Create a two-year roadmap covering the first 3 months, the next two 4-month periods, and your goals for each year.\n3. Explain how AI, computers, and technology can help you work toward your dream.\n4. Explain how the Fellowship can help you improve skills, English, communication, confidence, discipline, and leadership.\n5. Create a 5-7 slide presentation about your journey.\n6. Prepare a 2-minute vision video introducing yourself, your dream, why you joined, what you hope to learn, and your commitment.\nFor the recommended portal test, combine your written work and exported presentation into one PDF. You can also test clear page photos or submit the vision video separately; local Whisper creates its transcript and raw video never enters the grading model.",
+    "allowed_submission_types": [
+      "handwritten_image",
+      "handwritten_pdf",
+      "video_and_handnote"
+    ],
+    "rubric": [
+      {
+        "name": "Dream and inspiration",
+        "description": "Clearly explains the learner's desired future, reasons for that goal, and sources of inspiration. Evaluate reflection and clarity, not the social value or prestige of the chosen dream.",
+        "max_points": 13.33,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Two-year roadmap",
+        "description": "Provides a practical staged plan covering the first three months, the next two four-month periods, and intended yearly achievements.",
+        "max_points": 20.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "AI and technology connection",
+        "description": "Explains specific, realistic ways AI, computers, or technology could support the learner's goals while avoiding unsupported guarantees.",
+        "max_points": 13.33,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Fellowship development plan",
+        "description": "Connects the Fellowship to growth in relevant areas such as skills, English, communication, confidence, discipline, and leadership.",
+        "max_points": 20.0,
+        "scoring_mode": "automatic"
+      },
+      {
+        "name": "Presentation completeness",
+        "description": "The 5-7 slide presentation communicates the journey in a clear sequence and includes the required project components. Teacher review is required when slide evidence is unavailable.",
+        "max_points": 13.34,
+        "scoring_mode": "teacher_only"
+      },
+      {
+        "name": "Vision video reflection",
+        "description": "The two-minute reflection addresses identity, dream, reason for joining, learning hopes, and personal commitment. Score only from a transcript produced outside the grading model; never infer personality, sincerity, or emotion from appearance or voice.",
+        "max_points": 20.0,
+        "scoring_mode": "requires_transcript"
+      }
+    ],
+    "mcq_questions": [],
+    "due_label": "Available for Class 6 testing",
+    "learner_type": "minor",
+    "module_match_terms": [
+      "project 01",
+      "my journey begins",
+      "two-year plan",
+      "vision video"
+    ]
+  }
+]

@@ -1,4 +1,5 @@
 fastapi==0.116.1
+faster-whisper==1.2.1
 keyring==25.6.0
 openai==1.109.1
 pydantic-settings==2.10.1

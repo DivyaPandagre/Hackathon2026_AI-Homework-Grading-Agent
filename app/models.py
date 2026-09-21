@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 from enum import Enum
+from typing import Literal
 from uuid import uuid4
 
 from pydantic import BaseModel, Field, model_validator
@@ -12,6 +13,12 @@ def utc_now() -> datetime:
 class AssessmentStatus(str, Enum):
     needs_review = "needs_review"
     ready_for_approval = "ready_for_approval"
+    knowledge_incomplete = "knowledge_incomplete"
+    provisional_source = "provisional_source"
+    awaiting_transcription = "awaiting_transcription"
+    wrong_assignment = "wrong_assignment"
+    needs_teacher_scoring = "needs_teacher_scoring"
+    draft_assessment_ready = "draft_assessment_ready"
     approved = "approved"
     overridden = "overridden"
 
@@ -20,6 +27,9 @@ class RubricCriterion(BaseModel):
     name: str = Field(min_length=1, max_length=120)
     description: str = Field(min_length=1, max_length=500)
     max_points: float = Field(gt=0, le=1000)
+    scoring_mode: Literal["automatic", "requires_transcript", "teacher_only"] = (
+        "automatic"
+    )
 
 
 class SubmissionAttachment(BaseModel):
@@ -27,6 +37,32 @@ class SubmissionAttachment(BaseModel):
     mime_type: str = Field(min_length=3, max_length=100)
     size_bytes: int = Field(gt=0, le=10_000_000)
     data_url: str = Field(default="", max_length=14_000_000, exclude=True)
+
+
+class SubmissionEvidence(BaseModel):
+    file_name: str = Field(min_length=1, max_length=240)
+    mime_type: str = Field(min_length=3, max_length=100)
+    size_bytes: int = Field(gt=0, le=100_000_000)
+    sha256: str = Field(pattern=r"^[a-fA-F0-9]{64}$")
+    page_header: str = Field(default="", max_length=240)
+    goes_to_model: bool = False
+
+
+class StoredEvidenceAsset(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid4()))
+    file_name: str
+    mime_type: str
+    size_bytes: int
+    content_url: str = ""
+
+
+class LocalVideoEvidenceSummary(BaseModel):
+    method: Literal["deterministic_local_browser"] = "deterministic_local_browser"
+    duration_seconds: float = Field(ge=0, le=7200)
+    transcript_word_count: int = Field(ge=0, le=10000)
+    estimated_words_per_minute: float = Field(ge=0, le=1000)
+    frame_pointer_seconds: list[float] = Field(default_factory=list, max_length=12)
+    contains_video_data: Literal[False] = False
 
 
 class AssessmentCreate(BaseModel):
@@ -38,12 +74,23 @@ class AssessmentCreate(BaseModel):
     module_title: str = Field(default="Teacher-provided learning module", max_length=200)
     module_content: str = Field(default="", max_length=20000)
     submission: str = Field(default="", max_length=30000)
-    submission_type: str = Field(default="typed_text", max_length=80)
+    submission_type: Literal[
+        "handwritten_image",
+        "handwritten_pdf",
+        "mcq",
+        "video_and_handnote",
+    ]
     attachment: SubmissionAttachment | None = None
+    attachments: list[SubmissionAttachment] = Field(default_factory=list, max_length=10)
+    evidence_manifest: list[SubmissionEvidence] = Field(
+        default_factory=list, max_length=20
+    )
+    page_header: str = Field(default="", max_length=240)
     mcq_answers: dict[str, int] = Field(default_factory=dict)
     permission_confirmed: bool = True
     external_media_processing_confirmed: bool = False
     media_processing_reference: str = Field(default="", max_length=160)
+    local_video_evidence: LocalVideoEvidenceSummary | None = None
     feedback_language: str = Field(default="english_and_hindi", max_length=40)
     rubric: list[RubricCriterion] = Field(min_length=1, max_length=20)
 
@@ -52,31 +99,27 @@ class AssessmentCreate(BaseModel):
         if not self.permission_confirmed:
             raise ValueError("permission is required before media can be evaluated")
         if self.submission_type == "handwritten_image":
-            if (
-                self.attachment is None
-                or self.attachment.mime_type
-                not in {"image/jpeg", "image/png", "image/webp"}
+            attachments = self.attachments or (
+                [self.attachment] if self.attachment is not None else []
+            )
+            if not attachments or any(
+                item.mime_type not in {"image/jpeg", "image/png", "image/webp"}
+                for item in attachments
             ):
                 raise ValueError("a handwritten image is required")
         if self.submission_type == "handwritten_pdf":
-            if (
-                self.attachment is None
-                or self.attachment.mime_type != "application/pdf"
+            attachments = self.attachments or (
+                [self.attachment] if self.attachment is not None else []
+            )
+            if not attachments or any(
+                item.mime_type != "application/pdf" for item in attachments
             ):
                 raise ValueError("a handwritten PDF is required")
         if self.submission_type == "mcq" and not self.mcq_answers:
             raise ValueError("MCQ answers are required")
         if self.submission_type == "video_and_handnote":
-            if not self.external_media_processing_confirmed:
-                raise ValueError(
-                    "video must be transcribed and sanitized outside the AI grading module"
-                )
-            if not self.media_processing_reference:
-                raise ValueError("an external media processing receipt is required")
-            if not self.submission:
-                raise ValueError("an externally generated video transcript is required")
-        if self.submission_type == "typed_text" and not self.submission:
-            raise ValueError("submission text is required")
+            if self.attachment is not None or self.attachments:
+                raise ValueError("raw video must not be attached to the grading request")
         return self
 
 
@@ -86,6 +129,8 @@ class CriterionEvaluation(BaseModel):
     max_points: float = Field(gt=0)
     rationale: str
     evidence: list[str] = Field(default_factory=list)
+    assessed: bool = True
+    not_assessed_reason: str = ""
 
     @model_validator(mode="after")
     def validate_score(self) -> "CriterionEvaluation":
@@ -113,6 +158,8 @@ class AssessmentResult(BaseModel):
     confidence: ConfidenceDetails
     module_alignment: str = ""
     safety_check: str = "Passed"
+    assessed_points_possible: float | None = Field(default=None, ge=0)
+    provisional: bool = False
 
 
 class ReviewAction(str, Enum):
@@ -126,9 +173,13 @@ class ReviewRequest(BaseModel):
     reviewer: str = Field(min_length=1, max_length=120)
     notes: str = Field(default="", max_length=2000)
     total_score: float | None = Field(default=None, ge=0)
-    ai_feedback_decision: str = Field(default="accept", pattern="^(accept|discard)$")
+    criterion_scores: dict[str, float] = Field(default_factory=dict)
+    ai_feedback_decision: str = Field(
+        default="accept", pattern="^(accept|discard|delete)$"
+    )
     teacher_feedback: str | None = Field(default=None, max_length=5000)
     teacher_feedback_hi: str | None = Field(default=None, max_length=5000)
+    expected_version: int | None = Field(default=None, ge=1)
 
 
 class AuditEvent(BaseModel):
@@ -151,15 +202,19 @@ class AssessmentRecord(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid4()))
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
+    version: int = Field(default=1, ge=1)
+    owner_principal_id: str = ""
     status: AssessmentStatus
     input: AssessmentCreate
     result: AssessmentResult
     review_required: bool
     ai_feedback_accepted: bool | None = None
+    ai_feedback_deleted: bool = False
     teacher_feedback: str = ""
     teacher_feedback_hi: str = ""
     published_feedback: str = ""
     published_feedback_hi: str = ""
+    evidence_assets: list[StoredEvidenceAsset] = Field(default_factory=list)
     execution_trace: list[ExecutionTraceEvent] = Field(default_factory=list)
     audit_trail: list[AuditEvent]
 
@@ -170,6 +225,11 @@ class LearningModuleCreate(BaseModel):
     grade_level: str = Field(min_length=1, max_length=80)
     content: str = Field(min_length=1, max_length=30000)
     source_type: str = Field(default="text", max_length=40)
+    source_status: Literal["approved", "incomplete", "provisional"] = "approved"
+    source_reference: str = Field(default="", max_length=500)
+    source_notes: str = Field(default="", max_length=4000)
+    answer_key_complete: bool = True
+    prohibited_submission_hashes: list[str] = Field(default_factory=list, max_length=100)
     evaluation_rubric: list[RubricCriterion] = Field(default_factory=list, max_length=8)
 
     @model_validator(mode="after")
@@ -224,22 +284,34 @@ class HomeworkDefinition(BaseModel):
     rubric: list[RubricCriterion]
     mcq_questions: list[MCQQuestion] = Field(default_factory=list)
     due_label: str = "Due Friday"
+    learner_type: Literal["minor", "adult_trainee"] = "minor"
+    module_match_terms: list[str] = Field(default_factory=list, max_length=20)
 
 
 class StudentRegistration(BaseModel):
     student_name: str = Field(min_length=1, max_length=120)
     student_email: str = Field(min_length=3, max_length=200)
-    parent_name: str = Field(min_length=1, max_length=120)
-    parent_email: str = Field(min_length=3, max_length=200)
-    parent_consent_confirmed: bool
+    learner_type: Literal["minor", "adult_trainee"] = "minor"
+    grade_level: str = Field(default="", max_length=80)
+    parent_name: str = Field(default="", max_length=120)
+    parent_email: str = Field(default="", max_length=200)
+    parent_consent_confirmed: bool = False
+    self_consent_confirmed: bool = False
     video_processing_approved: bool
     student_email_verification_token: str = Field(min_length=20, max_length=200)
-    parent_email_verification_token: str = Field(min_length=20, max_length=200)
+    parent_email_verification_token: str = Field(default="", max_length=200)
 
     @model_validator(mode="after")
     def validate_consent(self) -> "StudentRegistration":
-        if not self.parent_consent_confirmed:
+        if self.learner_type == "minor" and (
+            not self.parent_name
+            or not self.parent_email
+            or not self.parent_consent_confirmed
+            or not self.parent_email_verification_token
+        ):
             raise ValueError("parent or guardian consent must be confirmed")
+        if self.learner_type == "adult_trainee" and not self.self_consent_confirmed:
+            raise ValueError("adult learner consent must be confirmed")
         return self
 
 
@@ -248,14 +320,25 @@ class StudentProfile(BaseModel):
     student_name: str
     student_email: str
     student_email_verified: bool = True
-    parent_name: str
-    parent_email: str
-    parent_email_verified: bool = True
-    parent_consent_confirmed: bool
+    learner_type: Literal["minor", "adult_trainee"] = "minor"
+    grade_level: str = ""
+    parent_name: str = ""
+    parent_email: str = ""
+    parent_email_verified: bool = False
+    parent_consent_confirmed: bool = False
+    self_consent_confirmed: bool = False
     video_processing_approved: bool
     consent_reference: str
     consent_version: str = "2026.1"
     registered_at: datetime = Field(default_factory=utc_now)
+    owner_principal_id: str = ""
+
+
+class StudentRosterEntry(BaseModel):
+    id: str
+    student_name: str
+    learner_type: Literal["minor", "adult_trainee"]
+    grade_level: str = ""
 
 
 class VerificationPurpose(str, Enum):

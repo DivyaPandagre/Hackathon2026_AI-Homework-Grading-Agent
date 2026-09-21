@@ -21,6 +21,10 @@ class ConsentStore:
         with self._lock:
             return next((item for item in self._read() if item.id == student_id), None)
 
+    def list(self) -> list[StudentProfile]:
+        with self._lock:
+            return sorted(self._read(), key=lambda item: item.student_name.lower())
+
     def save(self, profile: StudentProfile) -> StudentProfile:
         with self._lock:
             profiles = self._read()

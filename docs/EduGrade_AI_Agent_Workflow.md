@@ -34,7 +34,17 @@ potential.
    external-processing receipt can enter the AI assessment step.
 10. EduGrade validates the AI response, calculates confidence, and routes the
     result to the Teacher.
-11. The Teacher approves, edits, or overrides the score and feedback.
+11. The Teacher selects the class and subject to view the real dashboard, then
+    optionally selects a module for roster-level submission review.
+12. The Teacher inspects retained handwritten evidence, confirms or edits every
+    rubric parameter, and approves, edits, or overrides the feedback.
+13. Only teacher-approved bilingual feedback is released in the Student workspace.
+14. The local owner Agent Inspector retains recent execution traces and failed-run
+    details so the last run is always available for troubleshooting.
+15. The Student dashboard uses the learner's registered class to show work due
+    today, available class assignments, submission progress, and approved outcomes.
+    Longitudinal report cards remain a future capability and must use
+    teacher-approved evidence without identity or personality inference.
 
 ## Where AI and the API key are used
 
@@ -91,7 +101,7 @@ For a Class 1 English module, the starting rubric is:
 | Spelling and language use | 10 | Language is appropriate for Class 1 |
 
 These percentages are configurable EduGrade defaults. They are not presented as
-official CBSE-mandated percentages. Admins and Teachers can change the parameters,
+official externally mandated percentages. Admins and Teachers can change the parameters,
 guidance, and point allocation, but the total must remain 100 points.
 
 ## How AI evaluates a submission
@@ -120,7 +130,9 @@ mandatory Teacher review.
 
 The Teacher can:
 
-- Accept or discard AI feedback
+- Accept, discard, or remove AI feedback from the working draft
+- Inspect retained handwritten images and PDFs
+- Confirm or edit every parameter score
 - Edit bilingual feedback
 - Change the score within the rubric maximum
 - Approve the result

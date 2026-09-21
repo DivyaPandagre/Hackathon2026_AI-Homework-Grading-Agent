@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 from pathlib import Path
 from threading import Lock
@@ -65,12 +67,24 @@ def default_evaluation_rubric(subject: str, grade_level: str) -> list[RubricCrit
 
 
 class ModuleStore:
-    def __init__(self, path: Path, default_path: Path | None = None) -> None:
+    def __init__(
+        self,
+        path: Path,
+        default_path: Path | None = None,
+        additional_default_paths: list[Path] | None = None,
+    ) -> None:
         self.path = path
         self._lock = Lock()
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        if not self.path.exists() and default_path and default_path.exists():
-            defaults = json.loads(default_path.read_text(encoding="utf-8"))
+        source_paths = [
+            item
+            for item in [default_path, *(additional_default_paths or [])]
+            if item is not None and item.exists()
+        ]
+        if not self.path.exists() and source_paths:
+            defaults = []
+            for source_path in source_paths:
+                defaults.extend(json.loads(source_path.read_text(encoding="utf-8")))
             validated = [
                 LearningModule.model_validate(item).model_dump(mode="json")
                 for item in defaults
@@ -79,6 +93,25 @@ class ModuleStore:
                 json.dumps(validated, ensure_ascii=False, indent=2),
                 encoding="utf-8",
             )
+        elif self.path.exists() and additional_default_paths:
+            existing = json.loads(self.path.read_text(encoding="utf-8"))
+            existing_ids = {item["id"] for item in existing}
+            changed = False
+            for source_path in additional_default_paths:
+                if not source_path.exists():
+                    continue
+                for item in json.loads(source_path.read_text(encoding="utf-8")):
+                    if item["id"] not in existing_ids:
+                        existing.append(
+                            LearningModule.model_validate(item).model_dump(mode="json")
+                        )
+                        existing_ids.add(item["id"])
+                        changed = True
+            if changed:
+                self.path.write_text(
+                    json.dumps(existing, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
 
     def list(self) -> list[LearningModule]:
         with self._lock:
