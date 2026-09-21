@@ -25,8 +25,8 @@
         "scoring_mode": "automatic"
       },
       {
-        "name": "Spoken reading",
-        "description": "Fluency and clarity of the reading aloud. Scored ONLY from a transcript produced outside the AI grading module. The recording itself and any frame of it are never sent to the model. With no transcript, leave this to the teacher.",
+        "name": "Spoken content coverage",
+        "description": "Checks whether the locally produced transcript communicates the required article content and key ideas. Do not score accent, dialect, native-like pronunciation, tone, or speaking confidence. Minor grammar differences and likely Whisper recognition errors must not reduce marks when meaning is understandable; use uncertainty to lower confidence and route to educator review.",
         "max_points": 15.0,
         "scoring_mode": "requires_transcript"
       },

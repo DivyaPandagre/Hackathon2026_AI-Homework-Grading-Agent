@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from app.agent import AssessmentAgent
+from app.agent import AssessmentAgent, SYSTEM_PROMPT
 from app.config import Settings
 from app.main import app, get_agent
 from app.models import (
@@ -448,6 +448,9 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert 'aria-labelledby="rubric-dialog-title"' in response.text
     assert 'aria-labelledby="registration-dialog-title"' in response.text
     assert "Local Whisper transcription complete" in app_script
+    assert "Never reward or penalize a native-like accent" in SYSTEM_PROMPT
+    assert "Likely transcription" in SYSTEM_PROMPT
+    assert "errors should reduce confidence" in SYSTEM_PROMPT
     assert "video-transcript-file" not in response.text
     assert 'id="student-testing-class"' in response.text
     assert 'id="student-testing-module"' in response.text
@@ -1049,6 +1052,13 @@ def test_module_rubrics_vary_by_class_and_drive_homework(tmp_path: Path):
         assert [item.name for item in pre_primary.evaluation_rubric] != [
             item.name for item in class_six.evaluation_rubric
         ]
+        english_module = next(
+            module
+            for module in modules
+            if "English" in module.subject and module.grade_level == "Class 6"
+        )
+        assert english_module.evaluation_rubric[-1].name == "Communication and vocabulary"
+        assert "Do not penalize accent" in english_module.evaluation_rubric[-1].description
 
         client = TestClient(app)
         response = client.put(

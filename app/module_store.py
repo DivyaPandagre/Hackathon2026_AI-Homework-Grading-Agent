@@ -44,8 +44,8 @@ def default_evaluation_rubric(subject: str, grade_level: str) -> list[RubricCrit
 
     if any(name in subject_name for name in ("english", "hindi", "language")):
         criteria[-1] = (
-            "Spelling and language use",
-            "Uses class-appropriate spelling, grammar, vocabulary, and sentence construction.",
+            "Communication and vocabulary",
+            "Communicates understandable meaning using relevant vocabulary. Do not penalize accent, dialect, code-switching, or minor grammar and spelling differences when the intended meaning is clear. Likely transcription errors reduce confidence rather than marks.",
             criteria[-1][2],
         )
     elif "math" in subject_name or "numeracy" in subject_name:

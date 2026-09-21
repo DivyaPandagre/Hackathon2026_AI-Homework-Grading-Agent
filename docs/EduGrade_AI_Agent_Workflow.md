@@ -83,6 +83,13 @@ and confidence.
 | Sanitized video transcript evaluation | Yes | Azure AI evaluates transcript text only |
 | Final approval | No | Teacher decision |
 
+For multilingual English-speaking activities, EduGrade assesses understandable
+academic meaning and required content. Accent, dialect, code-switching, and
+native-like pronunciation are not scoring factors. The model receives no audio, so
+it must not claim to measure pronunciation, tone, fluency, or speaking confidence.
+Likely Whisper recognition errors lower confidence and require educator review rather
+than lowering the learner's marks.
+
 ## How the rubric is created
 
 Every module receives its own 100-point rubric. The starting parameters are based
