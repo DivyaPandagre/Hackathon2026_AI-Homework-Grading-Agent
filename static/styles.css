@@ -1221,6 +1221,7 @@ body:not(.demo-mode) .student-progress-layout { grid-template-columns: minmax(0,
 .student-score-details .student-result-explanation-content { display: block; }
 .compact-score-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border: 1px solid #d7e4ee; background: #d7e4ee; }
 .compact-score-list > div { display: flex; justify-content: space-between; gap: 14px; padding: 10px 12px; background: white; font-size: 9px; }
+.compact-score-list > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .compact-score-list span { flex: 0 0 auto; color: #0f6cbd; font-weight: 800; }
 .published-feedback-summary {
   display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start;

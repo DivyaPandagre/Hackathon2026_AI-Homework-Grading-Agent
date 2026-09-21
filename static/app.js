@@ -1180,6 +1180,24 @@ function conciseStudentText(value, fallback, maxLength = 260) {
     : `${concise.slice(0, maxLength - 1).trim()}…`;
 }
 
+function conciseStudentInstruction(value, fallback, maxLength = 220) {
+  const normalized = String(value || "").replace(/\s+/g, " ").trim() || fallback;
+  if (normalized.length <= maxLength) return normalized;
+  const shortened = normalized.slice(0, maxLength - 1);
+  const wordBoundary = shortened.lastIndexOf(" ");
+  const cutoff = wordBoundary > maxLength * 0.7 ? wordBoundary : shortened.length;
+  return `${shortened.slice(0, cutoff).trim()}…`;
+}
+
+function studentFriendlyAlignment(value, fallback) {
+  const simplified = String(value || "")
+    .replace(/^(strong|partial|low|not)\s+alignment\s*[:.-]?\s*/i, "")
+    .replace(/^the submission\b/i, "Your work")
+    .replace(/^submission\b/i, "Your work")
+    .trim();
+  return conciseStudentText(simplified, fallback, 190);
+}
+
 function conciseStudentList(items, fallback) {
   const selected = (items || []).slice(0, 1);
   return selected.length
@@ -1230,12 +1248,11 @@ function studentFeedbackSummary(assessment, feedbackEn = "", feedbackHi = "") {
     outcome: notScored
       ? "Not scored"
       : `${studentFivePointScore(assessment)} / 5`,
-    reason: conciseStudentText(
+    reason: studentFriendlyAlignment(
       assessment.result.module_alignment,
       notScored
         ? "This work appears to belong to a different assignment."
-        : "This result is based on the work submitted for this assignment.",
-      190
+        : "This result is based on the work submitted for this assignment."
     ),
     evidence: evidence.slice(0, 2),
     feedbackEn: conciseStudentText(
@@ -1250,7 +1267,7 @@ function studentFeedbackSummary(assessment, feedbackEn = "", feedbackHi = "") {
         ? "यह काम दूसरे कार्य का है, इसलिए कोई अंक नहीं काटे गए। इसे सही कार्य में जमा करें।"
         : "आपने उपयोगी काम किया है। अगली कोशिश के लिए नीचे दिया कदम अपनाएँ।"
     ),
-    nextStep: conciseStudentText(
+    nextStep: conciseStudentInstruction(
       assessment.result.recommendations?.[0],
       notScored
         ? "Open the correct assignment and submit this work in the right place."

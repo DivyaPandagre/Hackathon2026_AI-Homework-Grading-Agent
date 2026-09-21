@@ -423,6 +423,9 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "function closeLiveInspector()" in app_script
     assert "Simple feedback you can use" in response.text
     assert "function conciseStudentText" in app_script
+    assert "function conciseStudentInstruction" in app_script
+    assert "function studentFriendlyAlignment" in app_script
+    assert "Your work" in app_script
     assert "function studentFeedbackSummary" in app_script
     assert "function studentSubmissionStatus" in app_script
     assert "Check assignment" in app_script
