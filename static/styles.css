@@ -1158,6 +1158,12 @@ body:not(.demo-mode) .student-progress-layout { grid-template-columns: minmax(0,
 .student-submission-heading { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; }
 .student-submission-heading h3 { margin: 5px 0; }
 .student-submission-heading p { margin: 0; color: var(--muted); font-size: 10px; }
+.student-assignment-check {
+  display: grid; gap: 4px; margin-top: 13px; padding: 12px 14px;
+  border-left: 4px solid #d18b00; background: #fff8e8;
+}
+.student-assignment-check strong { color: #7a4b00; font-size: 10px; }
+.student-assignment-check span { color: #5d4a24; font-size: 10px; line-height: 1.5; }
 .student-document-list { display: grid; gap: 8px; margin-top: 15px; }
 .student-document {
   display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; align-items: center;
@@ -1278,6 +1284,9 @@ body:not(.demo-mode) .student-progress-layout { grid-template-columns: minmax(0,
 .status-badge.needs_teacher_scoring { background: #fff4ce; color: #7a4b00; }
 .status-badge.provisional_source { background: #f2eafa; color: #5c2d91; }
 .status-badge.wrong_assignment { background: #fde7e9; color: #a4262c; }
+.status-badge.check_assignment { background: #fff4ce; color: #7a4b00; }
+.status-badge.teacher_checking, .status-badge.preparing { background: #deecf9; color: #004578; }
+.status-badge.feedback_ready { background: #dff6dd; color: #0b5a0b; }
 .not-assessed {
   margin-top: 10px; padding: 9px 11px; border-left: 3px solid #ca5010;
   color: #6b3c00; background: #fff4ce; font-size: 10px; line-height: 1.45;

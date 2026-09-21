@@ -424,6 +424,10 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "Simple feedback you can use" in response.text
     assert "function conciseStudentText" in app_script
     assert "function studentFeedbackSummary" in app_script
+    assert "function studentSubmissionStatus" in app_script
+    assert "Check assignment" in app_script
+    assert "Why this needs checking" in app_script
+    assert "No marks were reduced." in app_script
     assert "function studentFivePointScore" in app_script
     assert "function studentCriterionLevel" in app_script
     assert "`${studentFivePointScore(assessment)} / 5`" in app_script

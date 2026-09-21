@@ -1323,6 +1323,37 @@ function formatFileSize(sizeBytes) {
   return `${(sizeBytes / 1_000_000).toFixed(1)} MB`;
 }
 
+function studentSubmissionStatus(assessment) {
+  if (assessment.status === "wrong_assignment") {
+    const reason = String(assessment.result.module_alignment || "")
+      .replace(/^(low alignment|not aligned)\s*[:.-]?\s*/i, "")
+      .trim();
+    return {
+      className: "check_assignment",
+      label: "Check assignment",
+      explanation: conciseStudentText(
+        reason,
+        "This work appears to match a different lesson than the assignment selected.",
+        210
+      ),
+    };
+  }
+  if (["approved", "overridden"].includes(assessment.status)) {
+    return { className: "feedback_ready", label: "Feedback ready", explanation: "" };
+  }
+  if (assessment.status === "awaiting_transcription") {
+    return { className: "preparing", label: "Preparing transcript", explanation: "" };
+  }
+  if (["needs_review", "ready_for_approval", "draft_assessment_ready"].includes(assessment.status)) {
+    return { className: "teacher_checking", label: "Teacher checking", explanation: "" };
+  }
+  return {
+    className: assessment.status,
+    label: assessment.status.replaceAll("_", " "),
+    explanation: "",
+  };
+}
+
 function renderStudentSubmissions() {
   const container = $("#student-submission-list");
   if (!container) return;
@@ -1338,6 +1369,7 @@ function renderStudentSubmissions() {
   container.innerHTML = submissions.map((item) => {
     const assets = item.evidence_assets || [];
     const documentLabel = `${assets.length} ${assets.length === 1 ? "document" : "documents"}`;
+    const studentStatus = studentSubmissionStatus(item);
     return `
       <article class="student-submission-card">
         <div class="student-submission-heading">
@@ -1346,8 +1378,14 @@ function renderStudentSubmissions() {
             <h3>${escapeHtml(item.input.assignment_title)}</h3>
             <p>${escapeHtml(submissionTypeLabel(item.input.submission_type))} · ${documentLabel}</p>
           </div>
-          <span class="status-badge ${escapeHtml(item.status)}">${escapeHtml(item.status.replaceAll("_", " "))}</span>
+          <span class="status-badge ${escapeHtml(studentStatus.className)}">${escapeHtml(studentStatus.label)}</span>
         </div>
+        ${studentStatus.explanation ? `
+          <div class="student-assignment-check">
+            <strong>Why this needs checking</strong>
+            <span>${escapeHtml(studentStatus.explanation)} No marks were reduced. Submit the work under the matching assignment when ready.</span>
+          </div>
+        ` : ""}
         ${assets.length ? `
           <div class="student-document-list">
             ${assets.map((asset, index) => `
