@@ -1179,6 +1179,21 @@ function conciseStudentList(items, fallback) {
     : `<li>${escapeHtml(fallback)}</li>`;
 }
 
+function studentFivePointScore(assessment) {
+  const normalized = Math.max(0, Math.min(5, assessment.result.percentage / 20));
+  const rounded = Math.round(normalized * 2) / 2;
+  return Number.isInteger(rounded) ? rounded.toFixed(0) : rounded.toFixed(1);
+}
+
+function studentCriterionLevel(criterion) {
+  if (!criterion.assessed || !criterion.max_points) return "Not assessed";
+  const percentage = criterion.score / criterion.max_points * 100;
+  if (percentage >= 85) return "Strong";
+  if (percentage >= 70) return "On track";
+  if (percentage >= 45) return "Developing";
+  return "Starting";
+}
+
 function studentFeedbackSummary(assessment, feedbackEn = "", feedbackHi = "") {
   const wrongModule = assessment.status === "wrong_assignment" ||
     /\b(not aligned|low alignment|different assignment|different task)\b/i.test(
@@ -1206,7 +1221,7 @@ function studentFeedbackSummary(assessment, feedbackEn = "", feedbackHi = "") {
     badge: wrongModule ? "Wrong module" : notScored ? "Not scored" : "Graded",
     outcome: notScored
       ? "Not scored"
-      : `${assessment.result.total_score.toFixed(0)} / ${assessment.result.max_score.toFixed(0)}`,
+      : `${studentFivePointScore(assessment)} / 5`,
     reason: conciseStudentText(
       assessment.result.module_alignment,
       notScored
@@ -1420,13 +1435,13 @@ function renderStudentFeedback() {
         <summary>
           <span>
             <strong>View score details</strong>
-            <small>Optional: see marks for each assessment area.</small>
+            <small>Optional: see your learning stage for each area.</small>
           </span>
         </summary>
         <div class="student-result-explanation-content">
           <div class="compact-score-list">
             ${item.result.criterion_evaluations.map((criterion) => `
-              <div><strong>${escapeHtml(criterion.criterion)}</strong><span>${criterion.assessed ? `${criterion.score}/${criterion.max_points}` : "Not assessed"}</span></div>
+              <div><strong>${escapeHtml(criterion.criterion)}</strong><span>${studentCriterionLevel(criterion)}</span></div>
             `).join("")}
           </div>
           <p class="student-explanation-note">Only teacher-approved results are shown. Detailed evidence and governance information remain available to educators in Agent Inspector.</p>
