@@ -1381,15 +1381,22 @@ function studentSubmissionStatus(assessment) {
 
 function renderStudentSubmissions() {
   const container = $("#student-submission-list");
+  const summary = $("#student-submission-summary");
   if (!container) return;
   if (!state.student) {
     container.innerHTML = '<div class="empty-state"><p>Register to see your submitted homework documents.</p></div>';
+    if (summary) summary.textContent = "Register to review your submission history.";
     return;
   }
   const submissions = studentAssessments();
   if (!submissions.length) {
     container.innerHTML = '<div class="empty-state"><p>Your submitted homework documents will appear here.</p></div>';
+    if (summary) summary.textContent = "No submitted work yet.";
     return;
+  }
+  if (summary) {
+    const ready = submissions.filter((item) => ["approved", "overridden"].includes(item.status)).length;
+    summary.textContent = `${submissions.length} submitted ${submissions.length === 1 ? "item" : "items"} · ${ready} with feedback ready.`;
   }
   container.innerHTML = submissions.map((item) => {
     const assets = item.evidence_assets || [];
@@ -1425,6 +1432,16 @@ function renderStudentSubmissions() {
       </article>
     `;
   }).join("");
+}
+
+function setSubmissionHistoryCollapsed(collapsed) {
+  const content = $("#student-submissions-content");
+  const button = $("#toggle-student-submissions");
+  if (!content || !button) return;
+  content.classList.toggle("hidden", collapsed);
+  button.setAttribute("aria-expanded", String(!collapsed));
+  button.textContent = collapsed ? "Show history" : "Collapse history";
+  localStorage.setItem("edugrade_submission_history_collapsed", String(collapsed));
 }
 
 function renderStudentFeedback() {
@@ -2719,6 +2736,14 @@ document.querySelectorAll("[data-student-target]").forEach((button) => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+$("#toggle-student-submissions").addEventListener("click", () => {
+  setSubmissionHistoryCollapsed(
+    !$("#student-submissions-content").classList.contains("hidden")
+  );
+});
+setSubmissionHistoryCollapsed(
+  localStorage.getItem("edugrade_submission_history_collapsed") === "true"
+);
 
 $("#module-form").addEventListener("submit", async (event) => {
   event.preventDefault();

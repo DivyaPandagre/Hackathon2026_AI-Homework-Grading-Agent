@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/styles.css?v=20260921-13">
+  <link rel="stylesheet" href="/static/styles.css?v=20260921-14">
 </head>
 <body>
   <div class="app-shell">
@@ -43,12 +43,12 @@
         <strong>No child left behind</strong>
         <p>Every lesson can become a step toward skills, confidence, and future opportunity.</p>
         <div>
-          <button type="button" data-student-target="student-progress-section">Learning overview</button>
           <button type="button" data-student-target="student-opportunity-section">Attendance to opportunity</button>
+          <button type="button" data-student-target="student-progress-section">Learning overview</button>
           <button type="button" data-student-target="student-assignment-section">Assignments</button>
           <button type="button" data-student-target="assessment-form">Submit homework</button>
-          <button type="button" data-student-target="student-submissions-section">Submitted work</button>
           <button type="button" data-student-target="student-feedback-section">Feedback</button>
+          <button type="button" data-student-target="student-submissions-section">Submitted work</button>
         </div>
         <small>Education expands choices. EduGrade never predicts a child’s income or potential.</small>
       </section>
@@ -478,6 +478,20 @@
           <div class="step"><b>4</b><span>Educator review</span></div>
         </div>
 
+        <section id="student-opportunity-section" class="panel student-opportunity-panel">
+          <div class="student-opportunity-copy">
+            <span class="eyebrow">Learning creates opportunity</span>
+            <h2>No child left behind. Every lesson can open a new path.</h2>
+            <p>Regular participation helps students keep learning. Completed work builds visible skills. Teacher-approved progress can help learners understand what they are ready to practise next—and how education connects to future study and earning opportunities.</p>
+          </div>
+          <div class="student-opportunity-path" aria-label="Education to opportunity pathway">
+            <article><b>1</b><span><strong>Attend</strong><small>Stay connected to lessons and support.</small></span></article>
+            <article><b>2</b><span><strong>Practise</strong><small>Complete meaningful assignments.</small></span></article>
+            <article><b>3</b><span><strong>Build skills</strong><small>Use feedback to improve real capabilities.</small></span></article>
+            <article><b>4</b><span><strong>Expand choices</strong><small>Prepare for further learning and future work.</small></span></article>
+          </div>
+        </section>
+
         <section id="student-progress-section" class="panel student-progress-dashboard">
           <div class="student-dashboard-heading">
             <div>
@@ -510,20 +524,6 @@
                 <li>No personality, identity, or potential predictions</li>
               </ul>
             </aside>
-          </div>
-        </section>
-
-        <section id="student-opportunity-section" class="panel student-opportunity-panel">
-          <div class="student-opportunity-copy">
-            <span class="eyebrow">Learning creates opportunity</span>
-            <h2>No child left behind. Every lesson can open a new path.</h2>
-            <p>Regular participation helps students keep learning. Completed work builds visible skills. Teacher-approved progress can help learners understand what they are ready to practise next—and how education connects to future study and earning opportunities.</p>
-          </div>
-          <div class="student-opportunity-path" aria-label="Education to opportunity pathway">
-            <article><b>1</b><span><strong>Attend</strong><small>Stay connected to lessons and support.</small></span></article>
-            <article><b>2</b><span><strong>Practise</strong><small>Complete meaningful assignments.</small></span></article>
-            <article><b>3</b><span><strong>Build skills</strong><small>Use feedback to improve real capabilities.</small></span></article>
-            <article><b>4</b><span><strong>Expand choices</strong><small>Prepare for further learning and future work.</small></span></article>
           </div>
         </section>
 
@@ -660,18 +660,6 @@
             </ol>
           </aside>
         </div>
-        <section id="student-submissions-section" class="student-submissions-panel panel">
-          <div class="panel-heading">
-            <div>
-              <span class="eyebrow">Submission history</span>
-              <h2>Your submitted work</h2>
-              <p>Review every document you submitted and track its educator-review status.</p>
-            </div>
-          </div>
-          <div id="student-submission-list">
-            <div class="empty-state"><p>Your submitted homework documents will appear here.</p></div>
-          </div>
-        </section>
         <section id="student-feedback-section" class="student-feedback-panel panel">
           <div class="panel-heading">
             <div>
@@ -682,6 +670,21 @@
           </div>
           <div id="student-feedback-list">
             <div class="empty-state"><p>Approved feedback will appear here after educator review.</p></div>
+          </div>
+        </section>
+        <section id="student-submissions-section" class="student-submissions-panel panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">Submission history</span>
+              <h2>Your submitted work</h2>
+              <p id="student-submission-summary">Review every document you submitted and track its educator-review status.</p>
+            </div>
+            <button id="toggle-student-submissions" class="secondary-button student-history-toggle" type="button" aria-controls="student-submissions-content" aria-expanded="true">Collapse history</button>
+          </div>
+          <div id="student-submissions-content">
+            <div id="student-submission-list">
+              <div class="empty-state"><p>Your submitted homework documents will appear here.</p></div>
+            </div>
           </div>
         </section>
       </section>
@@ -895,6 +898,6 @@
       <div id="registration-error" class="error-message"></div>
     </form>
   </div>
-  <script src="/static/app.js?v=20260921-13"></script>
+  <script src="/static/app.js?v=20260921-14"></script>
 </body>
 </html>

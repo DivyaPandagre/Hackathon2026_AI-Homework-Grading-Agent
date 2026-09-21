@@ -448,6 +448,12 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "What the learner will understand" in app_script
     assert 'id="student-side-nav"' in response.text
     assert 'id="student-opportunity-section"' in response.text
+    assert response.text.index('id="student-opportunity-section"') < response.text.index('id="student-progress-section"')
+    assert response.text.index('id="student-feedback-section"') < response.text.index('id="student-submissions-section"')
+    assert 'id="toggle-student-submissions"' in response.text
+    assert 'aria-controls="student-submissions-content"' in response.text
+    assert "function setSubmissionHistoryCollapsed" in app_script
+    assert "edugrade_submission_history_collapsed" in app_script
     assert "No child left behind. Every lesson can open a new path." in response.text
     assert "EduGrade never predicts a child’s income or potential." in response.text
     assert "Your learning progress" in response.text

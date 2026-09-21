@@ -1153,6 +1153,8 @@ body:not(.demo-mode) .student-progress-layout { grid-template-columns: minmax(0,
 .published-review-note { margin-top: 15px; padding: 11px; color: #107c10; background: #dff6dd; font-size: 10px; font-weight: 700; }
 .student-submissions-panel, .student-feedback-panel { margin-top: 24px; padding: 26px; }
 .student-submissions-panel .panel-heading p { margin: 6px 0 0; color: var(--muted); font-size: 11px; }
+.student-history-toggle { flex: 0 0 auto; min-width: 115px; }
+#student-submissions-content { margin-top: 16px; }
 .student-submission-card { padding: 20px; border: 1px solid var(--line); background: white; }
 .student-submission-card + .student-submission-card { margin-top: 12px; }
 .student-submission-heading { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; }
