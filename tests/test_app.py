@@ -423,10 +423,15 @@ def test_teacher_page_has_no_fake_performance_metrics():
     assert "function closeLiveInspector()" in app_script
     assert "Simple feedback you can use" in response.text
     assert "function conciseStudentText" in app_script
-    assert "English feedback" in app_script
-    assert "हिंदी प्रतिक्रिया" in app_script
+    assert "function studentFeedbackSummary" in app_script
+    assert "Nothing has been marked down for this submission." in app_script
+    assert "student-bilingual-feedback" in app_script
+    assert "student-single-next-step" in app_script
+    assert "Feedback to you" in app_script
+    assert "यह काम दूसरे कार्य का है" in app_script
     assert "Your next action" in app_script
     assert "View score details" in app_script
+    assert "What the learner will understand" in app_script
     assert 'id="student-side-nav"' in response.text
     assert 'id="student-opportunity-section"' in response.text
     assert "No child left behind. Every lesson can open a new path." in response.text

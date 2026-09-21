@@ -1108,6 +1108,30 @@ body:not(.demo-mode) .student-progress-layout { grid-template-columns: minmax(0,
 .inline-ai-card { padding: 16px; border: 1px solid #edc7d8; border-left: 4px solid #c23978; background: #fff6fa; }
 .inline-ai-card.decision-confirmed, .ai-feedback-review.decision-confirmed { border-left-color: #107c10; }
 .inline-ai-copy p { margin: 10px 0 0; color: var(--ink); font-size: 11px; line-height: 1.6; }
+.feedback-outcome-row {
+  display: grid; grid-template-columns: minmax(120px, auto) 1fr; gap: 14px; align-items: center;
+  margin-top: 14px;
+}
+.feedback-outcome-row > div { display: flex; align-items: center; gap: 9px; }
+.feedback-outcome-row strong { color: #107c10; font-size: 24px; line-height: 1; text-transform: lowercase; }
+.feedback-outcome-row.not-scored strong { color: #9a5b00; }
+.feedback-outcome-row span, .student-feedback-badge {
+  padding: 4px 9px; border-radius: 999px; color: #0b5a0b; background: #dff6dd;
+  font-size: 9px; font-weight: 800; text-transform: uppercase;
+}
+.feedback-outcome-row.not-scored span, .student-feedback-badge.not-scored { color: #8a4b00; background: #fff4ce; }
+.feedback-outcome-row p { margin: 0; color: #44515a; font-size: 10px; line-height: 1.5; }
+.feedback-evidence-list, .student-feedback-evidence { margin: 11px 0 0; padding-left: 19px; color: #53636f; font-size: 10px; line-height: 1.5; }
+.bilingual-feedback-preview, .student-bilingual-feedback {
+  margin-top: 13px; padding: 14px; border: 1px solid #b9dcc7; background: #f1faf4;
+}
+.bilingual-feedback-preview p, .student-bilingual-feedback p { margin: 0; color: #1f3d2d; font-size: 11px; line-height: 1.6; }
+.bilingual-feedback-preview p + p, .student-bilingual-feedback p + p { margin-top: 12px; }
+.feedback-next-step, .student-single-next-step { margin-top: 10px; padding: 12px 14px; border-left: 4px solid #0f6cbd; background: #f5faff; }
+.feedback-next-step span, .student-single-next-step span, .student-bilingual-feedback > span {
+  display: block; margin-bottom: 5px; color: #0f6cbd; font-size: 9px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase;
+}
+.feedback-next-step p, .student-single-next-step p { margin: 0; color: #384853; font-size: 10px; line-height: 1.5; }
 .inline-ai-card.discarded { border-color: #d2d2d2; border-left-color: #737373; background: #fafafa; }
 .inline-ai-card.deleted .inline-ai-copy { display: none; }
 .inline-ai-note { margin: 9px 0 0; padding: 8px 10px; color: #6b3c00; background: #fff4ce; font-size: 9px; font-weight: 700; line-height: 1.45; }
@@ -1166,6 +1190,11 @@ body:not(.demo-mode) .student-progress-layout { grid-template-columns: minmax(0,
 .published-feedback-heading h3 { margin: 5px 0 0; }
 .published-feedback-heading > strong { color: #107c10; font-size: 25px; }
 .concise-feedback-card { padding: 22px; background: #fbfefb; }
+.student-feedback-badge { align-self: flex-start; flex: 0 0 auto; }
+.student-feedback-outcome { display: flex; gap: 14px; align-items: baseline; margin-top: 15px; }
+.student-feedback-outcome strong { flex: 0 0 auto; color: #107c10; font-size: 26px; line-height: 1; text-transform: lowercase; }
+.student-feedback-outcome.not-scored strong { color: #9a5b00; }
+.student-feedback-outcome p { margin: 0; color: #44515a; font-size: 11px; line-height: 1.5; }
 .published-feedback-heading small { display: block; margin-top: 6px; color: var(--muted); font-size: 9px; }
 .student-score { flex: 0 0 auto; min-width: 80px; padding: 10px 12px; color: #0b5a08; background: #dff6dd; text-align: center; }
 .student-score strong, .student-score span { display: block; }

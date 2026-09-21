@@ -969,6 +969,7 @@ function toggleInlineReview(assessmentId) {
     }
     const locked = ["approved", "overridden"].includes(assessment.status);
     const decision = assessmentFeedbackDecision(assessment);
+    const feedbackSummary = studentFeedbackSummary(assessment);
     container.innerHTML = `
       <div class="inline-review-grid">
         <section class="submission-evidence-panel">
@@ -979,10 +980,20 @@ function toggleInlineReview(assessmentId) {
         <section class="inline-feedback-panel">
           ${assessment.result.provisional ? `<div class="review-warning"><strong>Teacher action required</strong><span>${escapeHtml(assessment.result.module_alignment)}</span></div>` : ""}
           <div class="inline-ai-card ${decision === "delete" ? "deleted" : ""} ${decision === "discard" ? "discarded" : ""}">
-            <div class="ai-feedback-heading"><div><span class="eyebrow">AI-generated feedback</span><h3>Suggestion for teacher review</h3></div><span class="draft-label">Draft</span></div>
+            <div class="ai-feedback-heading"><div><span class="eyebrow">Student feedback preview</span><h3>What the learner will understand</h3></div><span class="draft-label">Draft</span></div>
             <div class="inline-ai-copy">
-              <p>${escapeHtml(assessment.result.personalized_feedback)}</p>
-              ${assessment.result.personalized_feedback_hi ? `<p lang="hi">${escapeHtml(assessment.result.personalized_feedback_hi)}</p>` : ""}
+              <div class="feedback-outcome-row ${feedbackSummary.notScored ? "not-scored" : "scored"}">
+                <div><strong>${escapeHtml(feedbackSummary.outcome)}</strong><span>${escapeHtml(feedbackSummary.badge)}</span></div>
+                <p>${escapeHtml(feedbackSummary.reason)}</p>
+              </div>
+              <ul class="feedback-evidence-list">
+                ${feedbackSummary.evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+              </ul>
+              <div class="bilingual-feedback-preview">
+                <p lang="en">${escapeHtml(feedbackSummary.feedbackEn)}</p>
+                <p lang="hi">${escapeHtml(feedbackSummary.feedbackHi)}</p>
+              </div>
+              <div class="feedback-next-step"><span>Next action</span><p>${escapeHtml(feedbackSummary.nextStep)}</p></div>
             </div>
             <input class="inline-ai-decision" type="hidden" value="${decision}">
             ${locked ? "" : `<div class="ai-feedback-actions">
@@ -992,7 +1003,7 @@ function toggleInlineReview(assessmentId) {
             </div>`}
             <p class="inline-ai-note" role="status" aria-live="polite"></p>
           </div>
-          <div class="inline-parameters">
+          ${feedbackSummary.notScored ? "" : `<div class="inline-parameters">
             <div class="inline-section-heading"><div><span class="eyebrow">Assessment parameters</span><h3>Confirm or edit each score</h3></div><span>Unavailable evidence may remain unassessed.</span></div>
             ${assessment.result.criterion_evaluations.map((criterion, index) => `
               <label class="inline-parameter">
@@ -1001,7 +1012,7 @@ function toggleInlineReview(assessmentId) {
                 <em>/ ${criterion.max_points}</em>
               </label>
             `).join("")}
-          </div>
+          </div>`}
           <div class="teacher-feedback-section">
             <span class="eyebrow">Teacher feedback</span>
             <h3>What the student should receive</h3>
@@ -1168,6 +1179,64 @@ function conciseStudentList(items, fallback) {
     : `<li>${escapeHtml(fallback)}</li>`;
 }
 
+function studentFeedbackSummary(assessment, feedbackEn = "", feedbackHi = "") {
+  const wrongModule = assessment.status === "wrong_assignment" ||
+    /\b(not aligned|low alignment|different assignment|different task)\b/i.test(
+      assessment.result.module_alignment || ""
+    );
+  const notScored = Boolean(
+    assessment.result.provisional ||
+    assessment.result.assessed_points_possible === 0 ||
+    wrongModule
+  );
+  const evidence = (assessment.result.strengths || [])
+    .slice(0, 2)
+    .map((item) => conciseStudentText(item, "", 150))
+    .filter(Boolean);
+  if (!evidence.length) {
+    evidence.push(
+      notScored
+        ? "Your submitted work was received and kept safely."
+        : "Your teacher reviewed the academic evidence in this submission."
+    );
+  }
+  if (notScored) evidence.push("Nothing has been marked down for this submission.");
+  return {
+    notScored,
+    badge: wrongModule ? "Wrong module" : notScored ? "Not scored" : "Graded",
+    outcome: notScored
+      ? "Not scored"
+      : `${assessment.result.total_score.toFixed(0)} / ${assessment.result.max_score.toFixed(0)}`,
+    reason: conciseStudentText(
+      assessment.result.module_alignment,
+      notScored
+        ? "This work appears to belong to a different assignment."
+        : "This result is based on the work submitted for this assignment.",
+      190
+    ),
+    evidence: evidence.slice(0, 2),
+    feedbackEn: conciseStudentText(
+      feedbackEn || assessment.result.personalized_feedback,
+      notScored
+        ? "This work is for a different task, so no marks were reduced. Submit it under the correct assignment."
+        : "You completed useful work. Use the next step below for your next attempt."
+    ),
+    feedbackHi: conciseStudentText(
+      feedbackHi || assessment.result.personalized_feedback_hi,
+      notScored
+        ? "यह काम दूसरे कार्य का है, इसलिए कोई अंक नहीं काटे गए। इसे सही कार्य में जमा करें।"
+        : "आपने उपयोगी काम किया है। अगली कोशिश के लिए नीचे दिया कदम अपनाएँ।"
+    ),
+    nextStep: conciseStudentText(
+      assessment.result.recommendations?.[0],
+      notScored
+        ? "Open the correct assignment and submit this work in the right place."
+        : "Improve one area and try the assignment again.",
+      180
+    ),
+  };
+}
+
 function effectiveStudentGrade() {
   if (state.student?.grade_level) return state.student.grade_level;
   const rosterGrade = state.students.find((student) => student.id === state.student?.id)?.grade_level;
@@ -1316,18 +1385,10 @@ function renderStudentFeedback() {
     const approvedFeedbackHi = item.published_feedback_hi
       ? studentPublishedFeedback(item, "hi")
       : "आपका परिणाम शिक्षक ने स्वीकृत किया है। अगला कदम समझने के लिए अंग्रेज़ी प्रतिक्रिया और नीचे दिए गए सुधार बिंदु देखें।";
-    const conciseEnglish = conciseStudentText(
+    const feedbackSummary = studentFeedbackSummary(
+      item,
       approvedFeedback,
-      "Your teacher approved this result. Review the next step below."
-    );
-    const conciseHindi = conciseStudentText(
-      approvedFeedbackHi,
-      "आपका परिणाम शिक्षक ने स्वीकृत किया है। नीचे दिया गया अगला कदम देखें।"
-    );
-    const nextStep = conciseStudentText(
-      item.result.recommendations?.[0],
-      "Review the teacher feedback and improve one area in your next attempt.",
-      180
+      approvedFeedbackHi
     );
     return `
     <article class="published-feedback-card concise-feedback-card">
@@ -1337,33 +1398,25 @@ function renderStudentFeedback() {
           <h3>${escapeHtml(item.input.assignment_title)}</h3>
           <small>${escapeHtml(submissionTypeLabel(item.input.submission_type))} · teacher approved</small>
         </div>
-        <div class="student-score"><strong>${item.result.percentage.toFixed(0)}%</strong><span>Your score</span></div>
+        <span class="student-feedback-badge ${feedbackSummary.notScored ? "not-scored" : "graded"}">${escapeHtml(feedbackSummary.badge)}</span>
       </div>
-      <div class="feedback-language-grid">
-        <section lang="en">
-          <span>English feedback</span>
-          <p>${escapeHtml(conciseEnglish)}</p>
-        </section>
-        <section lang="hi">
-          <span>हिंदी प्रतिक्रिया</span>
-          <p>${escapeHtml(conciseHindi)}</p>
-        </section>
+      <div class="student-feedback-outcome ${feedbackSummary.notScored ? "not-scored" : "scored"}">
+        <strong>${escapeHtml(feedbackSummary.outcome)}</strong>
+        <p>${escapeHtml(feedbackSummary.reason)}</p>
       </div>
-      <div class="student-feedback-actions">
-        <section class="feedback-action positive">
-          <span>Keep doing</span>
-          <ul>${conciseStudentList(item.result.strengths, "Keep following the assignment steps carefully.")}</ul>
-        </section>
-        <section class="feedback-action improve">
-          <span>Improve next</span>
-          <ul>${conciseStudentList(item.result.learning_gaps, "No specific improvement point was recorded.")}</ul>
-        </section>
-        <section class="feedback-action next">
-          <span>Your next action</span>
-          <p>${escapeHtml(nextStep)}</p>
-        </section>
+      <ul class="student-feedback-evidence">
+        ${feedbackSummary.evidence.map((evidence) => `<li>${escapeHtml(evidence)}</li>`).join("")}
+      </ul>
+      <div class="student-bilingual-feedback">
+        <span>Feedback to you</span>
+        <p lang="en">${escapeHtml(feedbackSummary.feedbackEn)}</p>
+        <p lang="hi">${escapeHtml(feedbackSummary.feedbackHi)}</p>
       </div>
-      <details class="student-result-explanation student-score-details">
+      <div class="student-single-next-step">
+        <span>Your next action</span>
+        <p>${escapeHtml(feedbackSummary.nextStep)}</p>
+      </div>
+      ${feedbackSummary.notScored ? "" : `<details class="student-result-explanation student-score-details">
         <summary>
           <span>
             <strong>View score details</strong>
@@ -1378,7 +1431,7 @@ function renderStudentFeedback() {
           </div>
           <p class="student-explanation-note">Only teacher-approved results are shown. Detailed evidence and governance information remain available to educators in Agent Inspector.</p>
         </div>
-      </details>
+      </details>`}
     </article>
   `;
   }).join("");
